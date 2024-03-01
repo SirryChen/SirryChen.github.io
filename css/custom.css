@@ -575,4 +575,21 @@ div#archive {
       transform: scale(1.1);
     }
   }
+
   
+
+
+
+  /* 个人信息卡片背景图 */
+[data-theme="light"] #aside-content > .card-widget.card-info {
+    background-image: url(https://github.com/SirryChen/SirryChen.github.io/tree/main/img/mountain.webp);
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-size: 100%;
+  }
+[data-theme="dark"] #aside-content > .card-widget.card-info {
+    background-image: url(https://github.com/SirryChen/SirryChen.github.io/tree/main/img/night.webp);
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-size: 100%;
+  }
