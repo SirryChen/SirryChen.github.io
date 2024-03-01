@@ -1393,7 +1393,7 @@ input::placeholder {
   z-index: -999;
   width: 100%;
   height: 100%;
-  background: url(https://github.com/SirryChen/SirryChen.github.io/blob/main/img/background.jpg);
+  background: url(https://pic.imgdb.cn/item/65e1ddbd9f345e8d03b7bb63.jpg);
   background-attachment: local;
   background-position: center;
   background-size: cover;
@@ -5062,7 +5062,7 @@ mjx-container[display],
   border-radius: 5px !important;
 }
 [data-theme="dark"] #web_bg {
-  background: https://github.com/SirryChen/SirryChen.github.io/blob/main/img/top_img.jpg;
+  background: url(https://pic.imgdb.cn/item/65e1ddec9f345e8d03b87098.jpg);
   background-attachment: local;
   background-position: center;
   background-size: cover;
@@ -5070,14 +5070,14 @@ mjx-container[display],
 }
 @media screen and (max-width: 800px) {
   #web_bg {
-    background: \img\mobile_background.jpg;
+    background: url(https://pic.imgdb.cn/item/65e1de1a9f345e8d03b91c5d.jpg);
     background-attachment: local !important;
     background-position: center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
   }
   [data-theme="dark"] #web_bg {
-    background: \img\mobile_background_night.jpg;
+    background: url(https://pic.imgdb.cn/item/65e1de349f345e8d03b9888f.webp);
     background-attachment: local !important;
     background-position: center !important;
     background-size: cover !important;
