@@ -6,7 +6,7 @@
   <link href="https://www.fomal.cc/atom.xml" rel="self"/>
   
   <link href="https://www.fomal.cc/"/>
-  <updated>2022-10-23T14:00:00.000Z</updated>
+  <updated>2024-03-02T15:36:41.606Z</updated>
   <id>https://www.fomal.cc/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>威斯康辛州乳腺癌数据集分析</title>
+    <link href="https://www.fomal.cc/posts/99629267.html"/>
+    <id>https://www.fomal.cc/posts/99629267.html</id>
+    <published>2024-03-02T15:19:03.000Z</published>
+    <updated>2024-03-02T15:36:41.606Z</updated>
+    
+    <content type="html"><![CDATA[<div class="row"><iframe src="https://drive.google.com/file/d/135iz_mdjmMzd3h1WvcGJjGqpTf1UeH2u/view?usp=drive_link" style="width:100%; height:550px"></iframe></div>]]></content>
+    
+    
+    <summary type="html">本文为多元统计分析大作业，可作为参考</summary>
+    
+    
+    
+    
+    <category term="人工智能" scheme="https://www.fomal.cc/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    <category term="大学课程" scheme="https://www.fomal.cc/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>Markdown语法与外挂标签写法汇总</title>
