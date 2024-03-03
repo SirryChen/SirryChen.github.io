@@ -3,11 +3,11 @@
   <title>SirryChen</title>
   
   
-  <link href="https://www.fomal.cc/atom.xml" rel="self"/>
+  <link href="https://sirrychen.github.io/atom.xml" rel="self"/>
   
-  <link href="https://www.fomal.cc/"/>
-  <updated>2024-03-03T03:01:45.616Z</updated>
-  <id>https://www.fomal.cc/</id>
+  <link href="https://sirrychen.github.io/"/>
+  <updated>2024-03-03T05:02:35.463Z</updated>
+  <id>https://sirrychen.github.io/</id>
   
   <author>
     <name>SirryChen</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>图像处理与分析调研报告</title>
-    <link href="https://www.fomal.cc/posts/dd90554b.html"/>
-    <id>https://www.fomal.cc/posts/dd90554b.html</id>
+    <link href="https://sirrychen.github.io/posts/dd90554b.html"/>
+    <id>https://sirrychen.github.io/posts/dd90554b.html</id>
     <published>2024-03-03T03:01:00.000Z</published>
-    <updated>2024-03-03T03:01:45.616Z</updated>
+    <updated>2024-03-03T05:02:35.463Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-课程报告"><a href="#1-课程报告" class="headerlink" title="1.课程报告"></a>1.课程报告</h1><div class="row">    <embed src="/pdf/图像处理与分析大作业.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
     
@@ -31,18 +31,18 @@
     
     
     
-    <category term="人工智能" scheme="https://www.fomal.cc/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    <category term="人工智能AI" scheme="https://sirrychen.github.io/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BDAI/"/>
     
-    <category term="大学课程" scheme="https://www.fomal.cc/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/"/>
+    <category term="大学课程" scheme="https://sirrychen.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>威斯康辛州乳腺癌数据集分析</title>
-    <link href="https://www.fomal.cc/posts/99629267.html"/>
-    <id>https://www.fomal.cc/posts/99629267.html</id>
+    <link href="https://sirrychen.github.io/posts/99629267.html"/>
+    <id>https://sirrychen.github.io/posts/99629267.html</id>
     <published>2024-03-02T15:19:03.000Z</published>
-    <updated>2024-03-03T02:58:00.198Z</updated>
+    <updated>2024-03-03T05:10:30.817Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-课程报告"><a href="#1-课程报告" class="headerlink" title="1.课程报告"></a>1.课程报告</h1><div class="row">    <embed src="/pdf/多元统计分析大作业-162140117-陈思远.pdf" width="100%" height="550" type="application/pdf"></div><h1 id="2-代码与结果速览"><a href="#2-代码与结果速览" class="headerlink" title="2.代码与结果速览"></a>2.代码与结果速览</h1><div class="note info flat"><p>转至：<a href="/html/多元统计分析-威斯康辛州乳腺癌数据集分析.html">多元统计分析-威斯康辛州乳腺癌数据集分析</a></p></div>]]></content>
     
@@ -52,16 +52,16 @@
     
     
     
-    <category term="人工智能" scheme="https://www.fomal.cc/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    <category term="人工智能AI" scheme="https://sirrychen.github.io/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BDAI/"/>
     
-    <category term="大学课程" scheme="https://www.fomal.cc/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/"/>
+    <category term="大学课程" scheme="https://sirrychen.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>Markdown语法与外挂标签写法汇总</title>
-    <link href="https://www.fomal.cc/posts/2013454d.html"/>
-    <id>https://www.fomal.cc/posts/2013454d.html</id>
+    <link href="https://sirrychen.github.io/posts/2013454d.html"/>
+    <id>https://sirrychen.github.io/posts/2013454d.html</id>
     <published>2022-08-09T10:19:03.000Z</published>
     <updated>2022-10-23T14:00:00.000Z</updated>
     
@@ -72,12 +72,8 @@
     
     
     
-    <category term="演示" scheme="https://www.fomal.cc/categories/%E6%BC%94%E7%A4%BA/"/>
     
-    
-    <category term="Markdown" scheme="https://www.fomal.cc/tags/Markdown/"/>
-    
-    <category term="外挂标签" scheme="https://www.fomal.cc/tags/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/"/>
+    <category term="基本语法" scheme="https://sirrychen.github.io/tags/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
