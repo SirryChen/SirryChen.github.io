@@ -9355,6 +9355,8 @@ hr:before {
   transition: all 0.3s ease-in-out;
 }
 
+@import "//at.alicdn.com/t/font_2264842_b004iy0kk2b.css";
+
 .search-dialog {
   position: fixed;
   top: 10%;
