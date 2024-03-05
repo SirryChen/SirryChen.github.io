@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sirrychen.github.io/social/link/index.html</loc>
+    
+    <lastmod>2024-03-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://sirrychen.github.io/posts/99629267.html</loc>
     
     <lastmod>2024-03-03</lastmod>
@@ -110,15 +119,6 @@
   </url>
   
   <url>
-    <loc>https://sirrychen.github.io/life/games/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://sirrychen.github.io/personal/bb/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
@@ -128,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://sirrychen.github.io/site/census/index.html</loc>
+    <loc>https://sirrychen.github.io/life/games/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -138,6 +138,15 @@
   
   <url>
     <loc>https://sirrychen.github.io/personal/love/index.html</loc>
+    
+    <lastmod>2023-03-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://sirrychen.github.io/site/census/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -156,15 +165,6 @@
   
   <url>
     <loc>https://sirrychen.github.io/social/fcircle/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://sirrychen.github.io/social/link/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -193,7 +193,7 @@
 
   <url>
     <loc>https://sirrychen.github.io/</loc>
-    <lastmod>2024-03-03</lastmod>
+    <lastmod>2024-03-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -201,21 +201,21 @@
   
   <url>
     <loc>https://sirrychen.github.io/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BDAI/</loc>
-    <lastmod>2024-03-03</lastmod>
+    <lastmod>2024-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sirrychen.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/</loc>
-    <lastmod>2024-03-03</lastmod>
+    <lastmod>2024-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sirrychen.github.io/tags/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</loc>
-    <lastmod>2024-03-03</lastmod>
+    <lastmod>2024-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
