@@ -1,4 +1,4 @@
-<div class="card">
+<!-- <div class="card">
     <a href="{{ include.url }}" class="card-link">
         <div class="card-header">
             <h3>{{ include.title }}</h3>
@@ -7,4 +7,49 @@
             <p>{{ include.content }}</p>
         </div>
     </a>
-</div>
+</div> -->
+
+
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+    border: 1px solid #ddd; /* 设置边框样式 */
+    width: 80%; /* 设置为固定宽度值 */
+    margin: 20px; /* 设置外边距 */
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(''); /* 初始为空 */
+    background-size: 100% auto; /* 宽度100%，高度自适应 */
+    background-position: center;
+    opacity: 0.5; /* 背景图透明度 */
+    z-index: -1; /* 将背景图放在最底层 */
+}
+
+.card-link {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-header {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9); /* 文字背景色，可根据需要调整透明度 */
+    padding: 1em;
+    border-bottom: 1px solid #ddd; /* 添加底部边框 */
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
