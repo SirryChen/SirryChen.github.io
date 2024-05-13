@@ -1,24 +1,7 @@
-<li class="rabbit-card rabbit-card-1">
-    <div class="card-header">
-        <img class="card-cover" src={ {include.image} }/>
+<div class="card">
+    <div class="card-bg" style="background-image: url('{{include.image}}');"></div>
+    <div class="card-content">
+      <h2>{{include.title}}</h2>
     </div>
-    <div class="card-tail">
-        <div class="tail-top">
-            <p class="card-subtitle">{ {include.time} }</p>
-        </div>
-        <div class="tail-middle">
-            <h2 class="card-title">{ {include.title} }</h2>
-            <p class="card-desc">{{include.desc}}</p>
-        </div>
-        <div class="tail-bottom">
-            <div class="horizontal-line"></div>
-            <div class="card-info flex-between">
-                <div class="rabbit-user">
-                    <div class="user-info">
-                        <span class="user-nickname">Sirry</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</li>
+  </div>
+  

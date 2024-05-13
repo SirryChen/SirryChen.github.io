@@ -1,286 +1,36 @@
-.rabbit-card {
-    width: 24%;
-    height: 400px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    box-shadow: 1px 1px 3px #aaaaaa;
-    transition: box-shadow 0.5s ease-in-out;
-
-    &:hover {
-        .card-header {
-            .card-cover {
-                transform: scaleX(1.1) scaleY(1.1);
-            }
-        }
-
-        box-shadow: 1px 1px 10px #999999;
-    }
-
-    .card-title {
-        font-size: 2.0rem;
-        font-weight: bold;
-        margin-bottom: 5px;
-        color: inherit;
-
-        a {
-            color: inherit;
-        }
-    }
-
-    &:last-child:nth-child(4n - 1) {
-        margin-right: calc(24% + 4% / 3);
-    }
-
-    &:last-child:nth-child(4n - 2) {
-        margin-right: calc(48% + 8% / 3);
-    }
-
-    .rabbit-quantity {
-        color: inherit;
-
-        img {
-            vertical-align: middle;
-            height: 1.2rem;
-        }
-
-        span {
-            vertical-align: middle;
-            color: inherit;
-        }
-    }
-
-    .card-header {
-        height: 75%;
-        overflow: hidden;
-
-        .card-cover {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease-in-out;
-        }
-    }
-
-    .card-tail {
-        padding: 5px 10px;
-
-        .card-subtitle {
-            color: inherit;
-        }
-
-        .card-info {
-            align-items: center;
-        }
-
-
-
-        .tail-bottom {
-        }
-
-        .tail-middle {
-            margin: 5px 0;
-        }
-
-        .tail-bottom {
-        }
-    }
-}
-
-
-
-
-.rabbit-card-1 {
-    display: block;
-    
-    .card-header {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        filter: brightness(90%);
-
-        .card-cover {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-    }
-
-    .quantity-icon{
-       filter: invert(100%);
-    }
-
-    .card-tail {
-        height: 100%;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        padding: 8px 14px;
-        position: relative;
-        z-index: 1;
-        justify-content: space-between;
-
-        .card-subtitle {
-            color: white;
-        }
-    }
-}
-
-.rabbit-card-2 {
-    .card-header {
-        flex: none;
-        height: 35%;
-    }
-
-    .card-tail {
-        flex: 1;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-    }
-}
-
-
-.rabbit-card-3 {
-    .card-header {
-        height: 60%;
-    }
-
-    .rabbit-quantity {
-        img {
-            filter: none;
-        }
-    }
-
-    .card-tail {
-        flex: 1;
-        flex-direction: column;
-        display: flex;
-        justify-content: space-between;
-        text-align: center;
-    }
-
-    .card-title {
-        a {
-            color: black;
-        }
-    }
-
-    .card-desc {
-        display: none;
-    }
-}
-
-
-.rabbit-card-4 {
-    .card-header {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        filter: brightness(90%);
-        .card-cover {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-    }
-
-    .card-tail {
-        background-color: white;
-        position: absolute;
-        bottom: 0;
-        z-index: 1;
-        width: 80%;
-        margin: 10% 10%;
-
-        .card-title {
-            a {
-                color: black;
-            }
-        }
-
-        .rabbit-quantity {
-            img {
-                filter: unset;
-            }
-
-            span {
-                vertical-align: middle;
-            }
-        }
-    }
-}
-
-
-
-.rabbit-card-5 {
-    display: flex;
-    flex-direction: row;
-
-    .card-header {
-        height: 100%;
-        width: 50%;
-    }
-
-    .card-tail {
-        width: 50%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        .rabbit-quantity {
-            img {
-                filter: unset;
-            }
-
-            span {
-                vertical-align: middle;
-            }
-        }
-    }
-}
-
-
-.rabbit-card-6 {
-    .quantity-icon {
-        filter: invert(100%);
-    }
-
-    .card-header {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-
-        .card-cover {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-    }
-
-    .card-tail {
-        height: 100%;
-        width: 50%;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        padding: 8px 14px;
-        position: relative;
-        z-index: 1;
-        justify-content: space-between;
-        text-align: start;
-        background-color: rgba(0,0,0,0.2);
-
-        .card-subtitle {
-            color: white;
-        }
-
-        .card-title {
-            a {
-                color: white;
-            }
-        }
-    }
-}
+.card {
+    width: 80%;
+    max-width: 400px; /* 设置最大宽度，防止在大屏幕上过度拉伸 */
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    overflow: hidden; /* 隐藏超出部分 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-bg {
+    /* background-image: url('背景图片路径'); */
+    background-size: cover;
+    height: 200px; /* 背景图片高度 */
+    filter: blur(5px); /* 模糊背景图片 */
+  }
+  
+  .card-content {
+    padding: 20px;
+    position: relative; /* 设置相对定位，以便于遮罩 */
+  }
+  
+  .card-content h2 {
+    margin-top: 0;
+    color: white; /* 设置标题颜色为白色，以便于显示在遮罩上 */
+    position: absolute; /* 设置绝对定位，使标题在遮罩上方 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 将标题居中 */
+    text-align: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 设置遮罩颜色为半透明黑色 */
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
