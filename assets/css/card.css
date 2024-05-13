@@ -1,36 +1,33 @@
 .card {
-    width: 80%;
-    max-width: 400px; /* 设置最大宽度，防止在大屏幕上过度拉伸 */
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    overflow: hidden; /* 隐藏超出部分 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card-bg {
-    /* background-image: url('背景图片路径'); */
-    background-size: cover;
-    height: 200px; /* 背景图片高度 */
-    filter: blur(5px); /* 模糊背景图片 */
-  }
-  
-  .card-content {
-    padding: 20px;
-    position: relative; /* 设置相对定位，以便于遮罩 */
-  }
-  
-  .card-content h2 {
-    margin-top: 0;
-    color: white; /* 设置标题颜色为白色，以便于显示在遮罩上 */
-    position: absolute; /* 设置绝对定位，使标题在遮罩上方 */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* 将标题居中 */
-    text-align: center;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 设置遮罩颜色为半透明黑色 */
-    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    max-width: 300px; /* 调整最大宽度 */
   }
+  
+  .card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .card-header {
+    background-color: #f0f0f0;
+    padding: 8px;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .card-header h3 {
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* 修改字体 */
+    font-size: 1.2em; /* 调整字体大小 */
+  }
+  
+  .card-body {
+    padding: 8px;
+    font-family: 'Arial', sans-serif; /* 修改字体 */
+    font-size: 1em; /* 调整字体大小 */
+  }
+  
   
