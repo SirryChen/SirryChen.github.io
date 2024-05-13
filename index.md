@@ -4,7 +4,7 @@ layout: page
 
 # About Me
 
-<img src="sirrychen.jpg" class="floatpic" width="360" height="480">
+<img src="sirrychen.jpg" class="floatpic" width="310" height="410">
 
 Here is **Sirry Chen(陈思远)**.
 
