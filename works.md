@@ -4,9 +4,9 @@ permalink: /publications/index.html
 title: Publications
 ---
 
-> Lastest Update: May 2024&nbsp;  [中文版本 (Chinese Version)](/file/publications-zh.md/)
+> Lastest Update: May 2024&nbsp;  [中文版本 (Chinese Version)](/file/works-zh.md/)
 
-## Conference Paper
+## Ongoing Project
 
 - Nothing to show
 
