@@ -1,7 +1,7 @@
 ---
 layout: page
-permalink: /file/publications-zh/index.html
-title: Publications-zh
+permalink: /file/works-zh/index.html
+title: Works-zh
 ---
 
 > 更新时间：2024/01/28 &nbsp;  [English Version (英文)](https://sirrychen.github.io/works/)
