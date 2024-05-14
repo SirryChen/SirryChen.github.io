@@ -1,7 +1,7 @@
 ---
 layout: page
-permalink: /publications/index.html
-title: Publications
+permalink: /works/index.html
+title: Works
 ---
 
 > Lastest Update: May 2024&nbsp;  [中文版本 (Chinese Version)](/file/works-zh.md/)
