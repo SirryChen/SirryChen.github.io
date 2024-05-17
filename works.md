@@ -24,8 +24,6 @@ title: Works
   - 2nd member, final review results is in transit
   - April, 2023 ~ May, 2024
 
-
-
 - QuteCar: A Demo Model of Intelligent Traffic System for Emergency Vehicles[[github]](https://github.com/SirryChen/QuteCar)
   - a course project
   - the highest score
