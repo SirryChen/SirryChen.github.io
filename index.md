@@ -21,7 +21,7 @@ If you are interested in any aspect of me, I would like to chat and collaborate,
 
 ## News and Updates
 
-- 🔥 My first paper CACL is accepted by ACL 2024 Findings [[*blog*]](/blogs/2024-05-17-CACL/)
+- 🔥 My first paper CACL is accepted by ACL 2024 Findings [[*blog*]](/blogs/2024-05-17-CACL.html)
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXP3VZ8MR8"></script>
