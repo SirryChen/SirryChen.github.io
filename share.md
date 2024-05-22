@@ -21,7 +21,7 @@ title: Share
 
 <br>
 
-{% include disqus.html url="https://sirrychen.github.io/share/" %} 
+{% include disqus_share.html%} 
 
 <br>
 

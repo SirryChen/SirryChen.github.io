@@ -17,7 +17,7 @@ title: Blogs
 
 <br>
 
-{% include disqus.html url="https://sirrychen.github.io/blogs/" %} 
+{% include disqus_blog.html%} 
 
 <br>
 
