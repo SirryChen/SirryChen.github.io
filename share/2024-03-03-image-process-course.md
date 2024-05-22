@@ -21,12 +21,3 @@ swiper_index: 3
 <iframe src="../file/图像处理与分析大作业.pdf" width="100%" height="600px"></iframe>
 
 
-<br>
-
-### Leave a Message
-
-<br>
-
-{% include disqus.html %} 
-
-<br>

@@ -7,23 +7,11 @@ title: Blogs
 
 ### 2024
 
-{% include card.html title="多元统计分析大作业" content="威斯康辛州乳腺癌数据集分析" url="/blogs/2024-03-02-wiskon.html" %}
-
-{% include card.html title="图像处理与分析大作业" content="图像处理与分析调研报告" url="/blogs/2024-03-03-image-process-course.html" %}
 
 {% include card.html title="社交媒体机器人识别" content="🔥第一篇论文！！！" url="/blogs/2024-05-17-CACL.html" %}
 
 
 
-<br>
-
-## Leave a Message
-
-<br>
-
-{% include disqus.html %} 
-
-<br>
 
 ## Web Reference
 
