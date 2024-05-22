@@ -11,6 +11,15 @@ title: Blogs
 {% include card.html title="社交媒体机器人识别" content="🔥第一篇论文！！！" url="/blogs/2024-05-17-CACL.html" %}
 
 
+<br>
+
+## Leave a Message
+
+<br>
+
+{% include disqus.html url="https://sirrychen.github.io/blogs/" %} 
+
+<br>
 
 
 ## Web Reference
