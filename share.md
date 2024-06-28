@@ -11,6 +11,8 @@ title: Share
 
 {% include card.html title="图像处理与分析大作业" content="图像处理与分析调研报告" url="/share/2024-03-03-image-process-course.html" %}
 
+{% include card.html title="知识表示project" content="LLMs知识图谱" url="/share/2024-06-28-knowledge-graph.html" %}
+
 
 
 
