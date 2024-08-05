@@ -14,7 +14,7 @@ If you are interested in any aspect of me, I would like to chat and collaborate,
 
 ## Academic Background
 
-- **Sep 2021 - Future：** Nanjing University of Aeronautics and Astronautics
+- **Sep 2021 - Now：** Nanjing University of Aeronautics and Astronautics
 - **Sep 2018 - June 2021:** Chongqing High School in Chongzhou City Sichuan Province
 
 ---
