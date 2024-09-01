@@ -447,3 +447,33 @@ img.mfp-img{width:auto;max-width:100%;height:auto;display:block;line-height:0;-w
   font-family: 'Arial', sans-serif; /* 修改字体 */
   font-size: 1em; /* 调整字体大小 */
 }
+
+
+.imgtable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.imgtable td {
+  vertical-align: top;
+  padding: 5px;
+}
+
+.imgtable img {
+  display: block;
+  margin-right: 10px;
+}
+
+.imgtable p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.imgtable a {
+  color: #007BFF; /* 链接颜色 */
+  text-decoration: none; /* 去掉下划线 */
+}
+
+.imgtable a:hover {
+  text-decoration: underline; /* 鼠标悬停效果 */
+}
