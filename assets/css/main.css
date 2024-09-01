@@ -449,31 +449,54 @@ img.mfp-img{width:auto;max-width:100%;height:auto;display:block;line-height:0;-w
 }
 
 
-.imgtable {
-  width: 100%;
-  border-collapse: collapse;
+
+img.eq {
+	padding: 0;
+	padding-left: 0.1em;
+	padding-right: 0.1em;
+	margin: 0;
 }
 
-.imgtable td {
-  vertical-align: top;
-  padding: 5px;
+img.eqwl {
+	padding-left: 2em;
+	padding-top: 0.6em;
+	padding-bottom: 0.2em;
+	margin: 0;
 }
 
-.imgtable img {
-  display: block;
-  margin-right: 10px;
+table {
+    border: 2px solid black;
+    border-collapse: collapse;
 }
 
-.imgtable p {
-  margin: 0;
-  line-height: 1.5;
+td {
+    padding: 2px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    text-align: left;
+    border: 1px solid gray;
 }
 
-.imgtable a {
-  color: #007BFF; /* 链接颜色 */
-  text-decoration: none; /* 去掉下划线 */
+table + table {
+    margin-top: 1em;
 }
 
-.imgtable a:hover {
-  text-decoration: underline; /* 鼠标悬停效果 */
+tr.heading {
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
+
+img {
+    border: none;
+    margin-bottom: -0.25em;
+}
+
+table.imgtable, table.imgtable td {
+	margin-left: 0.25em;
+    border: none;
+    text-align: left;
+}
+
+strong {
+	font-weight: bold;
 }
