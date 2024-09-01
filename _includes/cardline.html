@@ -1,11 +1,13 @@
-<table class="imgtable" herf={{ include.url }}>
+<table class="imgtable">
+    <a herf="{{ include.url }}">
     <tr>
         <td>
-            <img src="{{ include.img }}" alt="alt text" width="200" height="150"/> &nbsp;
+            <img src="{{ include.img }}" alt="alt text" width="250" height="175"/> &nbsp;
         </td>
         <td align="left">
             <p> <strong>{{ include.title }} </strong><br />
             <span style="font-size: 70%;">{{ include.content }}</span> </p>
         </td>
     </tr>
+    </a>
 </table>

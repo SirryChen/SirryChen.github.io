@@ -8,7 +8,7 @@ title: Blogs
 ### 2024
 
 
-{% include card.html title="社交媒体机器人识别" content="🔥第一篇论文！！！" url="/blogs/2024-05-17-CACL.html" %}
+{% include card.html title="社交媒体机器人识别" content="第一篇论文！！！" url="/blogs/2024-05-17-CACL.html" %}
 
 {% include cardline.html url="/blogs/2024-05-17-CACL.html" img="/file/img/cacl_main_img.svg" title="CACL: Community-Aware Heterogeneous Graph Contrastive Learning for Social Media Bot Detection" content="🔥 My first paper" %}
 
