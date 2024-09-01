@@ -502,9 +502,9 @@ table.imgtable, table.imgtable td {
 }
 
 table.imgtable:hover {
-  transform: translateY(-3px);
+  /* transform: translateY(-3px); */
   /* transform: scale(1.02);  鼠标悬停时轻微放大 */
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  添加阴影效果 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
 }
 
 strong {
