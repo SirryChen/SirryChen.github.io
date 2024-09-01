@@ -8,9 +8,9 @@ layout: page
 
 Here is **Sirry Chen(陈思远)**.
 
-I am a junior undergrad majoring in **AI** at Nanjing University of Aeronautics and Astronautics, Changkong College. My academic advisor is [Prof. Piji Li](https://lipiji.com/){:target="_blank"}. My research interests are large language model, graph learning, natural language learning, and data mining. 
+I am a junior undergrad majoring in **AI** at Nanjing University of Aeronautics and Astronautics, Changkong College. My academic advisor is [Prof. Piji Li](https://lipiji.com/){:target="_blank"}. My research interests include large language model, graph learning, natural language learning, and data mining. 
 
-If you are interested in any aspect of me, I would like to chat and collaborate, please email me at *sirrychen[at]nuaa[dot]edu[dot]cn*
+If you are interested in any aspect of me, you can email me at *sirrychen [at] nuaa [dot] edu [dot] cn*
 
 ## Academic Background
 
@@ -22,6 +22,7 @@ If you are interested in any aspect of me, I would like to chat and collaborate,
 ## News and Updates
 
 - 🔥 My first paper CACL is accepted by ACL 2024 Findings [[*blog*]](/blogs/2024-05-17-CACL.html)
+- 🔥 The first knowledge graph for LLMs has been released [[*blog*]](/blogs/2024-06-28-knowledge-graph.html)
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXP3VZ8MR8"></script>
