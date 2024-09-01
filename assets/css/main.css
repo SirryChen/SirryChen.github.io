@@ -491,15 +491,20 @@ img {
     margin-bottom: -0.25em;
 }
 
+table.imgtable {
+  border-radius: 8px;
+}
+
 table.imgtable, table.imgtable td {
-	margin-left: 0.25em;
+	  margin-left: 0.25em;
     border: none;
     text-align: left;
 }
 
 table.imgtable:hover {
-  transform: scale(1.02); /* 鼠标悬停时轻微放大 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+  transform: translateY(-3px);
+  /* transform: scale(1.02);  鼠标悬停时轻微放大 */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  添加阴影效果 */
 }
 
 strong {

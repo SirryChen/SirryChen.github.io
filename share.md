@@ -7,13 +7,17 @@ title: Share
 
 ### 课程
 
-{% include card.html title="多元统计分析" content="归纳总结 + 大作业：威斯康辛州乳腺癌数据集分析" url="/share/2024-03-02-wiskon.html" %}
+<!-- {% include card.html title="多元统计分析" content="归纳总结 + 大作业：威斯康辛州乳腺癌数据集分析" url="/share/2024-03-02-wiskon.html" %}
 
 {% include card.html title="图像处理与分析大作业" content="图像处理与分析调研报告" url="/share/2024-03-03-image-process-course.html" %}
 
-{% include card.html title="知识表示project" content="LLMs知识图谱" url="/share/2024-06-28-knowledge-graph.html" %}
+{% include card.html title="知识表示project" content="LLMs知识图谱" url="/share/2024-06-28-knowledge-graph.html" %} -->
 
+{% include cardline.html url="/share/2024-03-02-wiskon.html" img="/file/img/多元统计分析-数据集图像.png" title="多元统计分析" content="归纳总结 + 大作业：乳腺癌数据集分析" %}
 
+{% include cardline.html url="/share/2024-03-03-image-process-course.html" img="/file/img/图像处理与分析.png" title="图像处理与分析大作业" content="图像生成调研 + Drag Your GAN" %}
+
+{% include cardline.html url="/share/2024-06-28-knowledge-graph.html" img="/file/img/知识表示-LLM知识图谱.png" title="知识表示大作业" content="从头自动构建LLMs知识图谱" %}
 
 
 
