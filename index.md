@@ -12,11 +12,16 @@ I am a junior undergrad majoring in **AI** at Nanjing University of Aeronautics 
 
 If you are interested in any aspect of me, you can email me at *sirrychen [at] nuaa [dot] edu [dot] cn* -->
 
-<p style="text-align: justify;">
-    Here is <strong>Sirry Chen(陈思远)</strong>.<br>
-    I am a junior undergrad majoring in <strong>AI</strong> at Nanjing University of Aeronautics and Astronautics, Changkong College. My academic advisor is <a href="https://lipiji.com/" target="_blank">Prof. Piji Li</a>. My research interests include large language models, graph learning, natural language learning, and data mining. <br>
+<p style="text-align: justify; text-indent: 2em;">
+    Here is <strong>Sirry Chen(陈思远)</strong>.
+</p>
+<p style="text-align: justify; text-indent: 2em;">
+    I am a junior undergrad majoring in <strong>AI</strong> at Nanjing University of Aeronautics and Astronautics, Changkong College. My academic advisor is <a href="https://lipiji.com/" target="_blank">Prof. Piji Li</a>. My research interests include large language models, graph learning, natural language learning, and data mining.
+</p>
+<p style="text-align: justify; text-indent: 2em;">
     If you are interested in any aspect of me, you can email me at <em>sirrychen [at] nuaa [dot] edu [dot] cn</em>.
 </p>
+
 
 
 ## Academic Background
