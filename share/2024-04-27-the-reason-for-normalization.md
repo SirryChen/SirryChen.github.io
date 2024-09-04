@@ -47,6 +47,12 @@ $$
 - 对于式（1）， $$1-\operatorname{Softmax}(W^\{\ast}_{ij})$$ 趋近于0，使得 $$\frac{\partial \operatorname{Softmax}(W^\{\ast}_{ij})}{\partial W^\{\ast}_{ij}}$$ 趋近于0
 - 对于式（2）， $$\operatorname{Softmax}(W^\{\ast}_{ip})$$ 趋近于0，使得 $$\frac{\partial \operatorname{Softmax}(W^\{\ast}_{ij})}{\partial W^\{\ast}_{ip}}$$ 趋近于0
 
+- 对于式（1），$$1-\operatorname{Softmax}(W^\{\ast}_{ij})$$ 趋近于0，使得 $$\frac{\partial \operatorname{Softmax}(W^\{\ast}_{ij})}{\partial W^\{\ast}_{ij}}$$ 趋近于0
+- 对于式（2），$\operatorname{Softmax}(W^\{\ast}_{ip})$ 趋近于0，使得 $\frac{\partial \operatorname{Softmax}(W^\{\ast}_{ij})}{\partial W^\{\ast}_{ip}}$ 趋近于0
+
+
+对于式（1）， $$1-\operatorname{Softmax}(W^\{\ast}_{ij})$$ 趋近于0，使得 $$\frac{\partial \operatorname{Softmax}(W^\{\ast}_{ij})}{\partial W^\{\ast}_{ij}}$$ 趋近于0
+对于式（2）， $$\operatorname{Softmax}(W^\{\ast}_{ip})$$ 趋近于0，使得 $$\frac{\partial \operatorname{Softmax}(W^\{\ast}_{ij})}{\partial W^\{\ast}_{ip}}$$ 趋近于0
 
 #### 2.3 归纳
 
