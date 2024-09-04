@@ -1,6 +1,16 @@
+---
+title: Attention中的scale操作
+description: 
+mathjax: true
+tags:
+  - 人工智能AI
+date: 2024-04-27 11:01:00
+swiper_index: 3
+---
 
 ### 1. 问题描述
-《大规模语言模型：从理论到实践》第16页，“为防止**过大的匹配分数**在后续Softmax计算过程中导致的**梯度爆炸**以及收敛效率差的问题，这些得分会除**缩放因子**$\sqrt{d}$ 以稳定优化。”
+
+[《大规模语言模型：从理论到实践》](https://intro-llm.github.io/)第16页，“为防止**过大的匹配分数**在后续Softmax计算过程中导致的**梯度爆炸**以及收敛效率差的问题，这些得分会除**缩放因子**$\sqrt{d}$ 以稳定优化。”
 
 **原文等价于**: $\sqrt{d}$ 的作用为缩减$\mathbf{Q}\mathbf{K}^T$ 中元素值的大小，防止在梯度反向传播时导致的梯度爆炸问题。
 
@@ -56,7 +66,7 @@ $$
 
 丢弃 $\sqrt{d}$ 项会使得变量 $$W^{\ast}_{ij}$$ 的方差增大，而变量 $$W^{\ast}_{ij}$$ 的方差增大会使得梯度值偏小，进而引发梯度消失问题。
 
-真正解决梯度爆炸问题的应该是 $\operatorname{Softmax}$函数，它直接进行了归一化的操作，避免值过大导致的梯度爆炸问题。而正是因为使用了 $\operatorname{Softmax}$函数，引入了变量方差过大会导致梯度消失的问题，所以需要对变量进行除$\sqrt{d}$操作降低方差。
+真正解决梯度爆炸问题的应该是 $\operatorname{Softmax}$函数，它直接进行了归一化的操作，避免值过大导致的梯度爆炸问题。而正是因为使用了 $\operatorname{Softmax}$函数，引入了变量方差过大导致梯度消失的问题，所以需要对变量进行除以$\sqrt{d}$操作降低方差。
 
 
 ### Ref
@@ -75,4 +85,5 @@ $$
 
 
 ---
-$\small \LaTeX$ 公式支持调得感觉要寄了😵
+- $\small \LaTeX$ 公式支持调得感觉要寄了😵
+- 这个是好久之前看书发现的bug，只了解并记录了很浅层的原因。最近看见了苏剑林老师对这个问题有更深层次的思考[[浅谈Transformer的初始化、参数化与标准化]](https://spaces.ac.cn/archives/8620)、[[从熵不变性看Attention的Scale操作]](https://spaces.ac.cn/archives/8823) orz，reading and learning to death...

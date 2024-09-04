@@ -21,7 +21,7 @@ title: Share
 
 ### 随记
 
-{% include cardline.html url="/share/2024-04-27-the-reason-for-normalization.html" img="/file/img/张奇书-梯度爆炸.jpg" title="The reason for the normalization in the computation of Attention" content="To prevent the gradient from exploding or disappearing" %}
+{% include cardline.html url="/share/2024-04-27-the-reason-for-scaling.html" img="/file/img/张奇书-梯度爆炸.jpg" title="The reason for the normalization in the computation of Attention" content="To prevent the gradient from exploding or disappearing" %}
 
 <br>
 
