@@ -19,6 +19,8 @@ title: Share
 
 {% include cardline.html url="/share/2024-06-28-knowledge-graph.html" img="/file/img/知识表示-LLM知识图谱.png" title="知识表示大作业" content="从头自动构建LLMs知识图谱" %}
 
+### 随记
+
 {% include cardline.html url="/share/2024-04-27-the-reason-for-normalization.html" img="/file/img/张奇书-梯度爆炸.jpg" title="The reason for the normalization in the computation of Attention" content="To prevent the gradient from exploding or disappearing" %}
 
 <br>
