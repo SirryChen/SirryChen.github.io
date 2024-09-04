@@ -13,15 +13,16 @@
 使用与书中相同的记号
 
 $$
-    \operatorname{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V})=\operatorname{Softmax}(\frac{\mathbf{QK}^T}{\sqrt{d}})\mathbf{V}，
+    \operatorname{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V})=\operatorname{Softmax}(\frac{\mathbf{QK}^T}{\sqrt{d}})\mathbf{V},
 $$
 
 并定义
 
 $$
 \mathbf{W}^*=\frac{\mathbf{QK}^T}{\sqrt{d}},
-\mathbf{W}=\operatorname{Softmax}(\mathbf{W^*})，
+\mathbf{W}=\operatorname{Softmax}(\mathbf{W^*}),
 $$
+
 其中矩阵$\mathbf{W}$中的元素 $W_{ij}=\frac{e^{W^*_{ij}}}{\sum^{d}_{p=1}e^{W^*_{ip}}}$。
 
 #### 2.1 去除$\sqrt{d}$ 项会使得变量$W^*_{ij}$ 的方差增大
@@ -34,13 +35,13 @@ $$
 
 #### 2.2 变量$W^*_{ij}$ 的方差增大会使得梯度值偏小
 
-在反向传播过程中，会涉及到对$\operatorname{Softmax}$项进行求导，对于$\mathbf{W}^*$ 中的某一个元素 $W^*_{ij}$，求偏导如下
+在反向传播过程中，会涉及到对$\operatorname{Softmax}$项进行求导，对于 $\mathbf{W}^*$ 中的某一个元素 $W^*_{ij}$ ，求偏导如下
 
 \[
-\begin{gather}
-\frac{\partial \operatorname{Softmax}(W^\*_{ij})}{\partial W^\*_{ij}} = \operatorname{Softmax}(W^\*_{ij})(1-\operatorname{Softmax}(W^\*_{ij})) \tag{1}\\
-\frac{\partial \operatorname{Softmax}(W^\*_{ij})}{\partial W^\*_{ip}} = -\operatorname{Softmax}(W^\*_{ip})\operatorname{Softmax}(W^\*_{ij}), p\neq j\tag{2}
-\end{gather}
+\begin{align}
+\frac{\partial \operatorname{Softmax}(W^*_{ij})}{\partial W^*_{ij}} &= \operatorname{Softmax}(W^*_{ij})(1-\operatorname{Softmax}(W^*_{ij})) \tag{1} \\
+\frac{\partial \operatorname{Softmax}(W^*_{ij})}{\partial W^*_{ip}} &= -\operatorname{Softmax}(W^*_{ip})\operatorname{Softmax}(W^*_{ij}), \quad p \neq j \tag{2}
+\end{align}
 \]
 
 若变量$W^\*_{ij}$ 的方差增大，则考虑元素$W^\*_{ij}$ 远大于其他元素$W^\*_{ip}$ 的情况，则$\operatorname{Softmax}(W^\*_{ij})$ 趋近于1，而$\operatorname{Softmax}(W^\*_{ip})$ 趋近于0
