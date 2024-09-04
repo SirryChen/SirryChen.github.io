@@ -5,17 +5,6 @@
 **原文等价于**: $\sqrt{d}$ 的作用为缩减$\mathbf{Q}\mathbf{K}^T$ 中元素值的大小，防止在梯度反向传播时导致的梯度爆炸问题。
 ![alt text](../file/img/张奇书-梯度爆炸.jpg)
 
-这个$W^*_{ij}=\mathbf{Q}_i\mathbf{K}_i^T=\sum^d_{j=1}Q_{ij}K_{ij}$ 不行
-
-这个$W^\*_{ij}=\mathbf{Q}_i\mathbf{K}_i^T=\sum^d_{j=1}Q_{ij}K_{ij}$ 也不行
-
-真的吗$W_{ij}=\mathbf{Q}_i\mathbf{K}_i^T=\sum^d_{j=1}Q_{ij}K_{ij}$ 是的
-
-那这个你$W^*_{ij} = \mathbf{Q}_i \mathbf{K}_i^T = \sum_{j=1}^{d} Q_{ij} K_{ij}$ 不会吧
-
-为什么$W^*_{ij} = \sum_{j=1}^{d} Q_{ij} K_{ij}$ 好神奇
-
-$$W^*_{ij} = \sum_{j=1}^{d} Q_{ij} K_{ij}$$
 
 
 ### 2. $\sqrt{d}$ 的作用应该是防止梯度消失
@@ -36,23 +25,12 @@ $$
 其中矩阵$\mathbf{W}$中的元素 $W_{ij}=\frac{e^{W^*_{ij}}}{\sum^{d}_{p=1}e^{W^*_{ip}}}$。
 
 #### 2.1 去除$\sqrt{d}$ 项会使得变量$W^*_{ij}$ 的方差增大
-由之前定义可知矩阵$\mathbf{W}^\*$中元素 $W^\*_{ij}=\frac{\mathbf{Q}_i\mathbf{K}_i^T}{\sqrt{d}}=\sum^d_{j=1}\frac{Q_{ij}K_{ij}}{\sqrt{d}}$，
+由之前定义可知矩阵$\mathbf{W}^*$ 中元素$$W^*_{ij}=\frac{\mathbf{Q}_i\mathbf{K}_i^T}{\sqrt{d}}=\sum^d_{j=1}\frac{Q_{ij}K_{ij}}{\sqrt{d}}$$ ，$W^*_{ij}=\frac{\mathbf{Q}_i\mathbf{K}_i^T}{\sqrt{d}}=\sum^d_{j=1}\frac{Q_{ij}K_{ij}}{\sqrt{d}}$
 
-此时假设变量$Q_{ij},K_{ij}$均服从标准正态分布且互相独立，即$Q_{ij},K_{ij}\sim N(0, 1)$ ，则变量$W^*_{ij}\sim N(0,1)$。
+此时假设变量$Q_{ij},K_{ij}$ 均服从标准正态分布且互相独立，即$Q_{ij},K_{ij}\sim N(0, 1)$ ，则变量$W^*_{ij}\sim N(0,1)$。
 
 若去除$\sqrt{d}$ 项，即 $W^*_{ij}=\mathbf{Q}_i\mathbf{K}_i^T=\sum^d_{j=1}Q_{ij}K_{ij}$ ，则$W^*_{ij}\sim N(0,d)$，此时方差增大，即$\mathbf{W}^*$矩阵中元素之间的差异增大。
 
-这个$W^*_{ij}=\mathbf{Q}_i\mathbf{K}_i^T=\sum^d_{j=1}Q_{ij}K_{ij}$不行
-
-这个$W^\*_{ij}=\mathbf{Q}_i\mathbf{K}_i^T=\sum^d_{j=1}Q_{ij}K_{ij}$也不行
-
-真的吗$W_{ij}=\mathbf{Q}_i\mathbf{K}_i^T=\sum^d_{j=1}Q_{ij}K_{ij}$是的
-
-那这个你$W^*_{ij} = \mathbf{Q}_i \mathbf{K}_i^T = \sum_{j=1}^{d} Q_{ij} K_{ij}$不会吧
-
-为什么$W^*_{ij} = \sum_{j=1}^{d} Q_{ij} K_{ij}$好神奇
-
-$$W^*_{ij} = \sum_{j=1}^{d} Q_{ij} K_{ij}$$
 
 #### 2.2 变量$W^*_{ij}$ 的方差增大会使得梯度值偏小
 
