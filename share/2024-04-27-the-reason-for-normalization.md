@@ -11,11 +11,13 @@
 ### 2. $\sqrt{d}$ 的作用应该是防止梯度消失
 
 使用与书中相同的记号
+
 $$
     \operatorname{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V})=\operatorname{Softmax}(\frac{\mathbf{QK}^T}{\sqrt{d}})\mathbf{V}，
 $$
 
 并定义
+
 $$
 \mathbf{W}^*=\frac{\mathbf{QK}^T}{\sqrt{d}},
 \mathbf{W}=\operatorname{Softmax}(\mathbf{W^*})，
@@ -23,7 +25,7 @@ $$
 其中矩阵$\mathbf{W}$中的元素 $W_{ij}=\frac{e^{W^*_{ij}}}{\sum^{d}_{p=1}e^{W^*_{ip}}}$。
 
 #### 2.1 去除$\sqrt{d}$ 项会使得变量$W^*_{ij}$ 的方差增大
-由之前定义可知矩阵$\mathbf{W}^*$中元素 $W^*_{ij}=\frac{\mathbf{Q}_i\mathbf{K}_i^T}{\sqrt{d}}=\sum^d_{j=1}\frac{Q_{ij}K_{ij}}{\sqrt{d}}$，
+由之前定义可知矩阵$\mathbf{W}^\*$中元素 $W^\*_{ij}=\frac{\mathbf{Q}_i\mathbf{K}_i^T}{\sqrt{d}}=\sum^d_{j=1}\frac{Q_{ij}K_{ij}}{\sqrt{d}}$，
 
 此时假设变量$Q_{ij},K_{ij}$均服从标准正态分布且互相独立，即$Q_{ij},K_{ij}\sim N(0, 1)$，则变量$W^*_{ij}\sim N(0,1)$。
 
@@ -36,14 +38,14 @@ $$
 
 \[
 \begin{gather}
-\frac{\partial \operatorname{Softmax}(W^*_{ij})}{\partial W^*_{ij}} = \operatorname{Softmax}(W^*_{ij})(1-\operatorname{Softmax}(W^*_{ij})) \tag{1}\\
-\frac{\partial \operatorname{Softmax}(W^*_{ij})}{\partial W^*_{ip}} = -\operatorname{Softmax}(W^*_{ip})\operatorname{Softmax}(W^*_{ij}), p\neq j\tag{2}
+\frac{\partial \operatorname{Softmax}(W^\*_{ij})}{\partial W^\*_{ij}} = \operatorname{Softmax}(W^\*_{ij})(1-\operatorname{Softmax}(W^\*_{ij})) \tag{1}\\
+\frac{\partial \operatorname{Softmax}(W^\*_{ij})}{\partial W^\*_{ip}} = -\operatorname{Softmax}(W^\*_{ip})\operatorname{Softmax}(W^\*_{ij}), p\neq j\tag{2}
 \end{gather}
 \]
 
-若变量$W^*_{ij}$ 的方差增大，则考虑元素$W^*_{ij}$ 远大于其他元素$W^*_{ip}$ 的情况，则$\operatorname{Softmax}(W^*_{ij})$ 趋近于1，而$\operatorname{Softmax}(W^*_{ip})$ 趋近于0
-- 对于式（1），$1-\operatorname{Softmax}(W^*_{ij})$ 趋近于0，使得$\frac{\partial \operatorname{Softmax}(W^*_{ij})}{\partial W^*_{ij}}$趋近于0
-- 对于式（2），$\operatorname{Softmax}(W^*_{ip})$ 趋近于0，使得$\frac{\partial \operatorname{Softmax}(W^*_{ij})}{\partial W^*_{ip}}$ 趋近于0
+若变量$W^\*_{ij}$ 的方差增大，则考虑元素$W^\*_{ij}$ 远大于其他元素$W^\*_{ip}$ 的情况，则$\operatorname{Softmax}(W^\*_{ij})$ 趋近于1，而$\operatorname{Softmax}(W^\*_{ip})$ 趋近于0
+- 对于式（1），$1-\operatorname{Softmax}(W^\*_{ij})$ 趋近于0，使得$\frac{\partial \operatorname{Softmax}(W^\*_{ij})}{\partial W^\*_{ij}}$趋近于0
+- 对于式（2），$\operatorname{Softmax}(W^\*_{ip})$ 趋近于0，使得$\frac{\partial \operatorname{Softmax}(W^\*_{ij})}{\partial W^\*_{ip}}$ 趋近于0
 
 反之亦然。所以当变量$W^*_{ij}$ 的方差较大时，梯度值会整体偏小。
 
