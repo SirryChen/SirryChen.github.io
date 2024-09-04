@@ -5,9 +5,10 @@
 **原文等价于**: $\sqrt{d}$ 的作用为缩减$\mathbf{Q}\mathbf{K}^T$ 中元素值的大小，防止在梯度反向传播时导致的梯度爆炸问题。
 
 <div style="text-align: center;">
-    <img src="../file/img/张奇书-梯度爆炸.jpg" alt="alt text" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-    <p style="text-align: center; font-style: italic; margin-top: 8px; color: #333; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); display: inline-block; padding: 0 4px;">截图自《大规模语言模型：从理论到实践》</p>
+    <img src="../file/img/张奇书-梯度爆炸.jpg" alt="alt text" style="width: 70%; height: auto;">
+    <p style="text-align: center; font-style: italic;">截图自《大规模语言模型：从理论到实践》</p>
 </div>
+
 
 
 
@@ -62,19 +63,15 @@ $$
 
 1. 参考“[Attention Is All You Need](https://arxiv.org/abs/1706.03762)”原文，较大的$d$会导致点积的增大，进而在计算softmax函数时被推向较小梯度的区域（说的比较含糊，脚注中解释从方差影响的角度进行说明）
 
-<style>
-.centered-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 90%;
-}
-</style>
 
-<img class="centered-image" src="../file/img/原著中归一化原因.png">
+<div style="text-align: center;">
+    <img src="../file/img/原著中归一化原因.png" alt="alt text" style="width: 80%; height: auto;">
+    <p style="text-align: center; font-style: italic;">截图自"Attention Is All You Need"</p>
+</div>
 
-2. [知乎：Transformer学习笔记二：Self-Attention（自注意力机制）](https://zhuanlan.zhihu.com/p/455399791)
-3. [知乎提问：transformer中的attention为什么scaled?](https://www.zhihu.com/question/339723385/answers/updated)
+
+1. [知乎：Transformer学习笔记二：Self-Attention（自注意力机制）](https://zhuanlan.zhihu.com/p/455399791)
+2. [知乎提问：transformer中的attention为什么scaled?](https://www.zhihu.com/question/339723385/answers/updated)
 
 
 
