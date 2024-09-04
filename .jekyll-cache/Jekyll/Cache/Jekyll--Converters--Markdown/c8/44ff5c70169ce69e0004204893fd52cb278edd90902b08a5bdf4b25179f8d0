@@ -1,0 +1,43 @@
+I"�<h2 id="about-me">About Me</h2>
+
+<p><img src="sirrychen.jpg" class="floatpic" width="310" height="410" /></p>
+
+<p style="text-align: justify; text-indent: 2em;">
+    Here is <strong>Sirry Chen(陈思远)</strong>.
+</p>
+<p style="text-align: justify; text-indent: 2em;">
+    I am a junior undergrad majoring in <strong>AI</strong> at Nanjing University of Aeronautics and Astronautics, Changkong College. My academic advisor is <a href="https://lipiji.com/" target="_blank">Prof. Piji Li</a>. My research interests include large language models, graph learning, natural language learning, and data mining.
+</p>
+<p style="text-align: justify; text-indent: 2em;">
+    If you are interested in any aspect of me, you can email me at <em>sirrychen [at] nuaa [dot] edu [dot] cn</em>.
+</p>
+
+<h2 id="academic-background">Academic Background</h2>
+
+<ul>
+  <li><strong>Sep 2021 - Now：</strong> Nanjing University of Aeronautics and Astronautics</li>
+  <li><strong>Sep 2018 - June 2021:</strong> Chongqing High School in Chongzhou City Sichuan Province</li>
+</ul>
+
+<hr />
+
+<h2 id="news-and-updates">News and Updates</h2>
+
+<ul>
+  <li>🔥 My first paper CACL is accepted by ACL 2024 Findings <a href="/blogs/2024-05-17-CACL.html">[<em>blog</em>]</a></li>
+  <li>🔥 The first knowledge graph for LLMs has been released <a href="/share/2024-06-28-knowledge-graph.html">[<em>blog</em>]</a></li>
+</ul>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZXP3VZ8MR8"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZXP3VZ8MR8');
+</script>
+
+<!-- 谷歌网站分析 -->
+:ET

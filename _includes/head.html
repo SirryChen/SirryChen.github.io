@@ -55,26 +55,10 @@
 <!-- Load Modernizr -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha512-3n19xznO0ubPpSwYCRRBgHh63DrV+bdZfHK52b1esvId4GsfwStQNPJFjeQos2h3JwCmZl0/LgLxSKMAI55hgw==" crossorigin="anonymous"></script>
 
-<!-- 配置 MathJax -->
-<script type="text/x-mathjax-config">
-    window.MathJax = {
-        tex2jax: {
-            inlineMath: [["$", "$"], ["\\(", "\\)"]],
-            displayMath: [["$$", "$$"], ["\\[", "\\]"]],
-            skipTags: ["script", "noscript", "style", "textarea", "pre", "code", "a"]
-        },
-        showProcessingMessages: false,
-        messageStyle: "none",
-        jax: ["input/TeX", "output/HTML-CSS"],
-        "HTML-CSS": {
-            availableFonts: ["STIX", "TeX"],
-            showMathMenu: false
-        }
-    };
-</script>
 
-<!-- 加载 MathJax 库 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+{% unless page.no_latex %}
+{% include latex.html %}
+{% endunless %}
 
 
 

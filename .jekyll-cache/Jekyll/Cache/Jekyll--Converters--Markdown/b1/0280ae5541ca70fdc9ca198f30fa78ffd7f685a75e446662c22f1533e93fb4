@@ -1,0 +1,140 @@
+I"(<h3 id="课程">课程</h3>
+
+<!-- <div class="card">
+    <a href="/share/2024-03-02-wiskon.html" class="card-link">
+        <div class="card-header">
+            <h3>多元统计分析</h3>
+        </div>
+        <div class="card-body">
+            <p>归纳总结 + 大作业：威斯康辛州乳腺癌数据集分析</p>
+        </div>
+    </a>
+</div>
+
+<div class="card">
+    <a href="/share/2024-03-03-image-process-course.html" class="card-link">
+        <div class="card-header">
+            <h3>图像处理与分析大作业</h3>
+        </div>
+        <div class="card-body">
+            <p>图像处理与分析调研报告</p>
+        </div>
+    </a>
+</div>
+
+<div class="card">
+    <a href="/share/2024-06-28-knowledge-graph.html" class="card-link">
+        <div class="card-header">
+            <h3>知识表示project</h3>
+        </div>
+        <div class="card-body">
+            <p>LLMs知识图谱</p>
+        </div>
+    </a>
+</div> -->
+
+<table class="imgtable">
+    <tr>
+        <td>
+            <a href="/share/2024-03-02-wiskon.html">
+                <img src="/file/img/多元统计分析-数据集图像.png" alt="alt text" width="150" style="border-radius: 8px;" /> &nbsp;
+            </a>
+        </td>
+        <td align="left">
+            <a href="/share/2024-03-02-wiskon.html">
+                <p> <strong>多元统计分析 </strong><br />
+                <span style="font-size: 90%;">归纳总结 + 大作业：乳腺癌数据集分析</span> </p>
+            </a>
+        </td>
+    </tr>
+</table>
+
+<table class="imgtable">
+    <tr>
+        <td>
+            <a href="/share/2024-03-03-image-process-course.html">
+                <img src="/file/img/图像处理与分析.png" alt="alt text" width="150" style="border-radius: 8px;" /> &nbsp;
+            </a>
+        </td>
+        <td align="left">
+            <a href="/share/2024-03-03-image-process-course.html">
+                <p> <strong>图像处理与分析大作业 </strong><br />
+                <span style="font-size: 90%;">图像生成调研 + Drag Your GAN</span> </p>
+            </a>
+        </td>
+    </tr>
+</table>
+
+<table class="imgtable">
+    <tr>
+        <td>
+            <a href="/share/2024-06-28-knowledge-graph.html">
+                <img src="/file/img/知识表示-LLM知识图谱.png" alt="alt text" width="150" style="border-radius: 8px;" /> &nbsp;
+            </a>
+        </td>
+        <td align="left">
+            <a href="/share/2024-06-28-knowledge-graph.html">
+                <p> <strong>知识表示大作业 </strong><br />
+                <span style="font-size: 90%;">从头自动构建LLMs知识图谱</span> </p>
+            </a>
+        </td>
+    </tr>
+</table>
+
+<table class="imgtable">
+    <tr>
+        <td>
+            <a href="/share/2024-04-27-the-reason-for-normalization.html">
+                <img src="/file/img/张奇书-梯度爆炸.jpg" alt="alt text" width="150" style="border-radius: 8px;" /> &nbsp;
+            </a>
+        </td>
+        <td align="left">
+            <a href="/share/2024-04-27-the-reason-for-normalization.html">
+                <p> <strong>The reason for the normalization in the computation of Attention </strong><br />
+                <span style="font-size: 90%;">To prevent the gradient from exploding or disappearing</span> </p>
+            </a>
+        </td>
+    </tr>
+</table>
+
+<p><br /></p>
+
+<h2 id="leave-a-message">Leave a Message</h2>
+
+<p><br /></p>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://sirrychen.github.io/share/";
+      this.page.identifier = "https://sirrychen.github.io/share/";
+    };
+
+    // You should be able to get the following lines of code from your Disqus admin.
+    // https://disqus.com/admin/universalcode
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sirrychen.disqus.com/embed.js';
+      // DISQUS Instructions:
+      // https://help.disqus.com/en/articles/1935528-jekyll-installation-instructions
+      
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+<noscript>
+    Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+
+<!-- 评论设置 -->
+
+<p><br /></p>
+
+<h2 id="web-reference">Web Reference</h2>
+
+<ul>
+  <li><a href="https://github.com/SirryChen/SirryChen.github.io">Leave a star if you like it 🥰</a></li>
+  <li>This site begins from <a href="https://github.com/GuangLun2000/GuangLun2000.github.io">Hanlin Cai’s work</a></li>
+</ul>
+:ET
