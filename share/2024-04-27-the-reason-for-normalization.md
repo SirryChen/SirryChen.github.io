@@ -34,7 +34,7 @@ $$
 
 #### 2.2 变量$W^*_{ij}$ 的方差增大会使得梯度值偏小
 
-在反向传播过程中，会涉及到对$\operatorname{Softmax}$项进行求导，对于$\mathbf{W}^*$中的某一个元素$W^*_{ij}$，求偏导如下
+在反向传播过程中，会涉及到对$\operatorname{Softmax}$项进行求导，对于$\mathbf{W}^*$ 中的某一个元素 $W^*_{ij}$，求偏导如下
 
 \[
 \begin{gather}
