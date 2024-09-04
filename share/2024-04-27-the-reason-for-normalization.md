@@ -22,13 +22,13 @@ $$
 \mathbf{W}=\operatorname{Softmax}(\mathbf{W^{\ast}}),
 $$
 
-其中矩阵$\mathbf{W}$中的元素 $W_{ij}=\frac{e^{W^{\ast}_{ij}}}{\sum^{d}_{p=1}e^{W^{\ast}_{ip}}}$。$\mathbf{W}^{\{\ast}}$
+其中矩阵$\mathbf{W}$中的元素 $W_{ij}=\frac{e^{W^{\ast}_{ij}}}{\sum^{d}_{p=1}e^{W^{\ast}_{ip}}}$ 。
 
 #### 2.1 去除$\sqrt{d}$ 项会使得变量$W^{\ast}_{ij}$ 的方差增大
 由之前定义可知矩阵$\mathbf{W}^{\ast}$ 中元素$$W^{\ast}_{ij}=\frac{\mathbf{Q}_i\mathbf{K}_i^T}{\sqrt{d}}=\sum^d_{j=1}\frac{Q_{ij}K_{ij}}{\sqrt{d}}$$ ，
 此时假设变量$Q_{ij},K_{ij}$ 均服从标准正态分布且互相独立，即$Q_{ij},K_{ij}\sim N(0, 1)$ ，则变量$W^{\ast}_{ij}\sim N(0,1)$。
 
-若去除$\sqrt{d}$ 项，即 $W^{\ast}_{ij}=\mathbf{Q}_i\mathbf{K}_i^T=\sum^d_{j=1}Q_{ij}K_{ij}$ ，则$W^{\ast}_{ij}\sim N(0,d)$，此时方差增大，即$\mathbf{W}^{\ast}$矩阵中元素之间的差异增大。
+若去除$\sqrt{d}$ 项，即$W^{\ast}_{ij}=\mathbf{Q}_i\mathbf{K}_i^T=\sum^d_{j=1}Q_{ij}K_{ij}$ ，则$W^{\ast}_{ij}\sim N(0,d)$ ，此时方差增大，即$\mathbf{W}^{\ast}$ 矩阵中元素之间的差异增大。
 
 
 #### 2.2 变量$W^{\ast}_{ij}$ 的方差增大会使得梯度值偏小
@@ -36,11 +36,17 @@ $$
 在反向传播过程中，会涉及到对$\operatorname{Softmax}$项进行求导，对于 $\mathbf{W}^{\ast}$ 中的某一个元素 $W^{\ast}_{ij}$ ，求偏导如下
 
 \[
-\begin{align}
-\frac{\partial \operatorname{Softmax}(W^{\ast}_{ij})}{\partial W^{\ast}_{ij}} &= \operatorname{Softmax}(W^{\ast}_{ij})(1-\operatorname{Softmax}(W^{\ast}_{ij})) \tag{1} \\
-\frac{\partial \operatorname{Softmax}(W^{\ast}_{ij})}{\partial W^{\ast}_{ip}} &= -\operatorname{Softmax}(W^{\ast}_{ip})\operatorname{Softmax}(W^{\ast}_{ij}), \quad p \neq j \tag{2}
-\end{align}
+\begin{gather}
+\frac{\partial \operatorname{Softmax}(W^{\ast}_{ij})}{\partial W^{\ast}_{ij}} = \operatorname{Softmax}(W^{\ast}_{ij})(1-\operatorname{Softmax}(W^{\ast}_{ij})) \tag{1}\\
+\frac{\partial \operatorname{Softmax}(W^{\ast}_{ij})}{\partial W^{\ast}_{ip}} = -\operatorname{Softmax}(W^{\ast}_{ip})\operatorname{Softmax}(W^{\ast}_{ij}), p\neq j\tag{2}
+\end{gather}
 \]
+
+
+$$
+\mathbf{W}^{\ast}=\frac{\mathbf{QK}^T}{\sqrt{d}},
+\mathbf{W}=\operatorname{Softmax}(\mathbf{W^{\ast}}),
+$$
 
 若变量$W^{\ast}_{ij}$ 的方差增大，则考虑元素$W^{\ast}_{ij}$ 远大于其他元素$W^{\ast}_{ip}$ 的情况，则$\operatorname{Softmax}(W^{\ast}_{ij})$ 趋近于1，而$\operatorname{Softmax}(W^{\ast}_{ip})$ 趋近于0
 - 对于式（1），$1-\operatorname{Softmax}(W^\{\ast}_{ij})$ 趋近于0，使得$\frac{\partial \operatorname{Softmax}(W^\{\ast}_{ij})}{\partial W^\{\ast}_{ij}}$趋近于0
