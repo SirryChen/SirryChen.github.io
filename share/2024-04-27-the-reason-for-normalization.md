@@ -1,8 +1,8 @@
 
 ### 1. 问题描述
-《大规模语言模型：从理论到实践》第16页，“为防止{\ast}{\ast}过大的匹配分数{\ast}{\ast}在后续Softmax计算过程中导致的{\ast}{\ast}梯度爆炸{\ast}{\ast}以及收敛效率差的问题，这些得分会除{\ast}{\ast}缩放因子{\ast}{\ast}$\sqrt{d}$ 以稳定优化。”
+《大规模语言模型：从理论到实践》第16页，“为防止**过大的匹配分数**在后续Softmax计算过程中导致的**梯度爆炸**以及收敛效率差的问题，这些得分会除**缩放因子**$\sqrt{d}$ 以稳定优化。”
 
-{\ast}{\ast}原文等价于{\ast}{\ast}: $\sqrt{d}$ 的作用为缩减$\mathbf{Q}\mathbf{K}^T$ 中元素值的大小，防止在梯度反向传播时导致的梯度爆炸问题。
+**原文等价于**: $\sqrt{d}$ 的作用为缩减$\mathbf{Q}\mathbf{K}^T$ 中元素值的大小，防止在梯度反向传播时导致的梯度爆炸问题。
 ![alt text](../file/img/张奇书-梯度爆炸.jpg)
 
 
@@ -25,6 +25,7 @@ $$
 其中矩阵$\mathbf{W}$中的元素 $W_{ij}=\frac{e^{W^{\ast}_{ij}}}{\sum^{d}_{p=1}e^{W^{\ast}_{ip}}}$ 。
 
 #### 2.1 去除$\sqrt{d}$ 项会使得变量$W^{\ast}_{ij}$ 的方差增大
+
 由之前定义可知矩阵$\mathbf{W}^{\ast}$ 中元素$$W^{\ast}_{ij}=\frac{\mathbf{Q}_i\mathbf{K}_i^T}{\sqrt{d}}=\sum^d_{j=1}\frac{Q_{ij}K_{ij}}{\sqrt{d}}$$ ，
 此时假设变量$Q_{ij},K_{ij}$ 均服从标准正态分布且互相独立，即$Q_{ij},K_{ij}\sim N(0, 1)$ ，则变量$W^{\ast}_{ij}\sim N(0,1)$。
 
@@ -41,7 +42,7 @@ $$
 \frac{\partial \operatorname{Softmax}(W^{\ast}_{ij})}{\partial W^{\ast}_{ip}} = -\operatorname{Softmax}(W^{\ast}_{ip})\operatorname{Softmax}(W^{\ast}_{ij}), p\neq j\tag{2}
 \end{gather}
 $$
-
+这个$W^{\ast}_{ij}$ 正确吗
 若变量 $W^{\ast}_{ij}$ 的方差增大，则考虑元素 $W^{\ast}_{ij}$ 远大于其他元素 $W^{\ast}_{ip}$ 的情况，则 $\operatorname{Softmax}(W^{\ast}_{ij})$ 趋近于1，而 $\operatorname{Softmax}(W^{\ast}_{ip})$ 趋近于0
 - 对于式（1）， $1-\operatorname{Softmax}(W^\{\ast}_{ij})$ 趋近于0，使得 $\frac{\partial \operatorname{Softmax}(W^\{\ast}_{ij})}{\partial W^\{\ast}_{ij}}$ 趋近于0
 - 对于式（2）， $\operatorname{Softmax}(W^\{\ast}_{ip})$ 趋近于0，使得 $\frac{\partial \operatorname{Softmax}(W^\{\ast}_{ij})}{\partial W^\{\ast}_{ip}}$ 趋近于0
