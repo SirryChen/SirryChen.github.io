@@ -61,17 +61,21 @@ $$
 
 ### Ref
 
-1. 参考“[Attention Is All You Need](https://arxiv.org/abs/1706.03762)”原文，较大的$d$会导致点积的增大，进而在计算softmax函数时被推向较小梯度的区域（说的比较含糊，脚注中解释从方差影响的角度进行说明）
+<ol>
+    <li>参考“<a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a>”原文，较大的 <code>d</code> 会导致点积的增大，进而在计算 softmax 函数时被推向较小梯度的区域（说的比较含糊，脚注中解释从方差影响的角度进行说明）</li>
+</ol>
+
 <div style="text-align: center;">
     <img src="../file/img/原著中归一化原因.png" alt="alt text" style="width: 80%; height: auto;">
     <p style="text-align: center; font-style: italic;">截图自"Attention Is All You Need"</p>
 </div>
 
-2. [知乎：Transformer学习笔记二：Self-Attention（自注意力机制）](https://zhuanlan.zhihu.com/p/455399791)
-3. [知乎提问：transformer中的attention为什么scaled?](https://www.zhihu.com/question/339723385/answers/updated)
-
+<ol start="2">
+    <li><a href="https://zhuanlan.zhihu.com/p/455399791">知乎：Transformer学习笔记二：Self-Attention（自注意力机制）</a></li>
+    <li><a href="https://www.zhihu.com/question/339723385/answers/updated">知乎提问：transformer中的attention为什么scaled?</a></li>
+</ol>
 
 
 ---
-latex公式支持调得感觉要寄了😵
+$$\latex$$ 公式支持调得感觉要寄了😵
 ---
