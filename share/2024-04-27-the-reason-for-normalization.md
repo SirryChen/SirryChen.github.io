@@ -70,8 +70,8 @@ $$
 </div>
 
 
-1. [知乎：Transformer学习笔记二：Self-Attention（自注意力机制）](https://zhuanlan.zhihu.com/p/455399791)
-2. [知乎提问：transformer中的attention为什么scaled?](https://www.zhihu.com/question/339723385/answers/updated)
+2. [知乎：Transformer学习笔记二：Self-Attention（自注意力机制）](https://zhuanlan.zhihu.com/p/455399791)
+3. [知乎提问：transformer中的attention为什么scaled?](https://www.zhihu.com/question/339723385/answers/updated)
 
 
 

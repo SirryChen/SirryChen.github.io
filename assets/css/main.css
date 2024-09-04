@@ -155,10 +155,14 @@ p code{font-size:80%;white-space:nowrap;margin:0 2px;padding:0 5px;border:1px so
 .nv{color:#008080;}
 .ow{color:#000000;font-weight:bold;}
 .w{color:#bbbbbb;}
-.mf{color:#009999;}
+/* .mf{color:#009999;}
 .mh{color:#009999;}
 .mi{color:#009999;}
-.mo{color:#009999;}
+.mo{color:#009999;} */
+.mf{color:#333332;}
+.mh{color:#333332;}
+.mi{color:#333332;}
+.mo{color:#333332;}
 .sb{color:#d01040;}
 .sc{color:#d01040;}
 .sd{color:#d01040;}
