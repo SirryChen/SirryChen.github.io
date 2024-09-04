@@ -42,18 +42,18 @@ $$
 \end{gather}
 $$
 
-若变量 $W^{\ast}_{ij}$ 的方差增大，则考虑元素$W^{\ast}_{ij}$ 远大于其他元素 $W^{\ast}_{ip}$ 的情况，则 $\operatorname{Softmax}(W^{\ast}_{ij})$ 趋近于1，而 $\operatorname{Softmax}(W^{\ast}_{ip})$ 趋近于0
+若变量 $W^{\ast}_{ij}$ 的方差增大，则考虑元素 $W^{\ast}_{ij}$ 远大于其他元素 $W^{\ast}_{ip}$ 的情况，则 $\operatorname{Softmax}(W^{\ast}_{ij})$ 趋近于1，而 $\operatorname{Softmax}(W^{\ast}_{ip})$ 趋近于0
 - 对于式（1）， $1-\operatorname{Softmax}(W^\{\ast}_{ij})$ 趋近于0，使得 $\frac{\partial \operatorname{Softmax}(W^\{\ast}_{ij})}{\partial W^\{\ast}_{ij}}$ 趋近于0
 - 对于式（2）， $\operatorname{Softmax}(W^\{\ast}_{ip})$ 趋近于0，使得 $\frac{\partial \operatorname{Softmax}(W^\{\ast}_{ij})}{\partial W^\{\ast}_{ip}}$ 趋近于0
 
-反之亦然。所以当变量$W^{\ast}_{ij}$ 的方差较大时，梯度值会整体偏小。
+反之亦然。所以当变量 $W^{\ast}_{ij}$ 的方差较大时，梯度值会整体偏小。
 
 
 #### 2.3 归纳
 
-丢弃$\sqrt{d}$ 项会使得变量 $W^{\ast}_{ij}$ 的方差增大，而变量 $W^{\ast}_{ij}$ 的方差增大会使得梯度值偏小，进而引发梯度消失问题。
+丢弃 $\sqrt{d}$ 项会使得变量 $W^{\ast}_{ij}$ 的方差增大，而变量 $W^{\ast}_{ij}$ 的方差增大会使得梯度值偏小，进而引发梯度消失问题。
 
-真正解决梯度爆炸问题的应该是$\operatorname{Softmax}$函数，它直接进行了归一化的操作，避免值过大导致的梯度爆炸问题。而正是因为使用了$\operatorname{Softmax}$函数，引入了变量方差过大会导致梯度消失的问题，所以需要对变量进行除$\sqrt{d}$操作降低方差。
+真正解决梯度爆炸问题的应该是 $\operatorname{Softmax}$函数，它直接进行了归一化的操作，避免值过大导致的梯度爆炸问题。而正是因为使用了 $\operatorname{Softmax}$函数，引入了变量方差过大会导致梯度消失的问题，所以需要对变量进行除$\sqrt{d}$操作降低方差。
 
 
 ### Ref
