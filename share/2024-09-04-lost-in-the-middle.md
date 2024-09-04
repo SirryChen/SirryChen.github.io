@@ -8,7 +8,7 @@ date: 2024-09-5 20:01:00
 swiper_index: 3
 ---
 
-### 问题提出
+### 1.问题提出
 
 > 23年11月：[Lost in the Middle: How Language Models Use Long Contexts](https://aclanthology.org/2024.tacl-1.9/) 
 
@@ -23,22 +23,22 @@ swiper_index: 3
 
 <div style="text-align: center;">
     <img src="../file/img/lost in the middle/U-shaped-lost-in-the-middle.svg" alt="alt text" style="width: 70%; height: auto;">
-    <p style="text-align: center; font-style: italic;">在长文本中，随着问题答案位置的变化，模型性能呈现出U形<br><a href=https://aclanthology.org/2024.tacl-1.9/>Lost in the Middle</a> Liu et al., 2023</p>
+    <p style="text-align: center; font-style: italic;">在长文本中，随着问题答案位置的变化，模型性能呈现出U形<br><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle</a> Liu et al., 2023</p>
 </div>
 <div style="text-align: center;">
     <img src="../file/img/lost in the middle/retrieval-u-shape-lost-in-the-middle.svg" alt="alt text" style="width: 70%; height: auto;">
-    <p style="text-align: center; font-style: italic; font-size: 80%;">在长文本中，随着问题答案位置的变化，模型性能在retrieval任务上呈现出U形<br><a href=https://aclanthology.org/2024.tacl-1.9/>Lost in the Middle</a> Liu et al., 2023</p>
+    <p style="text-align: center; font-style: italic; font-size: 80%;">在长文本中，随着问题答案位置的变化，模型性能在retrieval任务上呈现出U形<br><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle</a> Liu et al., 2023</p>
 </div>
 <div style="text-align: center;">
     <img src="../file/img/lost in the middle/QA-u-shape-lost-in-the-middle.svg" alt="alt text" style="width: 70%; height: auto;">
-    <p style="text-align: center; font-style: italic; font-size: 80%;">在长文本中，随着问题答案位置的变化，模型性能在question-answering任务上呈现出U形<br><a href=https://aclanthology.org/2024.tacl-1.9/>Lost in the Middle</a> Liu et al., 2023</p>
+    <p style="text-align: center; font-style: italic; font-size: 80%;">在长文本中，随着问题答案位置的变化，模型性能在question-answering任务上呈现出U形<br><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle</a> Liu et al., 2023</p>
 </div>
 
 观测结论：大模型（无论是否经过指令微调）的性能都呈现出U形，即对长文本中信息的使用缺乏稳健性
 
 > 23年7月：[Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models](https://aclanthology.org/2024.acl-long.818/)
 
-提出了Flexible LENgth Question Answering dataset (FLenQA)数据集，包括三个**推理**任务，均为两段式，即会有两个关键信息分布在长文本中
+提出了Flexible LENgth Question Answering dataset (FLenQA)数据集，包括三个**推理**任务，均为两段式，即会有两个关键信息分布在长文本中,其余为无关信息
 - Monotone Relations(e.g. X > Y & Y > Z ->  X>Z?true:false)
 - People In Rooms
 - a simplified version of Ruletaker
