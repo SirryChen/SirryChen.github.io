@@ -3,7 +3,11 @@
 《大规模语言模型：从理论到实践》第16页，“为防止**过大的匹配分数**在后续Softmax计算过程中导致的**梯度爆炸**以及收敛效率差的问题，这些得分会除**缩放因子**$\sqrt{d}$ 以稳定优化。”
 
 **原文等价于**: $\sqrt{d}$ 的作用为缩减$\mathbf{Q}\mathbf{K}^T$ 中元素值的大小，防止在梯度反向传播时导致的梯度爆炸问题。
-![alt text](../file/img/张奇书-梯度爆炸.jpg)
+
+<div style="text-align: center;">
+    <img src="../file/img/张奇书-梯度爆炸.jpg" alt="alt text" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+    <p style="text-align: center; font-style: italic; margin-top: 8px; color: #333; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); display: inline-block; padding: 0 4px;">截图自《大规模语言模型：从理论到实践》</p>
+</div>
 
 
 
