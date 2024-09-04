@@ -28,10 +28,15 @@ $$
 #### 2.1 去除$\sqrt{d}$ 项会使得变量$W^*_{ij}$ 的方差增大
 由之前定义可知矩阵$\mathbf{W}^\*$中元素 $W^\*_{ij}=\frac{\mathbf{Q}_i\mathbf{K}_i^T}{\sqrt{d}}=\sum^d_{j=1}\frac{Q_{ij}K_{ij}}{\sqrt{d}}$，
 
-此时假设变量$Q_{ij},K_{ij}$均服从标准正态分布且互相独立，即$Q_{ij},K_{ij}\sim N(0, 1)$，则变量$W^*_{ij}\sim N(0,1)$。
+此时假设变量$Q_{ij},K_{ij}$均服从标准正态分布且互相独立，即$Q_{ij},K_{ij}\sim N(0, 1)$ ，则变量$W^*_{ij}\sim N(0,1)$。
 
-若去除$\sqrt{d}$ 项，即$W^*_{ij}=\mathbf{Q}_i\mathbf{K}_i^T=\sum^d_{j=1}Q_{ij}K_{ij}$，则$W^*_{ij}\sim N(0,d)$，此时方差增大，即$\mathbf{W}^*$矩阵中元素之间的差异增大。
+若去除$\sqrt{d}$ 项，即 $W^*_{ij}=\mathbf{Q}_i\mathbf{K}_i^T=\sum^d_{j=1}Q_{ij}K_{ij}$ ，则$W^*_{ij}\sim N(0,d)$，此时方差增大，即$\mathbf{W}^*$矩阵中元素之间的差异增大。
 
+$W^*_{ij}=\mathbf{Q}_i\mathbf{K}_i^T=\sum^d_{j=1}Q_{ij}K_{ij}$
+
+$W^\*_{ij}=\mathbf{Q}_i\mathbf{K}_i^T=\sum^d_{j=1}Q_{ij}K_{ij}$
+
+$W_{ij}=\mathbf{Q}_i\mathbf{K}_i^T=\sum^d_{j=1}Q_{ij}K_{ij}$
 
 #### 2.2 变量$W^*_{ij}$ 的方差增大会使得梯度值偏小
 
