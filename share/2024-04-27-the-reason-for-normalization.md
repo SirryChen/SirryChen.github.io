@@ -47,13 +47,6 @@ $$
 - 对于式（1）， $$1-\operatorname{Softmax}(W^{\ast}_{ij})$$ 趋近于0，使得 $$\frac{\partial \operatorname{Softmax}(W^{\ast}_{ij})}{\partial W^{\ast}_{ij}}$$ 趋近于0
 - 对于式（2）， $$\operatorname{Softmax}(W^{\ast}_{ip})$$ 趋近于0，使得 $$\frac{\partial \operatorname{Softmax}(W^{\ast}_{ij})}{\partial W^{\ast}_{ip}}$$ 趋近于0
 
-- 对于式（1），$$1-\operatorname{Softmax}(W^{\ast}_{ij})$$ 趋近于0，使得 $$\frac{\partial \operatorname{Softmax}(W^{\ast}_{ij})}{\partial W^{\ast}_{ij}}$$ 趋近于0
-- 对于式（2），$\operatorname{Softmax}(W^{\ast}_{ip})$ 趋近于0，使得 $\frac{\partial \operatorname{Softmax}(W^{\ast}_{ij})}{\partial W^{\ast}_{ip}}$ 趋近于0
-
-
-对于式（1）， $$1-\operatorname{Softmax}(W^{\ast}_{ij})$$ 趋近于0，使得 $$\frac{\partial \operatorname{Softmax}(W^{\ast}_{ij})}{\partial W^{\ast}_{ij}}$$ 趋近于0
-对于式（2）， $$\operatorname{Softmax}(W^{\ast}_{ip})$$ 趋近于0，使得 $$\frac{\partial \operatorname{Softmax}(W^{\ast}_{ij})}{\partial W^{\ast}_{ip}}$$ 趋近于0
-
 #### 2.3 归纳
 
 丢弃 $\sqrt{d}$ 项会使得变量 $$W^{\ast}_{ij}$$ 的方差增大，而变量 $$W^{\ast}_{ij}$$ 的方差增大会使得梯度值偏小，进而引发梯度消失问题。
