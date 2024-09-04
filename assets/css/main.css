@@ -521,3 +521,7 @@ strong {
   overflow-x: auto !important;
   overflow-y: hidden !important;
 }
+
+.mjx-math, .mjx-math * {
+  color: black !important;
+}

@@ -42,8 +42,19 @@ $$
 \frac{\partial \operatorname{Softmax}(W^{\ast}_{ij})}{\partial W^{\ast}_{ip}} = -\operatorname{Softmax}(W^{\ast}_{ip})\operatorname{Softmax}(W^{\ast}_{ij}), p\neq j\tag{2}
 \end{gather}
 $$
-这个$W^{\ast}_{ij}$ 正确吗
+
 若变量 $W^{\ast}_{ij}$ 的方差增大，则考虑元素 $W^{\ast}_{ij}$ 远大于其他元素 $W^{\ast}_{ip}$ 的情况，则 $\operatorname{Softmax}(W^{\ast}_{ij})$ 趋近于1，而 $\operatorname{Softmax}(W^{\ast}_{ip})$ 趋近于0
+- 对于式（1）， $1-\operatorname{Softmax}(W^\{\ast}_{ij})$ 趋近于0，使得 $\frac{\partial \operatorname{Softmax}(W^\{\ast}_{ij})}{\partial W^\{\ast}_{ij}}$ 趋近于0
+- 对于式（2）， $\operatorname{Softmax}(W^\{\ast}_{ip})$ 趋近于0，使得 $\frac{\partial \operatorname{Softmax}(W^\{\ast}_{ij})}{\partial W^\{\ast}_{ip}}$ 趋近于0
+
+$$
+\begin{gather}
+\frac{\partial \operatorname{Softmax}(W^{\ast}_{ij})}{\partial W^{\ast}_{ij}} = \operatorname{Softmax}(W^{\ast}_{ij})(1-\operatorname{Softmax}(W^{\ast}_{ij})) \tag{1}\\
+\frac{\partial \operatorname{Softmax}(W^{\ast}_{ij})}{\partial W^{\ast}_{ip}} = -\operatorname{Softmax}(W^{\ast}_{ip})\operatorname{Softmax}(W^{\ast}_{ij}), p\neq j\tag{2}
+\end{gather}
+$$
+
+若变量$W^{\ast}_{ij}$ 的方差增大，则考虑元素$W^{\ast}_{ij}$ 远大于其他元素$W^{\ast}_{ip}$ 的情况，则$\operatorname{Softmax}(W^{\ast}_{ij})$ 趋近于1，而$\operatorname{Softmax}(W^{\ast}_{ip})$ 趋近于0
 - 对于式（1）， $1-\operatorname{Softmax}(W^\{\ast}_{ij})$ 趋近于0，使得 $\frac{\partial \operatorname{Softmax}(W^\{\ast}_{ij})}{\partial W^\{\ast}_{ij}}$ 趋近于0
 - 对于式（2）， $\operatorname{Softmax}(W^\{\ast}_{ip})$ 趋近于0，使得 $\frac{\partial \operatorname{Softmax}(W^\{\ast}_{ij})}{\partial W^\{\ast}_{ip}}$ 趋近于0
 
