@@ -55,16 +55,23 @@
 <!-- Load Modernizr -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha512-3n19xznO0ubPpSwYCRRBgHh63DrV+bdZfHK52b1esvId4GsfwStQNPJFjeQos2h3JwCmZl0/LgLxSKMAI55hgw==" crossorigin="anonymous"></script>
 
-<html>
-<script>
-MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
-  },
-  svg: {
-    fontCache: 'global'
-  }
-};
+<script type="text/x-mathjax-config;executed=true">
+    window.MathJax.Hub.Config({
+        showProcessingMessages: false, // 关闭 js 加载过程信息
+        messageStyle: "none", // 不显示信息
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+            inlineMath: [["$", "$"], ["\\(", "\\)"]], // 行内公式选择符
+            displayMath: [["$$", "$$"], ["\\[", "\\]"]], // 段内公式选择符
+            skipTags: ["script", "noscript", "style", "textarea", "pre", "code", "a"] // 避开某些标签
+        },
+        "HTML-CSS": {
+            availableFonts: ["STIX", "TeX"], // 可选字体
+            showMathMenu: false // 关闭右击菜单显示
+        }
+    });
+    window.MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementsByClassName("ck-content")]);
+
 </script>
 
 <script type="text/javascript" id="MathJax-script" async
