@@ -61,9 +61,7 @@ $$
 
 ### Ref
 
-<ol>
-    <li>参考“<a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a>”原文，较大的 <code>d</code> 会导致点积的增大，进而在计算 softmax 函数时被推向较小梯度的区域（说的比较含糊，脚注中解释从方差影响的角度进行说明）</li>
-</ol>
+1. 参考“[Attention Is All You Need](https://arxiv.org/abs/1706.03762)”原文，较大的$d$会导致点积的增大，进而在计算$\operatorname{Softmax}$函数时被推向较小梯度的区域（说的比较含糊，脚注中解释从方差影响的角度进行说明）
 
 <div style="text-align: center;">
     <img src="../file/img/原著中归一化原因.png" alt="alt text" style="width: 80%; height: auto;">
@@ -77,4 +75,4 @@ $$
 
 
 ---
-$\LaTeX$ 公式支持调得感觉要寄了😵
+$\small \LaTeX$ 公式支持调得感觉要寄了😵
