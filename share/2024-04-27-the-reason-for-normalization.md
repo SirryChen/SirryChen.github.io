@@ -5,7 +5,17 @@
 **原文等价于**: $\sqrt{d}$ 的作用为缩减$\mathbf{Q}\mathbf{K}^T$ 中元素值的大小，防止在梯度反向传播时导致的梯度爆炸问题。
 ![alt text](../file/img/张奇书-梯度爆炸.jpg)
 
+这个$W^*_{ij}=\mathbf{Q}_i\mathbf{K}_i^T=\sum^d_{j=1}Q_{ij}K_{ij}$ 不行
 
+这个$W^\*_{ij}=\mathbf{Q}_i\mathbf{K}_i^T=\sum^d_{j=1}Q_{ij}K_{ij}$ 也不行
+
+真的吗$W_{ij}=\mathbf{Q}_i\mathbf{K}_i^T=\sum^d_{j=1}Q_{ij}K_{ij}$ 是的
+
+那这个你$W^*_{ij} = \mathbf{Q}_i \mathbf{K}_i^T = \sum_{j=1}^{d} Q_{ij} K_{ij}$ 不会吧
+
+为什么$W^*_{ij} = \sum_{j=1}^{d} Q_{ij} K_{ij}$ 好神奇
+
+$$W^*_{ij} = \sum_{j=1}^{d} Q_{ij} K_{ij}$$
 
 
 ### 2. $\sqrt{d}$ 的作用应该是防止梯度消失
