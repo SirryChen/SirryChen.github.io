@@ -10,7 +10,7 @@ swiper_index: 3
 
 
 
-### 1.问题提出
+## 1.问题提出
 
 > 23年11月：[Lost in the Middle: How Language Models Use Long Contexts](https://aclanthology.org/2024.tacl-1.9/) 
 
@@ -134,11 +134,11 @@ swiper_index: 3
 - 在无CoT，推理任务，任意文本长度情况下，不同关键信息位置，模型的性能`文末 > 文首 > 中间 > 随机`
 
 
-### 2.原因猜想
+## 2.原因猜想
 
 上述两篇论文的共同点在于，模型无法有效利用位于模型中部的信息。下面概述一些可能的原因。
 
-#### 2.1 模型结构 decoder-only V.S. encoder-decoder
+### 2.1 模型结构 decoder-only V.S. encoder-decoder
 
 **encoder-decoder**: 
 Flan-T5-XXL(<a href="https://huggingface.co/google/flan-t5-xxl/blob/main/tokenizer_config.json#:~:text=%22model_max_length%22%3A%20512%2C" style="font-size: smaller;">model_max_length: 512 tokens</a>), 
@@ -161,7 +161,7 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 论文中由模型Flan-UL2-2k在2k输入情况下，表现出最佳的稳健性，得出"encoder-decoder模型得益于其双向编码，能够最佳地利用其窗口大小"的结论。但是其余两个decoder-only模型为8k和16k的窗口大小，其在2k输入情况下表现出略差的稳健性是可能的，因此论文中的结论并不具有说服力，应该增加大于8k输入的对比实验。
 
 
-#### 2.2 Fine-Tuning对模型造成影响
+### 2.2 Fine-Tuning对模型造成影响
 
 大模型在经过预训练后，往往会进行指令微调来弥补预训练目标（e.g., next word prediction）与下游任务(e.g., dialog)的gap。"Lost in the middle"中认为，由于在指令微调过程中，指令通常是被放置在**文首**，这可能会驱使模型**习惯地**将更多的注意力放在输入文本的开头，从而导致对文本中部的忽略。
 
@@ -169,16 +169,16 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 - 过去的工作已经发现，无指令微调的模型对最近的token即文末有更高的关注度（recency bias）
 - 而其对文首的关注，则可能来自于预训练任务中混入类似的指令微调数据，例如StackOverflow中的数据
 
-#### 2.3 Attention分布不均
+### 2.3 Attention分布不均
 
-受微调对模型关注位置影响的启发，下面对ChatGLM2-6B-32K attention score可视化，可以更直观地展现模型对文首和文末的注意，以及对文本中部的忽视
+受微调对模型关注位置影响的启发，对ChatGLM2-6B-32K的attention score可视化，可以更直观地展现模型对文首和文末的注意，以及对文本中部的忽视
 
 <div style="text-align: center;">
     <img src="../file/img/lost in the middle/chatglm32katt.png" alt="image" style="width: 40%; height: auto; margin-bottom: 10px;">
     <p style="text-align: center; font-style: italic;">ChatGLM2-6B-32K的attention score可视化<br><a href="https://aclanthology.org/2024.acl-long.736/">Never Lost in the Middle</a> He et al., Aug 2024</p>
 </div>
 
-将数据集中大量重复的instructions、query看作special token（大部分的指令集和问题模板都是人工针对不同的任务编写，是一个有限集，经过tokenizer之后token序列一致，可以看作一组特定的token序列集），则对于一定数量的训练数据，是由instruction(special token) + text + query(special token)组成，这与预训练过程中的[cls] + text + [seq]非常相似。大模型的训练数据量是庞大的，使得text的取值范围很广，找到从text到answer的映射是非常困难的。当模型不知道关注长文本中哪一部分时，文本的attention score会较低，由于softmax[[Attention Is Off By One](https://www.evanmiller.org/attention-is-off-by-one.html?continueFlag=5d0e431f4edf1d8cccea47871e82fbc4)]对方差的不断扩大，会将注意力积聚到special token上（即使它们并不那么重要）。这在StreamingLLM中被利用来做Attention Sink。
+如果将数据集中大量重复的instructions、query看作special token（大部分的指令集和问题模板都是人工针对不同的任务编写，是一个有限集，经过tokenizer之后token序列一致，可以看作一组特定的token序列集），则对于一定数量的训练数据，是由instruction(special token) + text + query(special token)组成，这与预训练过程中的[cls] + text + [seq]非常相似。大模型的训练数据量是庞大的，使得text的取值范围很广，找到从text到answer的映射是非常困难的。当模型不知道关注长文本中哪一部分时，文本的attention score会较低，由于softmax[[Attention Is Off By One](https://www.evanmiller.org/attention-is-off-by-one.html?continueFlag=5d0e431f4edf1d8cccea47871e82fbc4)]对方差的不断扩大，会将注意力积聚到special token上（即使它们并不那么重要）。这在StreamingLLM中被利用来做Attention Sink。
 
 <div style="text-align: center;">
     <img src="../file/img/lost in the middle/StreamingLLM-attention_weights.svg" alt="image" style="width: 90%; height: auto; margin-bottom: 10px;">
