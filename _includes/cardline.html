@@ -1,16 +1,29 @@
 
-<table class="imgtable">
+<!-- <table class="imgtable">
     <tr>
-        <td>
+        <td style="width: 25%;">
             <a href="{{ include.url }}">
-                <img src="{{ include.img }}" alt="alt text" width="150" style="border-radius: 8px;"/> &nbsp;
+                <img src="{{ include.img }}" alt="image" width="100%" style="border-radius: 8px;"/>
             </a>
         </td>
         <td align="left">
             <a href="{{ include.url }}">
-                <p> <strong>{{ include.title }} </strong><br />
+                <p style="margin: auto;"> <strong>{{ include.title }} </strong><br />
                 <span style="font-size: 90%;">{{ include.content }}</span> </p>
             </a>
         </td>
     </tr>
+</table> -->
+<a href="{{ include.url }}">
+<table class="imgtable">
+    <tr>
+        <td style="width: 25%;">
+                <img src="{{ include.img }}" alt="image" width="100%" style="border-radius: 8px;"/>
+        </td>
+        <td align="left">
+                <p style="margin: auto;"> <strong>{{ include.title }} </strong><br />
+                <span style="font-size: 90%;">{{ include.content }}</span> </p>
+        </td>
+    </tr>
 </table>
+</a>
