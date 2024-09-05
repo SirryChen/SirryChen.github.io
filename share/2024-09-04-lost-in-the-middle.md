@@ -161,7 +161,7 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 根据下图，随着输入文本长度增长，对于关键信息位于**文首**或**文末**，各模型性能均有下降；对于关键信息分布在**中间**的情况，两个encoder-decoder模型的性能下降幅度更大。
 
 <div style="text-align: center;">
-    <img src="../file/img/lost in the middle/qa_decoder_only_vs_encoder_decoder.svg" alt="image" style="width: 80%; height: auto; margin-bottom: 10px;">
+    <img src="../file/img/lost in the middle/qa_decoder_only_vs_encoder_decoder.svg" alt="image" style="width: 100%; height: auto; margin-bottom: 10px;">
     <p style="text-align: center; font-style: italic;">在不同输入长度下，decoder-only V.S. encoder-decoder<br><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle</a> Liu et al., 2023</p>
 </div>
 
@@ -193,7 +193,7 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 受微调对模型关注位置影响的启发，对ChatGLM2-6B-32K的attention score可视化，可以更直观地展现模型对文首和文末的注意，以及对文本中部的忽视。
 
 <div style="text-align: center;">
-    <img src="../file/img/lost in the middle/chatglm32katt.png" alt="image" style="width: 30%; height: auto; margin-bottom: 10px;">
+    <img src="../file/img/lost in the middle/chatglm32katt.png" alt="image" style="width: 50%; height: auto; margin-bottom: 10px;">
     <p style="text-align: center; font-style: italic;">ChatGLM2-6B-32K的attention score可视化<br><a href="https://aclanthology.org/2024.acl-long.736/">Never Lost in the Middle</a> He et al., Aug 2024</p>
 </div>
 
