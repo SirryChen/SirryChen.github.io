@@ -12,7 +12,7 @@ swiper_index: 3
 
 ## 1.问题提出
 
-<blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin-bottom: 10px;">
+<blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin-bottom: 15px;">
     23年11月：<a href="https://aclanthology.org/2024.tacl-1.9/" style="color: red;">Lost in the Middle: How Language Models Use Long Contexts</a>
 </blockquote>
 
@@ -72,7 +72,7 @@ swiper_index: 3
 
 
 
-<blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin: 0;">
+<blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin: 15px;">
     23年11月：<a href="https://aclanthology.org/2024.acl-long.818/" style="color: red;">Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models</a>
 </blockquote>
 
@@ -167,14 +167,14 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 
 > We hypothesize that encoder-decoder models may make better use of their context windows because their bidirectional encoder allows processing each document in the context of future documents, potentially improving relative importance estimation between documents.
 
-论文中由模型Flan-UL2-2k在2k输入情况下，表现出最佳的稳健性，得出"encoder-decoder模型得益于其双向编码，能够最佳地利用其窗口大小"的结论。但是其余两个decoder-only模型为8k和16k的窗口大小，其在2k输入情况下表现出略差的稳健性是可能的，因此论文中的结论并不具有说服力，应该增加大于8k输入的对比实验。
+根据上述原文，论文由模型Flan-UL2-2k在2k输入情况下，表现出最佳的稳健性，得出“encoder-decoder模型得益于其双向编码，能够最佳地利用其窗口大小”的结论。但是其余两个decoder-only模型为8k和16k的窗口大小，其在2k输入情况下表现出略差的稳健性是可能的，因此论文中的结论并不具有说服力，我认为应该增加大于8k输入的对比实验。
 
 
 ### 2.2 Pretraining & Fine-Tuning对模型造成影响
 
 ["Make Your LLM Fully Utilize the Context"](https://arxiv.org/abs/2404.16811) 中认为，在自回归的预训练过程中，代理任务（e.g., next token prediction）的训练目标会使得模型更倾向于关注邻近token，在后续生成过程中，处于**文末**的token对生成有更大的影响。
 
-大模型在经过预训练后，会进行指令微调来弥补预训练代理任务与下游任务(e.g., dialog)的gap。["Lost in the middle"](https://aclanthology.org/2024.tacl-1.9/) 中也认为，由于在指令微调过程中，指令通常是被放置在**文首**，这可能会驱使模型**习惯地**将更多的注意力放在输入文本的开头，从而导致对文本中部的忽略。
+同时，大模型在经过预训练后，会进行指令微调来弥补预训练代理任务与下游任务(e.g., dialog)的gap。["Lost in the middle"](https://aclanthology.org/2024.tacl-1.9/) 中也认为，由于在指令微调过程中，指令通常是被放置在**文首**，这可能会驱使模型**习惯地**将更多的注意力放在输入文本的开头，从而导致对文本中部的忽略。
 
 此外，"Lost in the middle"通过实验发现，即使没有加入指令进行微调，模型的性能仍然呈现U形。论文中解释如下：
 - 过去的工作已经发现，无指令 微调的模型对最近的token即文末有更高的关注度（recency bias）
@@ -214,18 +214,23 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
     24年8月：<a href="https://aclanthology.org/2024.acl-long.736/" style="color: red;">Never Lost in the Middle: Mastering Long-Context Question Answering with Position-Agnostic Decompositional Training</a>
 </blockquote>
 
-这篇文章猜想是文首的attention scores在预训练和微调后很大，而中部包含关键信息的文本的值很小，导致模型无法关注到关键信息，最终导致模型性能下降。
+这篇文章的猜想是文首的attention scores在预训练和微调后很大，而中部包含关键信息的文本的值很小，导致模型无法关注到关键信息，最终导致模型性能下降。
 
 基于这个猜想，构建了一个多文档的多步推理问答数据集，要求模型在回答问题之前，1.复述问题，2.找到与问题相关的文档序号。希望通过这两个额外任务能够迫使模型关注到文本中部的内容，而不仅仅是文首的问题和文末的指令。
+
+<div style="text-align: center;">
+    <img src="../file/img/lost in the middle/never-lost-in-the-middle.png" alt="image" style="width: 70%; height: auto; margin-bottom: 10px;">
+    <p style="text-align: center; font-style: italic;">问答流程构建<br>
+</div>
 
 将一个文档重复20次作为输入，可视化微调后模型attention scores如下图，依据此作者认为模型关注到了context中的内容，捕获到了关键信息。<span style="color: red;">但是为什么要用ChatGLM2-6B-32K作为对比，而不用原始的Ziya-LLaMa-13B-v1.1？</span>
 
 <!-- 图片和注解的网格容器 -->
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0px; text-align: center;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0px; text-align: center; width: 80%">
 
     <!-- 第一幅图 -->
     <div>
-        <img src="../file/img/lost in the middle/never-lost-in-the-middle.png" alt="alt text" style="width: 100%; height: auto; margin-bottom: 10px;">
+        <img src="../file/img/lost in the middle/chatglm32katt.png" alt="alt text" style="width: 100%; height: auto; margin-bottom: 10px;">
         <p style="text-align: center; font-style: italic; font-size: 80%;">ChatGLM2-6B-32K</p>
     </div>
 
@@ -241,7 +246,7 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
     24年4月：<a href="https://arxiv.org/abs/2404.16811" style="color: red;">Make Your LLM Fully Utilize the Context</a>
 </blockquote>
 
-这篇文章猜想是在长文本训练过程中不充分的监督，导致模型“不知道”关键信息可能会出现在文本中的任何位置。（其实就是模型无法关注到文本中部）
+这篇文章的猜想是在长文本训练过程中不充分的监督，导致模型“不知道”关键信息可能会出现在文本中的任何位置。（其实就是模型无法关注到文本中部）
 
 基于这个猜想，这篇文章提出了一种训练策略INformation-INtensive (IN2) training，包含两种问题：
 - fine-grained information awareness：试图告诉模型关键信息可能出现在任意一个地方
@@ -249,7 +254,7 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 
 <div style="text-align: center;">
     <img src="../file/img/lost in the middle/make-your-LLM-fully-utilize-the-context-method.svg" alt="image" style="width: 70%; height: auto; margin-bottom: 10px;">
-    <p style="text-align: center; font-style: italic;">IN2 training的两种数据构建过程<br>
+    <p style="text-align: center; font-style: italic;">IN2 training的两种数据构建过程</p>
 </div>
 
 <blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin-bottom: 10px;">
