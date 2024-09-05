@@ -12,7 +12,10 @@ swiper_index: 3
 
 ## 1.问题提出
 
-> 23年11月：[Lost in the Middle: How Language Models Use Long Contexts](https://aclanthology.org/2024.tacl-1.9/) 
+<blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin: 0;">
+    23年11月：<a href="https://aclanthology.org/2024.tacl-1.9/" style="color: red;">Lost in the Middle: How Language Models Use Long Contexts</a>
+</blockquote>
+
 
 文中使用了两种任务
 - multi-document question answering(e.g. who got the first nobel prize in physics)
@@ -32,13 +35,13 @@ swiper_index: 3
     <!-- 第一幅图 -->
     <div>
         <img src="../file/img/lost in the middle/U-shaped-lost-in-the-middle.svg" alt="alt text" style="width: 90%; height: auto; margin-bottom: 10px;">
-        <p style="text-align: center; font-style: italic; font-size: 80%;">在长文本中，随着问题答案位置的变化，模型性能呈现出U形</p>
+        <p style="text-align: center; font-style: italic; font-size: 80%;">模型性能呈现出U形</p>
     </div>
 
     <!-- 第二幅图 -->
     <div>
         <img src="../file/img/lost in the middle/retrieval-u-shape-lost-in-the-middle.svg" alt="alt text" style="width: 90%; height: auto; margin-bottom: 10px;">
-        <p style="text-align: center; font-style: italic; font-size: 80%;">在长文本中，随着问题答案位置的变化，模型性能在retrieval任务上呈现出U形</p>
+        <p style="text-align: center; font-style: italic; font-size: 80%;">随着问题答案位置的变化，模型性能在retrieval任务上呈现出U形</p>
     </div>
 
     <!-- 第二行 -->
@@ -51,13 +54,13 @@ swiper_index: 3
     <!-- 第四幅图 -->
     <div>
         <img src="../file/img/lost in the middle/QA-u-shape-lost-in-the-middle.svg" alt="alt text" style="width: 90%; height: auto; margin-bottom: 10px;">
-        <p style="text-align: center; font-style: italic; font-size: 80%;">在长文本中，随着问题答案位置的变化，模型性能在question-answering任务上呈现出U形</p>
+        <p style="text-align: center; font-style: italic; font-size: 80%;">随着问题答案位置的变化，模型性能在question-answering任务上呈现出U形</p>
     </div>
 
 </div>
 
 <!-- 引用部分 -->
-<div style="text-align: center; margin-top: 10px;">
+<div style="text-align: center; margin-top: 5px;">
     <p><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle</a> Liu et al., 2023</p>
 </div>
 
@@ -65,7 +68,10 @@ swiper_index: 3
 
 观测结论：大模型（无论是否经过指令微调）的性能都呈现出U形，即对长文本中信息的使用缺乏稳健性
 
-> 24年7月：[Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models](https://aclanthology.org/2024.acl-long.818/)
+<blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin: 0;">
+    23年11月：<a href="https://aclanthology.org/2024.acl-long.818/" style="color: red;">Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models</a>
+</blockquote>
+
 
 为探究输入长度对模型推理能力的影响，提出了Flexible LENgth Question Answering dataset (FLenQA)数据集，包括三个**推理**任务（均为两段式，即会有两个关键信息分布在长文本中,其余为无关信息）：
 - Monotone Relations(e.g. X>Y & Y>Z  ->  X>Z?true:false)
