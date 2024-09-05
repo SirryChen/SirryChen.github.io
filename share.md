@@ -23,10 +23,10 @@ title: Share
 
 {% include cardline.html url="/share/2024-04-27-the-reason-for-scaling.html" img="/file/img/张奇书-梯度爆炸.jpg" title="The reason to scaling in the computation of Attention" content="To prevent the gradient from exploding or disappearing" %}
 
-{% include cardline.html url="/share/2024-09-04-lost-in-the-middle.html" img="/file/img/lost in the middle/U-shaped-lost-in-the-middle.svg" title="LLMs lost in the middle" content="The performance of LLMs differ when the answers are located in different places: phenomena, analyses, and suspects" %}
+{% include cardline.html url="/share/2024-09-04-lost-in-the-middle.html" img="/file/img/lost in the middle/U-shaped-lost-in-the-middle.svg" title="LLMs lost in the middle" content="The performances of LLMs differ when the answers are located in different places: phenomena, analyses, and suspects" %}
 
 <br>
-
+s
 ## Leave a Message
 
 <br>
