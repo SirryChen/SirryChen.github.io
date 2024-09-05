@@ -211,10 +211,12 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 最近有许多工作，依据初步的实验，对原因进行了猜想，并以猜想作为假设，采取了一系列措施，尝试解决这个问题
 
 <blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin-bottom: 10px;">
-    23年11月：<a href="https://aclanthology.org/2024.acl-long.736/" style="color: red;">Never Lost in the Middle: Mastering Long-Context Question Answering with Position-Agnostic Decompositional Training</a>
+    24年8月：<a href="https://aclanthology.org/2024.acl-long.736/" style="color: red;">Never Lost in the Middle: Mastering Long-Context Question Answering with Position-Agnostic Decompositional Training</a>
 </blockquote>
 
-构建了一个多文档的多步推理问答数据集，要求模型在回答问题之前，1.复述问题，2.找到与问题相关的文档序号。希望通过这两个额外任务能够迫使模型关注到文本中部的内容，而不仅仅是文首的问题和文末的指令。
+这篇文章猜想是文首的attention scores在预训练和微调后很大，而中部包含关键信息的文本的值很小，导致模型无法关注到关键信息，最终导致模型性能下降。
+
+基于这个猜想，构建了一个多文档的多步推理问答数据集，要求模型在回答问题之前，1.复述问题，2.找到与问题相关的文档序号。希望通过这两个额外任务能够迫使模型关注到文本中部的内容，而不仅仅是文首的问题和文末的指令。
 
 将一个文档重复20次作为输入，可视化微调后模型attention scores如下图，依据此作者认为模型关注到了context中的内容，捕获到了关键信息。<span style="color: red;">但是为什么要用ChatGLM2-6B-32K作为对比，而不用原始的Ziya-LLaMa-13B-v1.1？</span>
 
@@ -234,3 +236,22 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
     </div>
 
 </div>
+
+<blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin-bottom: 10px;">
+    24年4月：<a href="https://arxiv.org/abs/2404.16811" style="color: red;">Make Your LLM Fully Utilize the Context</a>
+</blockquote>
+
+这篇文章猜想是在长文本训练过程中不充分的监督，导致模型“不知道”关键信息可能会出现在文本中的任何位置。（其实就是模型无法关注到文本中部）
+
+基于这个猜想，这篇文章提出了一种训练策略INformation-INtensive (IN2) training，包含两种问题：
+- fine-grained information awareness：试图告诉模型关键信息可能出现在任意一个地方
+- integration and reasoning of information：试图告诉模型关键信息可能有多处，并需要推理
+
+<div style="text-align: center;">
+    <img src="../file/img/lost in the middle/make-your-LLM-fully-utilize-the-context-method.svg" alt="image" style="width: 70%; height: auto; margin-bottom: 10px;">
+    <p style="text-align: center; font-style: italic;">IN2 training的两种数据构建过程<br>
+</div>
+
+<blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin-bottom: 10px;">
+    24年7月：<a href="https://arxiv.org/abs/2404.16811" style="color: red;">Found in the Middle: Calibrating Positional Attention Bias Improves Long Context Utilization</a>
+</blockquote>
