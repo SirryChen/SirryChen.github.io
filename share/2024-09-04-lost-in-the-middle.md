@@ -8,6 +8,13 @@ date: 2024-09-5 20:01:00
 swiper_index: 3
 ---
 
+<style>
+p {
+    margin: 0 0 0;
+}
+</style>
+
+
 ### 1.问题提出
 
 > 23年11月：[Lost in the Middle: How Language Models Use Long Contexts](https://aclanthology.org/2024.tacl-1.9/) 
@@ -55,8 +62,8 @@ swiper_index: 3
 
 > 24年7月：[Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models](https://aclanthology.org/2024.acl-long.818/)
 
-提出了Flexible LENgth Question Answering dataset (FLenQA)数据集，包括三个**推理**任务（均为两段式，即会有两个关键信息分布在长文本中,其余为无关信息）：
-- Monotone Relations(e.g. X > Y & Y > Z ->  X>Z?true:false)
+为探究输入长度对模型推理能力的影响，提出了Flexible LENgth Question Answering dataset (FLenQA)数据集，包括三个**推理**任务（均为两段式，即会有两个关键信息分布在长文本中,其余为无关信息）：
+- Monotone Relations(e.g. X>Y & Y>Z  ->  X>Z?true:false)
 - People In Rooms
 - A simplified version of Ruletaker
 
@@ -74,38 +81,38 @@ swiper_index: 3
     <!-- 第一行 -->
     <!-- 第一幅图 -->
     <div>
-        <img src="../file/img/lost in the middle/identity_control.svg" alt="alt text" style="width: 90%; height: auto;">
+        <img src="../file/img/lost in the middle/identity_control.svg" alt="alt text" style="width: 90%; height: auto; margin-bottom: 10px;">
         <p style="text-align: center; font-style: italic; font-size: 80%;">重复关键信息</p>
     </div>
 
     <!-- 第二幅图 -->
     <div>
-        <img src="../file/img/lost in the middle/accuracy_per_positions.svg" alt="alt text" style="width: 90%; height: auto;">
+        <img src="../file/img/lost in the middle/accuracy_per_positions.svg" alt="alt text" style="width: 90%; height: auto; margin-bottom: 10px;">
         <p style="text-align: center; font-style: italic; font-size: 80%;">关键信息相邻&不同分布位置</p>
     </div>
 
     <!-- 第三幅图 -->
     <div>
-        <img src="../file/img/lost in the middle/accuracy_per_padding.svg" alt="alt text" style="width: 90%; height: auto;">
+        <img src="../file/img/lost in the middle/accuracy_per_padding.svg" alt="alt text" style="width: 90%; height: auto; margin-bottom: 10px;">
         <p style="text-align: center; font-style: italic; font-size: 80%;">冗余信息与关键信息相关/不相关</p>
     </div>
 
     <!-- 第二行 -->
     <!-- 第四幅图 -->
     <div>
-        <img src="../file/img/lost in the middle/nwp_vs_reasoning_all_models.svg" alt="alt text" style="width: 90%; height: auto;">
+        <img src="../file/img/lost in the middle/nwp_vs_reasoning_all_models.svg" alt="alt text" style="width: 90%; height: auto; margin-bottom: 10px;">
         <p style="text-align: center; font-style: italic; font-size: 80%;">next word prediction & reasoning</p>
     </div>
 
     <!-- 第五幅图 -->
     <div>
-        <img src="../file/img/lost in the middle/intro_plot_w_cot.svg" alt="alt text" style="width: 90%; height: auto;">
+        <img src="../file/img/lost in the middle/intro_plot_w_cot.svg" alt="alt text" style="width: 90%; height: auto; margin-bottom: 10px;">
         <p style="text-align: center; font-style: italic; font-size: 80%;">CoT的缓解作用</p>
     </div>
 
     <!-- 第六幅图 -->
     <div>
-        <img src="../file/img/lost in the middle/early_response.svg" alt="alt text" style="width: 90%; height: auto;">
+        <img src="../file/img/lost in the middle/early_response.svg" alt="alt text" style="width: 90%; height: auto; margin-bottom: 10px;">
         <p style="text-align: center; font-style: italic; font-size: 80%;">模型倾向于先回答再推理</p>
     </div>
 
@@ -119,4 +126,4 @@ swiper_index: 3
 
 观测结论：
 - 随着文本长度增大，模型性能均有下降
-- 无CoT，推理任务，任意文本长度下，不同关键信息位置，模型的性能`文末 > 文首 > 中间 > 随机`
+- 在无CoT，推理任务，任意文本长度情况下，不同关键信息位置，模型的性能`文末 > 文首 > 中间 > 随机`
