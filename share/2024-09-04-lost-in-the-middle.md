@@ -8,11 +8,6 @@ date: 2024-09-5 20:01:00
 swiper_index: 3
 ---
 
-<style>
-p {
-    margin: 0 0 0;
-}
-</style>
 
 
 ### 1.问题提出
@@ -135,3 +130,16 @@ p {
 
 #### 2.1 模型结构 decoder-only V.S. encoder-decoder
 
+encoder-decoder: Flan-T5-XXL([model_max_length: 512 tokens](https://huggingface.co/google/flan-t5-xxl/blob/main/tokenizer_config.json#:~:text=%22model_max_length%22%3A%20512%2C)), Flan-UL2([model_max_length:2k](https://huggingface.co/google/flan-ul2/blob/main/tokenizer_config.json#:~:text=%22model_max_length%22%3A%202048%2C))
+decoder-only: Mpt-30b-instruct([model_max_length:8k](https://huggingface.co/mosaicml/mpt-30b-instruct/blob/main/tokenizer_config.json#:~:text=%22model_max_length%22%3A%208192%2C)), [Longchat-13b-16k](https://huggingface.co/lmsys/longchat-13b-16k/blob/main/tokenizer_config.json#:~:text=%22model_max_length%22%3A%2016384%2C)
+
+根据下图，随着输入文本长度增长，对于关键信息位于**文首**或**文末**，各模型性能均有下降；对于关键信息分布在**中间**的情况，两个encoder-decoder模型的性能下降幅度更大。
+
+<div style="text-align: center;">
+    <img src="../file/img/lost in the middle/qa_decoder_only_vs_encoder_decoder.svg" alt="image" style="width: 80%; height: auto; margin-bottom: 10px;">
+    <p style="text-align: center; font-style: italic;">在不同输入长度下，decoder-only V.S. encoder-decoder<br><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle</a> Liu et al., 2023</p>
+</div>
+
+> We hypothesize that encoder-decoder models may make better use of their context windows because their bidirectional encoder allows processing each document in the context of future documents, potentially improving relative importance estimation between documents.
+
+论文中由模型Flan-UL2-2k在2k输入情况下，表现出最佳的稳健性，得出"encoder-decoder模型得益于其双向编码，能够最佳地利用其窗口大小"的结论。但是其余两个decoder-only模型为8k和16k的窗口大小，其在2k输入情况下表现出略差的稳健性是可能的，因此论文中的结论并不具有说服力。
