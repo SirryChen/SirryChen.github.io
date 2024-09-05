@@ -22,7 +22,7 @@ swiper_index: 3
 - 当问题的答案位于长文本的文首或者文末时，模型（即使是经过长文本训练）能够回答出问题答案的频率，大于答案分布在文本中部的情况。
 - 并且模型性能随着答案的位置的变化，整体呈现出U形的连续渐变性。
 - 部分情况下，当答案防止在长文本中部，模型的性能甚至 < 没有额外输入直接进行回答
-- U形的性能变化曲线只出现在**足够大**的模型上
+- U形的性能变化曲线只出现在**足够大**的模型上（😳相似的训练策略，为什么结果不同？）
 
 
 <!-- 图片和注解的网格容器 -->
@@ -168,4 +168,20 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 通过实验，"Lost in the middle"发现，即使没有加入指令进行微调，模型的性能仍然呈现U形。论文中解释如下：
 - 过去的工作已经发现，无指令微调的模型对最近的token即文末有更高的关注度（recency bias）
 - 而其对文首的关注，则可能来自于预训练任务中混入类似的指令微调数据，例如StackOverflow中的数据
+
+#### 2.3 Attention分布不均
+
+受微调对模型关注位置影响的启发，下面对ChatGLM2-6B-32K attention score可视化，可以更直观地展现模型对文首和文末的注意，以及对文本中部的忽视
+
+<div style="text-align: center;">
+    <img src="../file/img/lost in the middle/chatglm32katt.png" alt="image" style="width: 40%; height: auto; margin-bottom: 10px;">
+    <p style="text-align: center; font-style: italic;">ChatGLM2-6B-32K的attention score可视化<br><a href="https://aclanthology.org/2024.acl-long.736/">Never Lost in the Middle</a> He et al., Aug 2024</p>
+</div>
+
+将数据集中大量重复的instructions、query看作special token（大部分的指令集和问题模板都是人工针对不同的任务编写，是一个有限集，经过tokenizer之后token序列一致，可以看作一组特定的token序列集），则对于一定数量的训练数据，是由instruction(special token) + text + query(special token)组成，这与预训练过程中的[cls] + text + [seq]非常相似。大模型的训练数据量是庞大的，使得text的取值范围很广，找到从text到answer的映射是非常困难的。当模型不知道关注长文本中哪一部分时，文本的attention score会较低，由于softmax[[Attention Is Off By One](https://www.evanmiller.org/attention-is-off-by-one.html?continueFlag=5d0e431f4edf1d8cccea47871e82fbc4)]对方差的不断扩大，会将注意力积聚到special token上（即使它们并不那么重要）。这在StreamingLLM中被利用来做Attention Sink。
+
+<div style="text-align: center;">
+    <img src="../file/img/lost in the middle/StreamingLLM-attention_weights.svg" alt="image" style="width: 90%; height: auto; margin-bottom: 10px;">
+    <p style="text-align: center; font-style: italic;">在经过第三层后的注意力中，前几个token的注意力巨增<br><a href="https://iclr.cc/virtual/2024/poster/18794/">EFFICIENT STREAMING LANGUAGE MODELS WITH ATTENTION SINKS</a> Xiao et al., Apr 2024</p>
+</div>
 
