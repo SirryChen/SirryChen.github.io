@@ -22,28 +22,38 @@ swiper_index: 3
 - 当问题的答案位于长文本的文首或者文末时，模型（即使是经过长文本训练）能够回答出问题答案的频率，大于答案分布在文本中部的情况。
 - 并且模型性能随着答案的位置的变化，整体呈现出U形的连续渐变性。
 - 部分情况下，当答案防止在长文本中部，模型的性能甚至 < 没有额外输入直接进行回答
+- U形的性能变化曲线只出现在**足够大**的模型上
 
 
-<div style="display: flex; align-items: stretch; justify-content: center;">
-    <!-- 左侧的图片容器 -->
-    <div style="flex: 1; text-align: center; margin-right: 10px; display: flex; flex-direction: column; justify-content: center;">
+<!-- 图片和注解的网格容器 -->
+<div style="display: grid; grid-template-columns: 1fr 3fr; gap: 10px; text-align: center;">
+
+    <!-- 第一行 -->
+    <!-- 第一幅图 -->
+    <div>
         <img src="../file/img/lost in the middle/U-shaped-lost-in-the-middle.svg" alt="alt text" style="width: 90%; height: auto; margin-bottom: 10px;">
-        <p style="text-align: center; font-style: italic; font-size: 80%">在长文本中，随着问题答案位置的变化，模型性能呈现出U形</p>
+        <p style="text-align: center; font-style: italic; font-size: 80%;">在长文本中，随着问题答案位置的变化，模型性能呈现出U形</p>
     </div>
-    
-    <!-- 右侧的两幅图容器 -->
-    <div style="flex: 1; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
-        <!-- 第一幅图 -->
-        <div style="margin-bottom: 10px;">
-            <img src="../file/img/lost in the middle/retrieval-u-shape-lost-in-the-middle.svg" alt="alt text" style="width: 100%; height: auto; margin-bottom: 10px;">
-            <p style="text-align: center; font-style: italic; font-size: 80%;">在长文本中，随着问题答案位置的变化，模型性能在retrieval任务上呈现出U形</p>
-        </div>
-        <!-- 第二幅图 -->
-        <div>
-            <img src="../file/img/lost in the middle/QA-u-shape-lost-in-the-middle.svg" alt="alt text" style="width: 100%; height: auto; margin-bottom: 10px;">
-            <p style="text-align: center; font-style: italic; font-size: 80%;">在长文本中，随着问题答案位置的变化，模型性能在question-answering任务上呈现出U形</p>
-        </div>
+
+    <!-- 第二幅图 -->
+    <div>
+        <img src="../file/img/lost in the middle/retrieval-u-shape-lost-in-the-middle.svg" alt="alt text" style="width: 90%; height: auto; margin-bottom: 10px;">
+        <p style="text-align: center; font-style: italic; font-size: 80%;">在长文本中，随着问题答案位置的变化，模型性能在retrieval任务上呈现出U形</p>
     </div>
+
+    <!-- 第二行 -->
+    <!-- 第三幅图 -->
+    <div>
+        <img src="../file/img/lost in the middle/llama_2_20_total_documents.svg" alt="alt text" style="width: 90%; height: auto; margin-bottom: 10px;">
+        <p style="text-align: center; font-style: italic; font-size: 80%;">模型的参数量、微调策略对U形的影响</p>
+    </div>
+
+    <!-- 第四幅图 -->
+    <div>
+        <img src="../file/img/lost in the middle/QA-u-shape-lost-in-the-middle.svg" alt="alt text" style="width: 90%; height: auto; margin-bottom: 10px;">
+        <p style="text-align: center; font-style: italic; font-size: 80%;">在长文本中，随着问题答案位置的变化，模型性能在question-answering任务上呈现出U形</p>
+    </div>
+
 </div>
 
 <!-- 引用部分 -->
@@ -130,8 +140,14 @@ swiper_index: 3
 
 #### 2.1 模型结构 decoder-only V.S. encoder-decoder
 
-encoder-decoder: Flan-T5-XXL([model_max_length: 512 tokens](https://huggingface.co/google/flan-t5-xxl/blob/main/tokenizer_config.json#:~:text=%22model_max_length%22%3A%20512%2C)), Flan-UL2([model_max_length:2k](https://huggingface.co/google/flan-ul2/blob/main/tokenizer_config.json#:~:text=%22model_max_length%22%3A%202048%2C))
-decoder-only: Mpt-30b-instruct([model_max_length:8k](https://huggingface.co/mosaicml/mpt-30b-instruct/blob/main/tokenizer_config.json#:~:text=%22model_max_length%22%3A%208192%2C)), [Longchat-13b-16k](https://huggingface.co/lmsys/longchat-13b-16k/blob/main/tokenizer_config.json#:~:text=%22model_max_length%22%3A%2016384%2C)
+**encoder-decoder**: 
+Flan-T5-XXL(<a href="https://huggingface.co/google/flan-t5-xxl/blob/main/tokenizer_config.json#:~:text=%22model_max_length%22%3A%20512%2C" style="font-size: smaller;">model_max_length: 512 tokens</a>), 
+Flan-UL2(<a href="https://huggingface.co/google/flan-ul2/blob/main/tokenizer_config.json#:~:text=%22model_max_length%22%3A%202048%2C" style="font-size: smaller;">model_max_length: 2k</a>)
+
+**decoder-only**: 
+Mpt-30b-instruct(<a href="https://huggingface.co/mosaicml/mpt-30b-instruct/blob/main/tokenizer_config.json#:~:text=%22model_max_length%22%3A%208192%2C" style="font-size: smaller;">model_max_length: 8k</a>), 
+Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/main/tokenizer_config.json#:~:text=%22model_max_length%22%3A%2016384%2C" style="font-size: smaller;">model_max_length: 16k</a>)
+
 
 根据下图，随着输入文本长度增长，对于关键信息位于**文首**或**文末**，各模型性能均有下降；对于关键信息分布在**中间**的情况，两个encoder-decoder模型的性能下降幅度更大。
 
@@ -142,4 +158,14 @@ decoder-only: Mpt-30b-instruct([model_max_length:8k](https://huggingface.co/mosa
 
 > We hypothesize that encoder-decoder models may make better use of their context windows because their bidirectional encoder allows processing each document in the context of future documents, potentially improving relative importance estimation between documents.
 
-论文中由模型Flan-UL2-2k在2k输入情况下，表现出最佳的稳健性，得出"encoder-decoder模型得益于其双向编码，能够最佳地利用其窗口大小"的结论。但是其余两个decoder-only模型为8k和16k的窗口大小，其在2k输入情况下表现出略差的稳健性是可能的，因此论文中的结论并不具有说服力。
+论文中由模型Flan-UL2-2k在2k输入情况下，表现出最佳的稳健性，得出"encoder-decoder模型得益于其双向编码，能够最佳地利用其窗口大小"的结论。但是其余两个decoder-only模型为8k和16k的窗口大小，其在2k输入情况下表现出略差的稳健性是可能的，因此论文中的结论并不具有说服力，应该增加大于8k输入的对比实验。
+
+
+#### 2.2 Fine-Tuning对模型造成影响
+
+大模型在经过预训练后，往往会进行指令微调来弥补预训练目标（e.g., next word prediction）与下游任务(e.g., dialog)的gap。"Lost in the middle"中认为，由于在指令微调过程中，指令通常是被放置在**文首**，这可能会驱使模型**习惯地**将更多的注意力放在输入文本的开头，从而导致对文本中部的忽略。
+
+通过实验，"Lost in the middle"发现，即使没有加入指令进行微调，模型的性能仍然呈现U形。论文中解释如下：
+- 过去的工作已经发现，无指令微调的模型对最近的token即文末有更高的关注度（recency bias）
+- 而其对文首的关注，则可能来自于预训练任务中混入类似的指令微调数据，例如StackOverflow中的数据
+
