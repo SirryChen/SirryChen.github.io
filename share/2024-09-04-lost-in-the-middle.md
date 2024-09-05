@@ -220,7 +220,7 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 
 <div style="text-align: center;">
     <img src="../file/img/lost in the middle/never-lost-in-the-middle.png" alt="image" style="width: 70%; height: auto; margin-bottom: 10px;">
-    <p style="text-align: center; font-style: italic;">问答流程构建<br>
+    <p style="text-align: center; font-style: italic;">问答流程构建</p>
 </div>
 
 将一个文档重复20次作为输入，可视化微调后模型attention scores如下图，依据此作者认为模型关注到了context中的内容，捕获到了关键信息。<span style="color: red;">但是为什么要用ChatGLM2-6B-32K作为对比，而不用原始的Ziya-LLaMa-13B-v1.1？</span>
