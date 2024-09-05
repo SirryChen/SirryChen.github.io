@@ -38,23 +38,29 @@ swiper_index: 3
     <!-- 左侧的图片容器 -->
     <div style="flex: 1; text-align: center; margin-right: 20px; display: flex; flex-direction: column; justify-content: center;">
         <img src="../file/img/lost in the middle/U-shaped-lost-in-the-middle.svg" alt="alt text" style="width: 90%; height: auto; margin-bottom: 10px;">
-        <p style="text-align: center; font-style: italic;">在长文本中，随着问题答案位置的变化，模型性能呈现出U形<br><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle</a> Liu et al., 2023</p>
+        <p style="text-align: center; font-style: italic; font-size: 80%">在长文本中，随着问题答案位置的变化，模型性能呈现出U形</p>
     </div>
     
     <!-- 右侧的两幅图容器 -->
     <div style="flex: 1; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
         <!-- 第一幅图 -->
         <div style="margin-bottom: 20px;">
-            <img src="../file/img/lost in the middle/retrieval-u-shape-lost-in-the-middle.svg" alt="alt text" style="width: 70%; height: auto;">
-            <p style="text-align: center; font-style: italic; font-size: 80%;">在长文本中，随着问题答案位置的变化，模型性能在retrieval任务上呈现出U形<br><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle</a> Liu et al., 2023</p>
+            <img src="../file/img/lost in the middle/retrieval-u-shape-lost-in-the-middle.svg" alt="alt text" style="width: 100%; height: auto;">
+            <p style="text-align: center; font-style: italic; font-size: 80%;">在长文本中，随着问题答案位置的变化，模型性能在retrieval任务上呈现出U形</p>
         </div>
         <!-- 第二幅图 -->
         <div>
-            <img src="../file/img/lost in the middle/QA-u-shape-lost-in-the-middle.svg" alt="alt text" style="width: 70%; height: auto;">
-            <p style="text-align: center; font-style: italic; font-size: 80%;">在长文本中，随着问题答案位置的变化，模型性能在question-answering任务上呈现出U形<br><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle</a> Liu et al., 2023</p>
+            <img src="../file/img/lost in the middle/QA-u-shape-lost-in-the-middle.svg" alt="alt text" style="width: 100%; height: auto;">
+            <p style="text-align: center; font-style: italic; font-size: 80%;">在长文本中，随着问题答案位置的变化，模型性能在question-answering任务上呈现出U形</p>
         </div>
     </div>
 </div>
+
+<!-- 引用部分 -->
+<div style="text-align: center; margin-top: 20px;">
+    <p><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle</a> Liu et al., 2023</p>
+</div>
+
 
 
 观测结论：大模型（无论是否经过指令微调）的性能都呈现出U形，即对长文本中信息的使用缺乏稳健性
@@ -67,7 +73,60 @@ swiper_index: 3
 - A simplified version of Ruletaker
 
 观察到的现象：
-1. 仅通过**重复**所有关键信息来扩大文本长度，随着长度增加，模型性能也会下降
+1. 仅通过**重复**所有**关键信息**来扩大文本长度，随着长度增加，模型性能也会下降
 2. 两个关键信息相邻，随机分布在长文本中，效果为`文末 > 文首 > 中间 > 随机`，且随文本长度增加，模型性能下降（文末>文首的情况与lost in the middle不太相符）
+3. 当冗余信息与关键信息来自于相同任务时（即relevant），模型性能的下降**小于**冗余信息无关的情况
+4. 随着文本长度增加，next word prediction的准确度上升，reason的性能下降
+5. 部分情况下（GPT4, Mixtral 8x7B）CoT能缓解文本长度对模型性能的影响
+6. 随着文本长度增加，CoT prompt下，模型倾向于先回答再推理 -> 对指令的遵循能力下降？
+
+<!-- 图片和注解的网格容器 -->
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center;">
+
+    <!-- 第一行 -->
+    <!-- 第一幅图 -->
+    <div>
+        <img src="../file/img/lost in the middle/identity_control.svg" alt="alt text" style="width: 90%; height: auto;">
+        <p style="text-align: center; font-style: italic;">重复关键信息</p>
+    </div>
+
+    <!-- 第二幅图 -->
+    <div>
+        <img src="../file/img/lost in the middle/accuracy_per_positions.svg" alt="alt text" style="width: 90%; height: auto;">
+        <p style="text-align: center; font-style: italic; font-size: 80%;">关键信息相邻&随机分布</p>
+    </div>
+
+    <!-- 第三幅图 -->
+    <div>
+        <img src="../file/img/lost in the middle/accuracy_per_padding.svg" alt="alt text" style="width: 90%; height: auto;">
+        <p style="text-align: center; font-style: italic; font-size: 80%;">冗余信息与关键信息相关/不相关</p>
+    </div>
+
+    <!-- 第二行 -->
+    <!-- 第四幅图 -->
+    <div>
+        <img src="../file/img/lost in the middle/nwp_vs_reasoning_all_models.svg" alt="alt text" style="width: 90%; height: auto;">
+        <p style="text-align: center; font-style: italic;">next word prediction & reasoning</p>
+    </div>
+
+    <!-- 第五幅图 -->
+    <div>
+        <img src="../file/img/lost in the middle/intro_plot_w_cot.svg" alt="alt text" style="width: 90%; height: auto;">
+        <p style="text-align: center; font-style: italic;">CoT的缓解作用</p>
+    </div>
+
+    <!-- 第六幅图 -->
+    <div>
+        <img src="../file/img/lost in the middle/early_response.svg" alt="alt text" style="width: 90%; height: auto;">
+        <p style="text-align: center; font-style: italic;">模型倾向于先回答再推理</p>
+    </div>
+
+</div>
+
+<!-- 引用部分 -->
+<div style="text-align: center; margin-top: 20px;">
+    <p><a href="https://aclanthology.org/2024.tacl-1.9/">Same Task, More Tokens</a> Levy et al., 2024</p>
+</div>
+
 
 
