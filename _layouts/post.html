@@ -95,24 +95,18 @@
     var authorTop = document.querySelector(".article-author-top");
   
     function setTocPosition() {
-      var authorRect = authorTop.getBoundingClientRect();
-      console.log("Author Rect:", authorRect);
-      var authorBottom = authorRect.bottom;
-      var authorLeft = authorRect.left;
-      var authorWidth = authorRect.width;
+      var authorRect = authorTop.getBoundingClientRect(); // 获取相对于视口的位置
+      var authorBottom = authorRect.bottom; // 获取 .article-author-top 的底部相对于视口的距离
   
-      // 设置目录的宽度与 .article-author-top 相等
-      tocContainer.style.width = authorWidth + 'px';
-  
-      // 当 .article-author-top 在视口内时，目录跟随其底部
-      if (authorBottom > 0) {
+      // 判断 .article-author-top 是否在视口内
+      if (authorBottom > 100) {
+        // .article-author-top 在视口内，目录与 .article-author-top 的底部对齐
         tocContainer.style.position = 'absolute';
-        tocContainer.style.top = (authorBottom) + 'px'; // 目录位于 .article-author-top 的底部下方
-        tocContainer.style.left = authorLeft + 'px'; // 目录保持水平对齐
+        tocContainer.style.top = (window.scrollY + authorBottom) + 'px'; // 相对于页面顶部
       } else {
-        // 当 .article-author-top 滚动出视口时，目录停止移动
-        tocContainer.style.position = 'absolute';
-        tocContainer.style.top = (authorBottom + window.scrollY) + 'px'; // 固定在视口下方
+        // .article-author-top 滚动出视口，目录固定在视口顶部
+        tocContainer.style.position = 'fixed';
+        tocContainer.style.top = '100px'; // 固定在视口顶部
       }
     }
   
@@ -137,6 +131,7 @@
     });
   });
   </script>
+  
   
   
 
