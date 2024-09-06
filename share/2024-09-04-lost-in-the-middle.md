@@ -208,7 +208,7 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 
 <div style="text-align: center;">
     <img src="../file/img/lost in the middle/StreamingLLM-attention_weights.svg" alt="image" style="width: 90%; height: auto; margin-bottom: 10px;">
-    <p style="text-align: center; font-style: italic;">在经过第三层后的注意力中，前几个token的注意力巨增<br><a href="https://iclr.cc/virtual/2024/poster/18794/">Efficient Streaming Language Models with Attention Sinks</a> Xiao et al., Apr 2024</p>
+    <p style="text-align: center; font-style: italic;">在经过第三层后的注意力中，前几个token的注意力巨增<br><a href="https://iclr.cc/virtual/2024/poster/18794/">Efficient Streaming Language Models with Attention Sinks</a> Xiao et al., Sep 2023</p>
 </div>
 
 ## 3.尝试解决
@@ -271,7 +271,7 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 ### 3.3 Found in the Middle
 
 <blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin-bottom: 10px;">
-    24年7月：<a href="https://arxiv.org/abs/2404.16811" style="color: red;">Found in the Middle: Calibrating Positional Attention Bias Improves Long Context Utilization</a>
+    24年7月：<a href="https://aclanthology.org/2024.findings-acl.890/" style="color: red;">Found in the Middle: Calibrating Positional Attention Bias Improves Long Context Utilization</a>
 </blockquote>
 
 这篇文章的猜想是信息所在位置会对注意力造成偏置，使得模型在输出时倾向于依赖处于前面的文本。与之前两篇文章不同的是，这篇文章并不关注这个偏置从何而来，而是关注有什么因素能决定这个模型对文本的注意力分布。
@@ -303,9 +303,9 @@ $$Attn(x^{doc},k)=f(rel(x^{doc}_k), bias(k)),$$
 
 其中的$f$是一个函数。通过实验，可以证明这个函数是单调递增的，因此，不失一般性地使用线性模型替代$f$ ，将上式重写为
 
-$$Attn(x^{doc},k)=rel(x^{doc}_k) + bias(k) + \sigma,$$
+$$Attn(x^{doc},k)=rel(x^{doc}_k) + bias(k) + \epsilon,$$
 
-其中$\sigma$ 是噪声。此时，这篇文章非常巧妙地运用这个线性模型的性质，借助于一个dummy document获得与位置无关的“文本与输出的关联性”，即
+其中$\epsilon$ 是噪声。此时，这篇文章非常巧妙地运用这个线性模型的性质，借助于一个dummy document获得与位置无关的“文本与输出的关联性”，即
 
 $$ rel(x^{doc})=Attn(x^{doc},k)-Attn(x^{dum},k)+rel(x^{dum}).$$
 
@@ -327,16 +327,29 @@ $$ rel(x^{doc})=Attn(x^{doc},k)-Attn(x^{dum},k)+rel(x^{dum}).$$
 
     <!-- 第一幅图 -->
     <div>
-        <img src="../file/img/lost in the middle/U-shaped-lost-in-the-middle.svg" alt="alt text" style="height: 100%; width: auto; margin-bottom: 10px;">
+        <img src="../file/img/lost in the middle/U-shaped-lost-in-the-middle.svg" alt="alt text" style="height: 80%; width: auto; margin-bottom: 10px;">
         <p style="text-align: center; font-style: italic; font-size: 80%;">关键信息的位置分布对模型性能的U形分布</p>
         <p style="text-align: center; font-style: italic; font-size: 80%;"><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle</a> Liu et al., 2023</p>
     </div>
 
     <!-- 第二幅图 -->
     <div>
-        <img src="../file/img/lost in the middle/chatglm32katt.png" alt="alt text" style="height: 100%; width: auto; margin-bottom: 10px;">
+        <img src="../file/img/lost in the middle/chatglm32katt.png" alt="alt text" style="height: 80%; width: auto; margin-bottom: 10px;">
         <p style="text-align: center; font-style: italic; font-size: 80%;">不同位置文本获得的attention的U形分布</p>
         <p style="text-align: center; font-style: italic; font-size: 80%;"><a href="https://aclanthology.org/2024.acl-long.736/">Never Lost in the Middle</a> He et al., Aug 2024</p>
     </div>
 
 </div>
+
+## References
+<p style="text-align: center; font-style: italic; font-size: 80%;"><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle: How Language Models Use Long Contexts</a> Liu et al., Nov 2023</p>
+
+<p style="text-align: center; font-style: italic; font-size: 80%;"><a href="https://aclanthology.org/2024.tacl-1.9/">Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models</a> Levy et al., 2024</p>
+
+<p style="text-align: center; font-style: italic; font-size: 80%;"><a href="https://aclanthology.org/2024.acl-long.736/">Never Lost in the Middle: Mastering Long-Context Question Answering with Position-Agnostic Decompositional Training</a> He et al., Aug 2024</p>
+
+<p style="text-align: center; font-style: italic; font-size: 80%;"><a href="https://arxiv.org/abs/2404.16811">Make Your LLM Fully Utilize the Context</a> An et al., Apr 2024</p>
+
+<p style="text-align: center; font-style: italic; font-size: 80%;"><a href="https://aclanthology.org/2024.findings-acl.890/">Found in the Middle: Calibrating Positional Attention Bias Improves Long Context Utilization</a> Hsieh et al., Jul 2024</p>
+
+<p style="text-align: center; font-style: italic; font-size: 80%;"><a href="https://iclr.cc/virtual/2024/poster/18794/">Efficient Streaming Language Models with Attention Sinks</a> Xiao et al., Sep 2023</p>
