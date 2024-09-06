@@ -531,14 +531,21 @@ strong {
 }
 
 #toc-container {
-  width: auto; /* 宽度跟随 article-author-top */
+  width: auto; /* 宽度跟随 .article-author-top */
+  position: absolute; /* 确保目录可以被绝对定位 */
+  background: none; /* 去除背景 */
+  border: none; /* 去除边框 */
+  padding: 0; /* 去除内边距 */
+  box-shadow: none; /* 去除阴影（如果有的话） */
 }
 
 #toc {
-  max-height: 70vh;
-  overflow-y: auto;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  padding: 10px;
+  max-height: 70vh; /* 限制最大高度 */
+  overflow-y: auto; /* 允许垂直滚动 */
+  background: none; /* 去除背景 */
+  border: none; /* 去除边框 */
+  padding: 0; /* 去除内边距 */
+  margin: 0; /* 去除外边距 */
+  box-shadow: none; /* 去除阴影（如果有的话） */
 }
 

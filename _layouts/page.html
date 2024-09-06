@@ -72,24 +72,23 @@
     var authorTop = document.querySelector(".article-author-top");
   
     function setTocPosition() {
-      // 获取article-author-top的位置和宽度
       var authorRect = authorTop.getBoundingClientRect();
       var authorBottom = authorRect.bottom;
+      var authorLeft = authorRect.left;
       var authorWidth = authorRect.width;
   
-      // 设置目录宽度与article-author-top相等
+      // 设置目录的宽度与 .article-author-top 相等
       tocContainer.style.width = authorWidth + 'px';
   
-      if (authorBottom <= 0) {
-        // 当article-author-top滚动出视图时，固定目录容器
-        tocContainer.style.position = 'fixed';
-        tocContainer.style.top = '0'; // 固定在屏幕顶部
-        tocContainer.style.left = authorRect.left + 'px'; // 保持水平位置
-      } else {
-        // 当article-author-top在视图内时，目录容器跟随
+      // 当 .article-author-top 在视口内时，目录跟随其底部
+      if (authorBottom > 0) {
         tocContainer.style.position = 'absolute';
-        tocContainer.style.top = (authorRect.bottom) + 'px'; // 跟随article-author-top的底部
-        tocContainer.style.left = authorRect.left + 'px'; // 保持水平位置
+        tocContainer.style.top = (authorBottom) + 'px'; // 目录位于 .article-author-top 的底部下方
+        tocContainer.style.left = authorLeft + 'px'; // 目录保持水平对齐
+      } else {
+        // 当 .article-author-top 滚动出视口时，目录停止移动
+        tocContainer.style.position = 'absolute';
+        tocContainer.style.top = (authorBottom + window.scrollY) + 'px'; // 固定在视口下方
       }
     }
   
@@ -114,6 +113,7 @@
     });
   });
   </script>
+  
   
 
 {% include scripts.html %}
