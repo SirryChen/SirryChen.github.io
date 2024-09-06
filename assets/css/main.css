@@ -554,7 +554,7 @@ strong {
 #toc a {
   display: block; /* 确保目录项占据单独的一行 */
   padding-bottom: 5px; /* 增加目录项之间的间距（可以根据需要调整） */
-  transition: font-size 1s ease, text-shadow 1s ease; /* 平滑过渡效果 */
+  transition: font-size 0.4s ease, text-shadow 0.4s ease; /* 平滑过渡效果 */
 }
 
 /* 鼠标悬停时上移 */
