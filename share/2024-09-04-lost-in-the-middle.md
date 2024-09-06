@@ -1,5 +1,5 @@
 ---
-title: Lost in the middle Challenge
+title: Lost in the Middle Challenge
 description: to discuss the problem in LLM named "lost in the middle"
 mathjax: true
 tags:
