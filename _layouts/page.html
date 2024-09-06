@@ -39,9 +39,11 @@
     {% include author-bio.html %}
   </div>
 
-  <!-- 新增目录容器 -->
-  <div id="toc" style="width: 100%; padding: 10px; background-color: #f9f9f9; border: 1px solid #ddd; margin-bottom: 20px;">
-    <!-- 目录将通过JavaScript生成 -->
+  <!-- 包裹目录内容的盒子 -->
+  <div id="toc-container" style="position: absolute; z-index: 1000;">
+    <div id="toc" style="max-height: 70vh; overflow-y: auto; background-color: #f9f9f9; border: 1px solid #ddd; padding: 10px;">
+      <!-- 目录将通过JavaScript生成 -->
+    </div>
   </div>
 
   <article itemscope itemtype="http://schema.org/CreativeWork">
@@ -65,22 +67,29 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
+    var tocContainer = document.getElementById("toc-container");
     var toc = document.getElementById("toc");
     var authorTop = document.querySelector(".article-author-top");
-    
+  
     function setTocPosition() {
-      // 获取article-author-top的位置
+      // 获取article-author-top的位置和宽度
       var authorRect = authorTop.getBoundingClientRect();
       var authorBottom = authorRect.bottom;
+      var authorWidth = authorRect.width;
   
-      if (authorBottom <= 0) { 
-        // 当article-author-top滚动出视图时，固定目录
-        toc.style.position = 'fixed';
-        toc.style.top = '0'; // 固定在屏幕顶部
-      } else { 
-        // 当article-author-top在视图内时，目录跟随
-        toc.style.position = 'absolute';
-        toc.style.top = (authorRect.bottom) + 'px'; // 跟随article-author-top的底部
+      // 设置目录宽度与article-author-top相等
+      tocContainer.style.width = authorWidth + 'px';
+  
+      if (authorBottom <= 0) {
+        // 当article-author-top滚动出视图时，固定目录容器
+        tocContainer.style.position = 'fixed';
+        tocContainer.style.top = '0'; // 固定在屏幕顶部
+        tocContainer.style.left = authorRect.left + 'px'; // 保持水平位置
+      } else {
+        // 当article-author-top在视图内时，目录容器跟随
+        tocContainer.style.position = 'absolute';
+        tocContainer.style.top = (authorRect.bottom) + 'px'; // 跟随article-author-top的底部
+        tocContainer.style.left = authorRect.left + 'px'; // 保持水平位置
       }
     }
   
@@ -105,6 +114,7 @@
     });
   });
   </script>
+  
 
 {% include scripts.html %}
 
