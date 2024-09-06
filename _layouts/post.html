@@ -93,6 +93,9 @@
     var tocContainer = document.getElementById("toc-container");
     var toc = document.getElementById("toc");
     var authorTop = document.querySelector(".article-author-top");
+    var authorLeft = authorRect.left;
+    var authorWidth = authorRect.width;
+    tocContainer.style.width = authorWidth + 'px';
   
     function setTocPosition() {
       var authorRect = authorTop.getBoundingClientRect(); // 获取相对于视口的位置
@@ -103,10 +106,12 @@
         // .article-author-top 在视口内，目录与 .article-author-top 的底部对齐
         tocContainer.style.position = 'absolute';
         tocContainer.style.top = (window.scrollY + authorBottom) + 'px'; // 相对于页面顶部
+        tocContainer.style.left = authorLeft + 'px'; // 目录保持水平对齐
       } else {
         // .article-author-top 滚动出视口，目录固定在视口顶部
         tocContainer.style.position = 'fixed';
         tocContainer.style.top = '100px'; // 固定在视口顶部
+        tocContainer.style.left = authorLeft + 'px'; // 目录保持水平对齐
       }
     }
   
