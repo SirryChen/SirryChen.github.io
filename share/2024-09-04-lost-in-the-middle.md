@@ -329,14 +329,14 @@ $$ rel(x^{doc})=Attn(x^{doc},k)-Attn(x^{dum},k)+rel(x^{dum}).$$
     <div>
         <img src="../file/img/lost in the middle/U-shaped-lost-in-the-middle.svg" alt="alt text" style="height: 100%; width: auto; margin-bottom: 10px;">
         <p style="text-align: center; font-style: italic; font-size: 80%;">关键信息的位置分布对模型性能的U形分布</p>
-        <p style="text-align: center; font-style: italic; font-size: 80%;><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle</a> Liu et al., 2023</p>
+        <p style="text-align: center; font-style: italic; font-size: 80%;"><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle</a> Liu et al., 2023</p>
     </div>
 
     <!-- 第二幅图 -->
     <div>
         <img src="../file/img/lost in the middle/chatglm32katt.png" alt="alt text" style="height: 100%; width: auto; margin-bottom: 10px;">
         <p style="text-align: center; font-style: italic; font-size: 80%;">不同位置文本获得的attention的U形分布</p>
-        <p style="text-align: center; font-style: italic; font-size: 80%;><a href="https://aclanthology.org/2024.acl-long.736/">Never Lost in the Middle</a> He et al., Aug 2024</p>
+        <p style="text-align: center; font-style: italic; font-size: 80%;"><a href="https://aclanthology.org/2024.acl-long.736/">Never Lost in the Middle</a> He et al., Aug 2024</p>
     </div>
 
 </div>
