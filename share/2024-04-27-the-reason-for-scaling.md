@@ -6,6 +6,7 @@ tags:
   - 人工智能AI
 date: 2024-04-27 11:01:00
 swiper_index: 3
+layout: post
 ---
 
 ### 1. 问题描述

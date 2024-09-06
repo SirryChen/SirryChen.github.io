@@ -13,16 +13,15 @@
 <script src="https://cdn.counter.dev/script.js" data-id="4c8f7caa-2b55-46cd-a995-2c4633303773" data-utcoffset="8"></script>
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T5N5JY1E21"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXP3VZ8MR8"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-T5N5JY1E21');
+  gtag('config', 'G-ZXP3VZ8MR8');
 </script>
 
-</head>
 
 
 <body class="article" itemscope itemtype="http://schema.org/WebPage">
@@ -40,9 +39,11 @@
     {% include author-bio.html %}
   </div>
 
-  <!-- 目录容器 -->
-  <div id="toc" style="position: absolute; left: 0; width: 200px; max-height: 70vh; overflow-y: auto; background-color: #f9f9f9; border: 1px solid #ddd; padding: 10px; z-index: 1000;">
-    <!-- 目录将通过JavaScript生成 -->
+  <!-- 包裹目录内容的盒子 -->
+  <div id="toc-container" style="position: absolute; z-index: 1000;">
+    <div id="toc" style="max-height: 70vh; overflow-y: auto; padding: 0px; font-size: 50%;">
+      <!-- 目录将通过JavaScript生成 -->
+    </div>
   </div>
 
   <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
@@ -90,22 +91,33 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
+    var tocContainer = document.getElementById("toc-container");
     var toc = document.getElementById("toc");
     var authorTop = document.querySelector(".article-author-top");
-    
-    function setTocPosition() {
-      // 获取article-author-top的位置
-      var authorRect = authorTop.getBoundingClientRect();
-      var authorBottom = authorRect.bottom;
   
-      if (authorBottom <= 0) { 
-        // 当article-author-top滚动出视图时，固定目录
-        toc.style.position = 'fixed';
-        toc.style.top = '0'; // 固定在屏幕顶部
-      } else { 
-        // 当article-author-top在视图内时，目录跟随
-        toc.style.position = 'absolute';
-        toc.style.top = (authorRect.bottom) + 'px'; // 跟随article-author-top的底部
+    function setTocPosition() {
+      var authorRect = authorTop.getBoundingClientRect();
+      console.log("Author Rect:", authorRect);  // 打印 authorRect 对象，查看 bottom 值
+  
+      var authorBottom = authorRect.bottom;  // 获取 .article-author-top 底部位置
+      var authorLeft = authorRect.left;  // 获取左边位置
+      var authorWidth = authorRect.width;  // 获取宽度
+  
+      // 设置目录的宽度与 .article-author-top 相等
+      tocContainer.style.width = authorWidth + 'px';
+  
+      // 计算目录的顶端位置
+      var tocTop = Math.max(authorBottom + window.scrollY, window.scrollY + document.documentElement.clientHeight - tocContainer.offsetHeight);
+  
+      // 当 .article-author-top 在视口内时，目录跟随其底部
+      if (authorBottom > 0) {
+        tocContainer.style.position = 'absolute';
+        tocContainer.style.top = tocTop + 'px'; // 目录位于 .article-author-top 的底部下方
+        tocContainer.style.left = authorLeft + 'px'; // 目录保持水平对齐
+      } else {
+        // 当 .article-author-top 滚动出视口时，目录停止移动
+        tocContainer.style.position = 'absolute';
+        tocContainer.style.top = (window.scrollY + document.documentElement.clientHeight - tocContainer.offsetHeight) + 'px'; // 固定在视口下方
       }
     }
   
@@ -130,6 +142,7 @@
     });
   });
   </script>
+  
   
 
 {% include scripts.html %}	        
