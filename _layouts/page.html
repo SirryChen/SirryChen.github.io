@@ -66,8 +66,32 @@
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     var toc = document.getElementById("toc");
-    var headers = document.querySelectorAll("#main h1, #main h2, #main h3, #main h4, #main h5, #main h6");
+    var authorTop = document.querySelector(".article-author-top");
     
+    function setTocPosition() {
+      // 获取article-author-top的位置
+      var authorRect = authorTop.getBoundingClientRect();
+      var authorBottom = authorRect.bottom;
+  
+      if (authorBottom <= 0) { 
+        // 当article-author-top滚动出视图时，固定目录
+        toc.style.position = 'fixed';
+        toc.style.top = '0'; // 固定在屏幕顶部
+      } else { 
+        // 当article-author-top在视图内时，目录跟随
+        toc.style.position = 'absolute';
+        toc.style.top = (authorRect.bottom) + 'px'; // 跟随article-author-top的底部
+      }
+    }
+  
+    // 初次设置位置
+    setTocPosition();
+  
+    // 监听滚动事件
+    window.addEventListener("scroll", setTocPosition);
+  
+    // 生成目录项
+    var headers = document.querySelectorAll("#main h1, #main h2, #main h3, #main h4, #main h5, #main h6");
     headers.forEach(function(header) {
       if (!header.id) {
         header.id = header.textContent.trim().toLowerCase().replace(/\s+/g, '-');
@@ -80,7 +104,7 @@
       toc.appendChild(link);
     });
   });
-</script>
+  </script>
 
 {% include scripts.html %}
 
