@@ -26,7 +26,7 @@ title: Share
 {% include cardline.html url="/share/2024-09-04-lost-in-the-middle.html" img="/file/img/lost in the middle/U-shaped-lost-in-the-middle.svg" title="LLMs lost in the middle" content="The performances of LLMs differ when the answers are located in different places: phenomena, analyses, and suspects" %}
 
 <br>
-s
+
 ## Leave a Message
 
 <br>

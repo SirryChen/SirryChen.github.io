@@ -93,13 +93,17 @@
     var tocContainer = document.getElementById("toc-container");
     var toc = document.getElementById("toc");
     var authorTop = document.querySelector(".article-author-top");
-    var authorLeft = authorRect.left;
-    var authorWidth = authorRect.width;
-    tocContainer.style.width = authorWidth + 'px';
   
     function setTocPosition() {
-      var authorRect = authorTop.getBoundingClientRect(); // 获取相对于视口的位置
-      var authorBottom = authorRect.bottom; // 获取 .article-author-top 的底部相对于视口的距离
+      var authorRect = authorTop.getBoundingClientRect();
+      console.log("Author Rect:", authorRect);  // 打印 authorRect 对象，查看 bottom 值
+
+      var authorBottom = authorRect.bottom;  // 获取 .article-author-top 底部位置
+      var authorLeft = authorRect.left;  // 获取左边位置
+      var authorWidth = authorRect.width;  // 获取宽度
+
+      // 设置目录的宽度与 .article-author-top 相等
+      tocContainer.style.width = authorWidth + 'px';
   
       // 判断 .article-author-top 是否在视口内
       if (authorBottom > 100) {
