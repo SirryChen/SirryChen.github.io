@@ -39,6 +39,12 @@
   <div class="article-author-top">
     {% include author-bio.html %}
   </div>
+
+  <!-- 浮动的目录容器 -->
+  <div id="toc" style="position: fixed; top: 100px; left: 0; width: 200px; max-height: 70vh; overflow-y: auto; background-color: #f9f9f9; border: 1px solid #ddd; padding: 10px; z-index: 1000;">
+    <!-- 目录将通过JavaScript生成 -->
+  </div>
+
   <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     <div class="headline-wrap">
       <h1 itemprop="headline">{{ page.title }}</h1>
@@ -80,6 +86,26 @@
     {% include footer.html %}
   </footer>
 </div><!-- /.footer-wrap -->
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var toc = document.getElementById("toc");
+    var headers = document.querySelectorAll("#main h1, #main h2, #main h3, #main h4, #main h5, #main h6");
+    
+    headers.forEach(function(header) {
+      if (!header.id) {
+        header.id = header.textContent.trim().toLowerCase().replace(/\s+/g, '-');
+      }
+      var link = document.createElement("a");
+      link.href = "#" + header.id;
+      link.textContent = header.textContent;
+      link.style.display = "block";
+      link.style.marginLeft = (parseInt(header.tagName.substring(1)) - 1) * 10 + "px"; // 根据标题层级缩进
+      toc.appendChild(link);
+    });
+  });
+</script>
 
 {% include scripts.html %}	        
 
