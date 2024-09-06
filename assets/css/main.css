@@ -551,6 +551,12 @@ strong {
   transition: transform 1s ease; /* 平滑过渡效果 */
 }
 
+#toc a {
+  display: block; /* 确保目录项占据单独的一行 */
+  margin-bottom: 5px; /* 增加目录项之间的间距（可以根据需要调整） */
+  transition: font-size 1s ease, text-shadow 1s ease; /* 平滑过渡效果 */
+}
+
 /* 鼠标悬停时上移 */
 #toc a:hover {
   font-size: 150%; /* 按比例增大字体 */

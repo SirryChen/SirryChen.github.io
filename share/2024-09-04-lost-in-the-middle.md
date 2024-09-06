@@ -231,7 +231,7 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
     <p style="text-align: center; font-style: italic;">问答流程构建</p>
 </div>
 
-将一个文档重复20次作为输入，可视化微调后模型attention scores如下图，依据此作者认为模型关注到了context中的内容，捕获到了关键信息。<span style="color: red;">但是为什么要用ChatGLM2-6B-32K作为对比，而不用原始的Ziya-LLaMa-13B-v1.1？</span>
+将一个文档重复20次作为输入，可视化微调后模型attention scores如下图，依据此作者认为模型关注到了context中的内容，捕获到了关键信息。<span style="color: orange;">但是为什么要用ChatGLM2-6B-32K作为对比，而不用原始的Ziya-LLaMa-13B-v1.1？</span>
 
 <!-- 图片和注解的网格容器 -->
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0px; text-align: center;">
@@ -273,3 +273,68 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 <blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin-bottom: 10px;">
     24年7月：<a href="https://arxiv.org/abs/2404.16811" style="color: red;">Found in the Middle: Calibrating Positional Attention Bias Improves Long Context Utilization</a>
 </blockquote>
+
+这篇文章的猜想是信息所在位置会对注意力造成偏置，使得模型在输出时倾向于依赖处于前面的文本。与之前两篇文章不同的是，这篇文章并不关注这个偏置从何而来，而是关注有什么因素能决定这个模型对文本的注意力分布。
+
+<!-- 图片和注解的网格容器 -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0px; text-align: center;">
+
+    <!-- 第一幅图 -->
+    <div>
+        <img src="../file/img/lost in the middle/vicuna_rel_pos.png" alt="alt text" style="width: 100%; height: auto; margin-bottom: 10px;">
+        <p style="text-align: center; font-style: italic; font-size: 80%;">模型的输出与文首的相关性高</p>
+    </div>
+
+    <!-- 第二幅图 -->
+    <div>
+        <img src="../file/img/lost in the middle/vicuna_attn_weight.png" alt="alt text" style="width: 100%; height: auto; margin-bottom: 10px;">
+        <p style="text-align: center; font-style: italic; font-size: 80%;">平均注意力呈现出U形</p>
+    </div>
+
+</div>
+
+通过实验，发现注意力的分布由两个因素决定：
+- 文本分布的位置
+- 文本与输出的关联性（在输出未知时，这个因素是无法提前获得的）
+
+因此，输入中第$k$ 篇文档$x^{doc}_{k}$ 的注意力可表示为
+
+$$Attn(x^{doc},k)=f(rel(x^{doc}_k), bias(k)),$$
+
+其中的$f$是一个函数。通过实验，可以证明这个函数是单调递增的，因此，不失一般性地使用线性模型替代$f$ ，将上式重写为
+
+$$Attn(x^{doc},k)=rel(x^{doc}_k) + bias(k) + \sigma,$$
+
+其中$\sigma$ 是噪声。此时，这篇文章非常巧妙地运用这个线性模型的性质，借助于一个dummy document获得与位置无关的“文本与输出的关联性”，即
+
+$$ rel(x^{doc})=Attn(x^{doc},k)-Attn(x^{dum},k)+rel(x^{dum}).$$
+
+注意到当dummy document任意选择并固定时，$rel(x^{dum})$ 是一个常量，因此可忽略。最后，将$Attn(x^{doc},k)-Attn(x^{dum},k)$ 作为校准的与位置无关的注意力。
+
+<span style="color: orange;">突然想到，如果在transformer中，不加位置编码，那么对于模型来说输入是无序的。那么是否能够设计“一种仅在文档内部进行位置信息标注，而不同文档间位置无关”的位置编码方式。此时，在全局注意力下，不存在距离文首\文末（或者说instruction\query）更近的文档，是否与这篇文章提出的方法等效。</span>
+
+
+## 4.这仍是一个开放问题
+
+对于产生lost in the middle的原因，最开始的["Lost in the middle"](https://aclanthology.org/2024.tacl-1.9/)中提出三种不同的原因，之后的大部分文章都基于“Attention weight的U形分布”与“不同关键信息位置分布下 模型性能呈U形分布”的相似性，着重关注如何增大关键信息的attention，即让模型能充分利用输入，更关注于关键信息。
+
+但是这两种U形分布真的有很大的关系吗？注意到attention的U形分布主要出现于第三层或更高层之后，并不是从第一层开始。即attention的U形分布，是在多次信息广播融合之后，文首或文末此时已经包含丰富的全文信息（Bert中将放置于文首的CLS代表全文信息的聚合，用于情感分类等任务），模型对这些位置有很高的attention也无可厚非。
+
+至于文首和文末的高attention是否会“不小心”波及处于文首文尾附近的文本，导致如果这些文本恰好包含关键信息，使得模型的输出更合情合理，则又是一种猜测了。
+
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0px; text-align: center;">
+
+    <!-- 第一幅图 -->
+    <div>
+        <img src="../file/img/lost in the middle/U-shaped-lost-in-the-middle.svg" alt="alt text" style="width: 100%; height: auto; margin-bottom: 10px;">
+        <p style="text-align: center; font-style: italic; font-size: 80%;">关键信息的位置分布对模型性能的U形分布</p>
+    </div>
+
+    <!-- 第二幅图 -->
+    <div>
+        <img src="../file/img/lost in the middle/chatglm32katt.png" alt="alt text" style="width: 100%; height: auto; margin-bottom: 10px;">
+        <p style="text-align: center; font-style: italic; font-size: 80%;">不同位置文本获得的attention的U形分布</p>
+    </div>
+
+</div>
