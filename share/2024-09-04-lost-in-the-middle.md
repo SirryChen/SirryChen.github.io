@@ -63,14 +63,14 @@ layout: post
 </div>
 
 <!-- 引用部分 -->
-<div style="text-align: center; margin-top: 5px;">
+<div style="text-align: center;">
     <p><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle</a> Liu et al., 2023</p>
 </div>
 
 
 
 ##### 观测结论
-大模型（无论是否经过指令微调）的性能都呈现出U形，即对长文本中信息的使用缺乏稳健性
+大模型（无论是否经过指令微调）的性能都呈现出U形，即对长文本中信息的使用缺乏稳健性。
 
 
 ### 1.2 Same Task, More Tokens
@@ -154,7 +154,7 @@ layout: post
 ### 2.1 模型结构
 
 ["Lost in the middle"](https://aclanthology.org/2024.tacl-1.9/)中认为，decoder-only模型在训练时使用的mask可能会导致在每一个时间点，模型倾向于关注之前的tokens，而encoder-decoder模型则能关注到两边的tokens。为了探究是否是模型结构的影响，文中挑选了两组模型进行实验。
-
+<br>
 **encoder-decoder**: 
 Flan-T5-XXL(<a href="https://huggingface.co/google/flan-t5-xxl/blob/main/tokenizer_config.json#:~:text=%22model_max_length%22%3A%20512%2C" style="font-size: smaller;">model_max_length: 512 tokens</a>), 
 Flan-UL2(<a href="https://huggingface.co/google/flan-ul2/blob/main/tokenizer_config.json#:~:text=%22model_max_length%22%3A%202048%2C" style="font-size: smaller;">model_max_length: 2k</a>)<br>
@@ -167,7 +167,7 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 
 <div style="text-align: center;">
     <img src="../file/img/lost in the middle/qa_decoder_only_vs_encoder_decoder.svg" alt="image" style="width: 100%; height: auto; margin-bottom: 10px;">
-    <p style="text-align: center; font-style: italic;">在不同输入长度下，decoder-only V.S. encoder-decoder<br><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle</a> Liu et al., 2023</p>
+    <p style="text-align: center; font-style: italic; font-size: 80%;">在不同输入长度下，decoder-only V.S. encoder-decoder<br><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle</a> Liu et al., 2023</p>
 </div>
 
 > We hypothesize that encoder-decoder models may make better use of their context windows because their bidirectional encoder allows processing each document in the context of future documents, potentially improving relative importance estimation between documents.
@@ -199,7 +199,7 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 
 <div style="text-align: center;">
     <img src="../file/img/lost in the middle/chatglm32katt.png" alt="image" style="width: 50%; height: auto; margin-bottom: 10px;">
-    <p style="text-align: center; font-style: italic;">ChatGLM2-6B-32K的attention score可视化<br><a href="https://aclanthology.org/2024.acl-long.736/">Never Lost in the Middle</a> He et al., Aug 2024</p>
+    <p style="text-align: center; font-style: italic; font-size: 80%;">ChatGLM2-6B-32K的attention score可视化<br><a href="https://aclanthology.org/2024.acl-long.736/">Never Lost in the Middle</a> He et al., Aug 2024</p>
 </div>
 
 从数据的角度看，如果将数据集中大量重复的instructions、query看作special token（大部分的指令集和问题模板都是人工针对不同的任务编写，是一个有限集，经过tokenizer之后token序列一致，可以看作一组特定的token序列集），则对于一定数量的训练数据，是由instruction(special token) + text + query(special token)组成，这与预训练过程中的[cls] + text + [seq]非常相似。
@@ -208,7 +208,7 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 
 <div style="text-align: center;">
     <img src="../file/img/lost in the middle/StreamingLLM-attention_weights.svg" alt="image" style="width: 90%; height: auto; margin-bottom: 10px;">
-    <p style="text-align: center; font-style: italic;">在经过第三层后的注意力中，前几个token的注意力巨增<br><a href="https://iclr.cc/virtual/2024/poster/18794/">Efficient Streaming Language Models with Attention Sinks</a> Xiao et al., Sep 2023</p>
+    <p style="text-align: center; font-style: italic; font-size: 80%;">在经过第三层后的注意力中，前几个token的注意力巨增<br><a href="https://iclr.cc/virtual/2024/poster/18794/">Efficient Streaming Language Models with Attention Sinks</a> Xiao et al., Sep 2023</p>
 </div>
 
 ## 3.尝试解决
@@ -228,7 +228,7 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 
 <div style="text-align: center;">
     <img src="../file/img/lost in the middle/never-lost-in-the-middle.png" alt="image" style="width: 70%; height: auto; margin-bottom: 10px;">
-    <p style="text-align: center; font-style: italic;">问答流程构建</p>
+    <p style="text-align: center; font-style: italic; font-size: 80%;">问答流程构建</p>
 </div>
 
 将一个文档重复20次作为输入，可视化微调后模型attention scores如下图，依据此作者认为模型关注到了context中的内容，捕获到了关键信息。<span style="color: orange;">但是为什么要用ChatGLM2-6B-32K作为对比，而不用原始的Ziya-LLaMa-13B-v1.1？</span>
@@ -265,7 +265,7 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 
 <div style="text-align: center;">
     <img src="../file/img/lost in the middle/make-your-LLM-fully-utilize-the-context-method.svg" alt="image" style="width: 70%; height: auto; margin-bottom: 10px;">
-    <p style="text-align: center; font-style: italic;">IN2 training的两种数据构建过程</p>
+    <p style="text-align: center; font-style: italic; font-size: 80%;">IN2 training的两种数据构建过程</p>
 </div>
 
 ### 3.3 Found in the Middle
@@ -323,8 +323,9 @@ $$ rel(x^{doc})=Attn(x^{doc},k)-Attn(x^{dum},k)+rel(x^{dum}).$$
 至于文首和文末的高attention是否会“不小心”波及处于文首文尾附近的文本，导致如果这些文本恰好包含关键信息，使得模型的输出更合情合理，则又是一种猜测了。
 
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0px; text-align: center;">
-
+<div style="display: flex; justify-content: center; width: 100%;">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0px; text-align: center; width: 80%;">
+    
     <!-- 第一幅图 -->
     <div>
         <img src="../file/img/lost in the middle/U-shaped-lost-in-the-middle.svg" alt="alt text" style="height: 80%; width: auto; margin-bottom: 10px;">
@@ -339,17 +340,14 @@ $$ rel(x^{doc})=Attn(x^{doc},k)-Attn(x^{dum},k)+rel(x^{dum}).$$
         <p style="text-align: center; font-style: italic; font-size: 80%;"><a href="https://aclanthology.org/2024.acl-long.736/">Never Lost in the Middle</a> He et al., Aug 2024</p>
     </div>
 
+  </div>
 </div>
 
+
 ## References
-<p style="text-align: left; font-style: italic;"><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle: How Language Models Use Long Contexts</a> Liu et al., Nov 2023</p>
-
-<p style="text-align: left; font-style: italic;"><a href="https://aclanthology.org/2024.tacl-1.9/">Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models</a> Levy et al., 2024</p>
-
-<p style="text-align: left; font-style: italic;"><a href="https://aclanthology.org/2024.acl-long.736/">Never Lost in the Middle: Mastering Long-Context Question Answering with Position-Agnostic Decompositional Training</a> He et al., Aug 2024</p>
-
-<p style="text-align: left; font-style: italic;"><a href="https://arxiv.org/abs/2404.16811">Make Your LLM Fully Utilize the Context</a> An et al., Apr 2024</p>
-
-<p style="text-align: left; font-style: italic;"><a href="https://aclanthology.org/2024.findings-acl.890/">Found in the Middle: Calibrating Positional Attention Bias Improves Long Context Utilization</a> Hsieh et al., Jul 2024</p>
-
-<p style="text-align: left; font-style: italic;"><a href="https://iclr.cc/virtual/2024/poster/18794/">Efficient Streaming Language Models with Attention Sinks</a> Xiao et al., Sep 2023</p>
+- <span style="text-align: left; font-style: italic;"><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle: How Language Models Use Long Contexts</a> Liu et al., Nov 2023</span>
+- <span style="text-align: left; font-style: italic;"><a href="https://aclanthology.org/2024.tacl-1.9/">Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models</a> Levy et al., 2024</span>
+- <span style="text-align: left; font-style: italic;"><a href="https://aclanthology.org/2024.acl-long.736/">Never Lost in the Middle: Mastering Long-Context Question Answering with Position-Agnostic Decompositional Training</a> He et al., Aug 2024</span>
+- <span style="text-align: left; font-style: italic;"><a href="https://arxiv.org/abs/2404.16811">Make Your LLM Fully Utilize the Context</a> An et al., Apr 2024</span>
+- <span style="text-align: left; font-style: italic;"><a href="https://aclanthology.org/2024.findings-acl.890/">Found in the Middle: Calibrating Positional Attention Bias Improves Long Context Utilization</a> Hsieh et al., Jul 2024</span>
+- <span style="text-align: left; font-style: italic;"><a href="https://iclr.cc/virtual/2024/poster/18794/">Efficient Streaming Language Models with Attention Sinks</a> Xiao et al., Sep 2023</span>
