@@ -529,3 +529,11 @@ strong {
 .MJX-TEX {
   color: black !important;
 }
+
+#toc {
+  width: 100%;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
