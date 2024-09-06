@@ -549,3 +549,10 @@ strong {
   box-shadow: none; /* 去除阴影（如果有的话） */
 }
 
+
+.toc-bold {
+  font-weight: bold; /* 加粗字体 */
+  font-size: 120%; /* 按比例增大字体 */
+}
+
+

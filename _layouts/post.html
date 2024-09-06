@@ -50,6 +50,7 @@
     <div class="headline-wrap">
       <h1 itemprop="headline">{{ page.title }}</h1>
       <h2>{{ page.tagline }}</h2>
+      <hr>
       <p class="byline">published on <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %d, %Y" }}</time>{% if page.modified %} and last modified on <time datetime="{{ page.modified | date: "%Y-%m-%d" }}" itemprop="dateModified">{{ page.modified | date: "%B %d, %Y" }}</time>{% endif %} by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="{{ site.url }}" title="About {{ site.owner.name }}" itemprop="url">{{ site.owner.name }}</a></span></span>.</p>
     </div><!--/ .headline-wrap -->
     <div class="article-wrap" itemprop="text">
@@ -59,7 +60,6 @@
         <div class="article-author-bottom">
           {% include author-bio.html %}
         </div>
-        
       </footer>
     </div><!-- /.article-wrap -->
   </article>
@@ -129,8 +129,18 @@
     // 监听窗口大小变化事件
     window.addEventListener("resize", setTocPosition);
   
-    // 生成目录项
+      // 获取所有标题
     var headers = document.querySelectorAll("#main h1, #main h2, #main h3, #main h4, #main h5, #main h6");
+
+    // 找到文档中的最大标题级别
+    var minLevel = 6; // 初始设置为最高级别（h6）
+    headers.forEach(function(header) {
+      var level = parseInt(header.tagName.substring(1)); // 获取标题级别
+      if (level < minLevel) {
+        minLevel = level; // 更新为更高的级别
+      }
+    });
+      // 生成目录项并加粗最大级别的标题
     headers.forEach(function(header) {
       if (!header.id) {
         header.id = header.textContent.trim().toLowerCase().replace(/\s+/g, '-');
@@ -139,7 +149,13 @@
       link.href = "#" + header.id;
       link.textContent = header.textContent;
       link.style.display = "block";
-      link.style.marginLeft = (parseInt(header.tagName.substring(1)) - 1) * 10 + "px"; // 根据标题层级缩进
+      link.style.marginLeft = (parseInt(header.tagName.substring(1)) - 1) * 10 + "px";
+
+      // 如果当前标题是文档中最大的级别，添加 toc-bold 类
+      if (parseInt(header.tagName.substring(1)) === minLevel) {
+        link.classList.add('toc-bold');
+      }
+
       toc.appendChild(link);
     });
   });
