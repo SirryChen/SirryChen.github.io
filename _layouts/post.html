@@ -138,7 +138,7 @@
     });
 
     // 排序并去重
-    levels = Array.from(new Set(levels)).sort((a, b) => a - b).reverse();
+    levels = Array.from(new Set(levels)).sort((a, b) => a - b);
 
     // 选取最大的两个标题级别
     var maxLevels = levels.slice(0, 2);
