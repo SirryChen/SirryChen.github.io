@@ -548,12 +548,12 @@ strong {
   margin: 0; /* 去除外边距 */
   box-shadow: none; /* 去除阴影（如果有的话） */
   display: block; /* 确保目录项占据单独的一行 */
-  transition: transform 0.5s ease; /* 平滑过渡效果 */
+  transition: transform 1s ease; /* 平滑过渡效果 */
 }
 
 /* 鼠标悬停时上移 */
 #toc a:hover {
-  font-size: 180%; /* 按比例增大字体 */
+  font-size: 150%; /* 按比例增大字体 */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* 添加文字阴影 */
 }
 
