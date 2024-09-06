@@ -41,7 +41,7 @@
 
   <!-- 包裹目录内容的盒子 -->
   <div id="toc-container" style="position: absolute; z-index: 1000;">
-    <div id="toc" style="max-height: 70vh; overflow-y: auto; background-color: #f9f9f9; border: 1px solid #ddd; padding: 10px;">
+    <div id="toc" style="max-height: 70vh; overflow-y: auto; padding: 10px;">
       <!-- 目录将通过JavaScript生成 -->
     </div>
   </div>
@@ -80,15 +80,18 @@
       // 设置目录的宽度与 .article-author-top 相等
       tocContainer.style.width = authorWidth + 'px';
   
+      // 计算目录的顶端位置
+      var tocTop = Math.max(authorBottom + window.scrollY, window.scrollY + document.documentElement.clientHeight - tocContainer.offsetHeight);
+  
       // 当 .article-author-top 在视口内时，目录跟随其底部
       if (authorBottom > 0) {
         tocContainer.style.position = 'absolute';
-        tocContainer.style.top = (authorBottom) + 'px'; // 目录位于 .article-author-top 的底部下方
+        tocContainer.style.top = tocTop + 'px'; // 目录位于 .article-author-top 的底部下方
         tocContainer.style.left = authorLeft + 'px'; // 目录保持水平对齐
       } else {
         // 当 .article-author-top 滚动出视口时，目录停止移动
         tocContainer.style.position = 'absolute';
-        tocContainer.style.top = (authorBottom + window.scrollY) + 'px'; // 固定在视口下方
+        tocContainer.style.top = (window.scrollY + document.documentElement.clientHeight - tocContainer.offsetHeight) + 'px'; // 固定在视口下方
       }
     }
   
@@ -113,6 +116,7 @@
     });
   });
   </script>
+  
   
   
 
