@@ -132,14 +132,16 @@
       // 获取所有标题
     var headers = document.querySelectorAll("#main h1, #main h2, #main h3, #main h4, #main h5, #main h6");
 
-    // 找到文档中的最大标题级别
-    var minLevel = 6; // 初始设置为最高级别（h6）
-    headers.forEach(function(header) {
-      var level = parseInt(header.tagName.substring(1)); // 获取标题级别
-      if (level < minLevel) {
-        minLevel = level; // 更新为更高的级别
-      }
+    // 找到文档中的前两个最大标题级别
+    var levels = Array.from(headers).map(function(header) {
+      return parseInt(header.tagName.substring(1));
     });
+
+    // 排序并去重
+    levels = Array.from(new Set(levels)).sort((a, b) => a - b).reverse();
+
+    // 选取最大的两个标题级别
+    var maxLevels = levels.slice(0, 2);
       // 生成目录项并加粗最大级别的标题
     headers.forEach(function(header) {
       if (!header.id) {
@@ -151,8 +153,8 @@
       link.style.display = "block";
       link.style.marginLeft = (parseInt(header.tagName.substring(1)) - 1) * 10 + "px";
 
-      // 如果当前标题是文档中最大的级别，添加 toc-bold 类
-      if (parseInt(header.tagName.substring(1)) === minLevel) {
+      // 如果当前标题是文档中最大的两个级别之一，添加 toc-bold 类
+      if (maxLevels.includes(parseInt(header.tagName.substring(1)))) {
         link.classList.add('toc-bold');
       }
 
