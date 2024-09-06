@@ -4,7 +4,7 @@ description: to discuss the problem in LLM named "lost in the middle"
 mathjax: true
 tags:
   - 人工智能AI
-date: 2024-09-5 20:01:00
+date: 2024-09-05
 swiper_index: 3
 layout: post
 ---
@@ -12,6 +12,8 @@ layout: post
 
 
 ## 1.问题提出
+
+### 1.1 Lost in the middle
 
 <blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin-bottom: 15px;">
     23年11月：<a href="https://aclanthology.org/2024.tacl-1.9/" style="color: red;">Lost in the Middle: How Language Models Use Long Contexts</a>
@@ -71,7 +73,7 @@ layout: post
 大模型（无论是否经过指令微调）的性能都呈现出U形，即对长文本中信息的使用缺乏稳健性
 
 
-
+### 1.2 Same Task, More Tokens
 
 <blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin: 15px;">
     23年11月：<a href="https://aclanthology.org/2024.acl-long.818/" style="color: red;">Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models</a>
@@ -149,7 +151,9 @@ layout: post
 
 上述两篇论文的共同点在于，模型无法有效利用位于模型中部的信息。下面概述一些可能的原因。
 
-### 2.1 模型结构 decoder-only V.S. encoder-decoder
+### 2.1 模型结构
+
+["Lost in the middle"](https://aclanthology.org/2024.tacl-1.9/)中认为，decoder-only模型在训练时使用的mask可能会导致在每一个时间点，模型倾向于关注之前的tokens，而encoder-decoder模型则能关注到两边的tokens。为了探究是否是模型结构的影响，文中挑选了两组模型进行实验。
 
 **encoder-decoder**: 
 Flan-T5-XXL(<a href="https://huggingface.co/google/flan-t5-xxl/blob/main/tokenizer_config.json#:~:text=%22model_max_length%22%3A%20512%2C" style="font-size: smaller;">model_max_length: 512 tokens</a>), 
@@ -159,7 +163,7 @@ Mpt-30b-instruct(<a href="https://huggingface.co/mosaicml/mpt-30b-instruct/blob/
 Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/main/tokenizer_config.json#:~:text=%22model_max_length%22%3A%2016384%2C" style="font-size: smaller;">model_max_length: 16k</a>)
 
 
-根据下图，随着输入文本长度增长，对于关键信息位于**文首**或**文末**，各模型性能均有下降；对于关键信息分布在**中间**的情况，两个encoder-decoder模型的性能下降幅度更大。
+根据下图，随着输入文本长度增长，对于关键信息位于**文首**或**文末**，两类模型性能均有下降；对于关键信息分布在**中间**的情况，两个encoder-decoder模型的性能下降幅度更大。
 
 <div style="text-align: center;">
     <img src="../file/img/lost in the middle/qa_decoder_only_vs_encoder_decoder.svg" alt="image" style="width: 100%; height: auto; margin-bottom: 10px;">
@@ -211,6 +215,9 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 
 最近有许多工作，依据初步的实验，对原因进行了猜想，并以猜想作为假设，采取了一系列措施，尝试解决这个问题
 
+
+### 3.1 Never Lost in the Middle
+
 <blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin-bottom: 10px;">
     24年8月：<a href="https://aclanthology.org/2024.acl-long.736/" style="color: red;">Never Lost in the Middle: Mastering Long-Context Question Answering with Position-Agnostic Decompositional Training</a>
 </blockquote>
@@ -243,6 +250,9 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 
 </div>
 
+
+### 3.2 Make Your LLM Fully Utilize the Context
+
 <blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin-bottom: 10px;">
     24年4月：<a href="https://arxiv.org/abs/2404.16811" style="color: red;">Make Your LLM Fully Utilize the Context</a>
 </blockquote>
@@ -257,6 +267,8 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
     <img src="../file/img/lost in the middle/make-your-LLM-fully-utilize-the-context-method.svg" alt="image" style="width: 70%; height: auto; margin-bottom: 10px;">
     <p style="text-align: center; font-style: italic;">IN2 training的两种数据构建过程</p>
 </div>
+
+### 3.3 Found in the Middle
 
 <blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin-bottom: 10px;">
     24年7月：<a href="https://arxiv.org/abs/2404.16811" style="color: red;">Found in the Middle: Calibrating Positional Attention Bias Improves Long Context Utilization</a>
