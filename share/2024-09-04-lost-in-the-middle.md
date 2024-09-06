@@ -342,14 +342,14 @@ $$ rel(x^{doc})=Attn(x^{doc},k)-Attn(x^{dum},k)+rel(x^{dum}).$$
 </div>
 
 ## References
-<p style="text-align: center; font-style: italic; font-size: 80%;"><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle: How Language Models Use Long Contexts</a> Liu et al., Nov 2023</p>
+<p style="text-align: left; font-style: italic;"><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle: How Language Models Use Long Contexts</a> Liu et al., Nov 2023</p>
 
-<p style="text-align: center; font-style: italic; font-size: 80%;"><a href="https://aclanthology.org/2024.tacl-1.9/">Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models</a> Levy et al., 2024</p>
+<p style="text-align: left; font-style: italic;"><a href="https://aclanthology.org/2024.tacl-1.9/">Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models</a> Levy et al., 2024</p>
 
-<p style="text-align: center; font-style: italic; font-size: 80%;"><a href="https://aclanthology.org/2024.acl-long.736/">Never Lost in the Middle: Mastering Long-Context Question Answering with Position-Agnostic Decompositional Training</a> He et al., Aug 2024</p>
+<p style="text-align: left; font-style: italic;"><a href="https://aclanthology.org/2024.acl-long.736/">Never Lost in the Middle: Mastering Long-Context Question Answering with Position-Agnostic Decompositional Training</a> He et al., Aug 2024</p>
 
-<p style="text-align: center; font-style: italic; font-size: 80%;"><a href="https://arxiv.org/abs/2404.16811">Make Your LLM Fully Utilize the Context</a> An et al., Apr 2024</p>
+<p style="text-align: left; font-style: italic;"><a href="https://arxiv.org/abs/2404.16811">Make Your LLM Fully Utilize the Context</a> An et al., Apr 2024</p>
 
-<p style="text-align: center; font-style: italic; font-size: 80%;"><a href="https://aclanthology.org/2024.findings-acl.890/">Found in the Middle: Calibrating Positional Attention Bias Improves Long Context Utilization</a> Hsieh et al., Jul 2024</p>
+<p style="text-align: left; font-style: italic;"><a href="https://aclanthology.org/2024.findings-acl.890/">Found in the Middle: Calibrating Positional Attention Bias Improves Long Context Utilization</a> Hsieh et al., Jul 2024</p>
 
-<p style="text-align: center; font-style: italic; font-size: 80%;"><a href="https://iclr.cc/virtual/2024/poster/18794/">Efficient Streaming Language Models with Attention Sinks</a> Xiao et al., Sep 2023</p>
+<p style="text-align: left; font-style: italic;"><a href="https://iclr.cc/virtual/2024/poster/18794/">Efficient Streaming Language Models with Attention Sinks</a> Xiao et al., Sep 2023</p>
