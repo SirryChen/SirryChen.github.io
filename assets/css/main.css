@@ -553,7 +553,7 @@ strong {
 
 /* 鼠标悬停时上移 */
 #toc a:hover {
-  transform: translateY(-5px); /* 上移5像素，可以根据需要调整 */
+  transform: translateY(-2px); /* 上移5像素，可以根据需要调整 */
 }
 
 .toc-bold {

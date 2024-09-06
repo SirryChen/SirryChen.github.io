@@ -70,7 +70,7 @@ $$
 真正解决梯度爆炸问题的应该是 $\operatorname{Softmax}$函数，它直接进行了归一化的操作，避免值过大导致的梯度爆炸问题。而正是因为使用了 $\operatorname{Softmax}$函数，引入了变量方差过大导致梯度消失的问题，所以需要对变量进行除以$\sqrt{d}$操作降低方差。
 
 
-### Ref
+### Refences
 
 1. 参考“[Attention Is All You Need](https://arxiv.org/abs/1706.03762)”原文，较大的$d$会导致点积的增大，进而在计算$\operatorname{Softmax}$函数时被推向较小梯度的区域（说的比较含糊，脚注中解释从方差影响的角度进行说明）
 
