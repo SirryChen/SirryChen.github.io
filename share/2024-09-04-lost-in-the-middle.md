@@ -187,11 +187,19 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 
 从上述文章的分析来看，预训练和微调使得模型倾向于关注输入文本的文首和文末。当关键信息放置于文首或文末时，模型能够更容易地捕获这些关键信息，做出更准确地回答。
 
-许多文章都类似地表达了类似的猜想，并以**hypothesize**起手，依据假设提出了解决方法，却缺乏对这个猜想的实验验证。要验证这个猜想，我认为可以设计几个实验：
-- 将指令微调的instrction固定地放在输入文本中央，对模型进行微调，理想情况下，模型会关注到文首和放置instruction的地方，即这两个位置的attention score会较高。
--  将所有人为设定的指令、模板、special token都放置在输入末尾，对模型进行微调，理想情况下，模型会对文末高度关注，对文首的关注与中部相近，即attention score曲线类似于指数曲线。
+<span style="color: orange;">
+许多文章都类似地表达了类似的猜想，并以<strong>hypothesize</strong>起手，依据假设提出了解决方法，却缺乏对这个猜想的实验验证。要验证这个猜想，我认为可以设计几个实验：
+</span>
 
+<ul style="color: orange;">
+  <li>将指令微调的instrction固定地放在输入文本中央，对模型进行微调，理想情况下，模型会关注到文首和放置instruction的地方，即这两个位置的attention score会较高。</li>
+  <li>将所有人为设定的指令、模板、special token都放置在输入末尾，对模型进行微调，理想情况下，模型会对文末高度关注，对文首的关注与中部相近，即attention score曲线类似于指数曲线。</li>
+</ul>
+
+<span style="color: orange;">
 若两个实验均符合依据假设做出的推论，则认为微调给模型的关注带来了偏置。
+</span>
+
 
 ### 2.3 Attention分布不均
 
@@ -323,8 +331,8 @@ $$ rel(x^{doc})=Attn(x^{doc},k)-Attn(x^{dum},k)+rel(x^{dum}).$$
 至于文首和文末的高attention是否会“不小心”波及处于文首文尾附近的文本，导致如果这些文本恰好包含关键信息，使得模型的输出更合情合理，则又是一种猜测了。
 
 
-<div style="display: flex; justify-content: center; width: 100%;">
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0px; text-align: center; width: 80%;">
+<div style="display: flex; justify-content: center; width: 80%;">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0px; text-align: center;">
     
     <!-- 第一幅图 -->
     <div>

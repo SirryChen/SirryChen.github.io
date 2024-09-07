@@ -6,7 +6,7 @@ layout: page
 
 <img src="sirrychen.jpg" class="floatpic" width="310" height="410">
 
-<p style="text-align: justify; text-indent: 2em; margin-bottom: 10px;">
+<p style="text-align: justify; text-indent: 2em;">
     Here is <strong>Sirry Chen(陈思远)</strong>.
 </p>
 <p style="text-align: justify; text-indent: 2em;">
