@@ -548,13 +548,13 @@ strong {
   margin: 0; /* 去除外边距 */
   box-shadow: none; /* 去除阴影（如果有的话） */
   display: block; /* 确保目录项占据单独的一行 */
-  transition: transform 1s ease; /* 平滑过渡效果 */
+  transition: transform 0.2s ease; /* 平滑过渡效果 */
 }
 
 #toc a {
   display: block; /* 确保目录项占据单独的一行 */
   padding-bottom: 5px; /* 增加目录项之间的间距（可以根据需要调整） */
-  transition: font-size 0.2s ease, text-shadow 0.2s ease; /* 平滑过渡效果 */
+  transition: font-size 0.1s ease, text-shadow 0.1s ease; /* 平滑过渡效果 */
 }
 
 /* 鼠标悬停时上移 */

@@ -332,7 +332,7 @@ $$ rel(x^{doc})=Attn(x^{doc},k)-Attn(x^{dum},k)+rel(x^{dum}).$$
 至于文首和文末的高attention是否会“不小心”波及处于文首文尾附近的文本，导致如果这些文本恰好包含关键信息，使得模型的输出更合情合理，则又是一种猜测了。
 
 
-<div style="display: flex; justify-content: center; width: 80%;">
+<div style="display: flex; justify-content: center;">
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0px; text-align: center;">
     
     <!-- 第一幅图 -->
