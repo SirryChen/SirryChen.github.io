@@ -4,11 +4,7 @@ layout: page
 
 ## About Me
 
-<!-- <img src="sirrychen.jpg" class="floatpic" width="310" height="410"> -->
-<figure class="floatpic" style="float: right; margin-left: 1em;">
-  <img src="sirrychen.jpg" alt="Image">
-  <figcaption style="font-size: 0.5em; color: #666; text-align: right; margin-top: 0.5em;">Shot by Sraule</figcaption>
-</figure>
+<img src="sirrychen.jpg" class="floatpic" width="310" height="410">
 
 <p style="text-align: justify; text-indent: 2em;">
     Here is <strong>Sirry Chen(陈思远)</strong>.
