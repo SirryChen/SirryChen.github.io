@@ -5,8 +5,8 @@ layout: page
 ## About Me
 
 <!-- <img src="sirrychen.jpg" class="floatpic" width="310" height="410"> -->
-<figure class="floatpic" style="float: right; margin-left: 1em; width: 310px; height: 410px;">
-  <img src="sirrychen.jpg" alt="Image" width="310" height="410">
+<figure class="floatpic" style="float: right; margin-left: 1em;">
+  <img src="sirrychen.jpg" alt="Image">
   <figcaption style="font-size: 0.5em; color: #666; text-align: right; margin-top: 0.5em;">Shot by Sraule</figcaption>
 </figure>
 

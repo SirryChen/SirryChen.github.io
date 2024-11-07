@@ -201,12 +201,22 @@ svg:not(:root){overflow:hidden;}
 .third:after{clear:both;}
 .third img{display:inline;float:left;width:33.333333333333336%;}
 .third figcaption{display:inline;float:left;width:100%;}
-img.floatpic{
-  float:right; 
-  margin-left:1em; 
-  width:30%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* 组合两个阴影效果，使得阴影更加柔和 */
-  transition: box-shadow 0.3s; /* 添加过渡效果，使阴影变化更加平滑 */}
+img.floatpic {
+  float: right;
+  margin-left: 1em;
+  width: 20%; /* 使用百分比来控制宽度 */
+  height: auto; /* 保持纵横比 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* 阴影效果 */
+  transition: box-shadow 0.3s; /* 平滑过渡效果 */
+}
+
+
+figcaption {
+  font-size: 0.8em;
+  color: #666;
+  text-align: center;
+  margin-top: 0.5em; /* 适当的上边距，避免文字太靠近图片 */
+}
 .btn{display:inline-block;*display:inline;*zoom:1;padding:12px 24px;margin-bottom:2em;line-height:1;text-align:center;text-transform:uppercase;vertical-align:middle;border:4px double #333332;-webkit-border-radius:50px;-moz-border-radius:50px;border-radius:50px;cursor:pointer;*margin-left:.3em;-webkit-transition:0.4s linear;-moz-transition:0.4s linear;-ms-transition:0.4s linear;-o-transition:0.4s linear;transition:0.4s linear;}.btn:visited{border:4px double #4e4e4e;}
 .btn:hover{border:4px double #1a1a1a;}
 .btn:first-child{*margin-left:0;}
