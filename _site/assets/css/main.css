@@ -197,14 +197,15 @@ svg:not(:root){overflow:hidden;}
 .third:after{clear:both;}
 .third img{display:inline;float:left;width:33.333333333333336%;}
 .third figcaption{display:inline;float:left;width:100%;}
-.floatpic {
+img.floatpic {
   float: right;
   margin-left: 1em;
-  width: 310px; /* 设置图片宽度 */
-  height: 410px; /* 设置图片高度 */
+  width: 30%; /* 使用百分比来控制宽度 */
+  height: auto; /* 保持纵横比 */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* 阴影效果 */
   transition: box-shadow 0.3s; /* 平滑过渡效果 */
 }
+
 
 figcaption {
   font-size: 0.8em;
