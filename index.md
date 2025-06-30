@@ -11,7 +11,7 @@ layout: page
     Hello! I am <strong>Sirry Chen(陈思远)</strong>.
 </p>
 <p style="text-align: justify; text-indent: 2em;">
-    I am currently pursuing a Ph.D. at Fudan University, advised by <a href="http://www.fudan-disc.com/people/zywei" target="_blank">Prof. Zhongyu Wei(魏忠钰)</a>. My research interests include large language models, graph learning, natural language learning, and data mining.
+    I am currently pursuing a Ph.D. at Fudan University, advised by <a href="http://www.fudan-disc.com/people/zywei" target="_blank">Prof. Zhongyu Wei(魏忠钰)</a>. I received my bachelor's degree from Nanjing University of Aeronautics and Astronautics in 2025, where I was advised by <a href="https://lipiji.com/" target="_blank">Prof. Piji Li(李丕绩)</a>. Welcome to talk with me, no matter who, where, when, and how!
 </p>
 <p style="text-align: justify; text-indent: 2em;">
     <strong>Research Interests</strong>: LLMs, NLP, Data Mining ...
@@ -21,7 +21,7 @@ layout: page
 
 ## Academic Background
 - **Sep 2025 - NOW:** <a href="http://www.fudan-disc.com/" target="_blank">FDU Data Intelligence and Social Computing Lab</a> & <a href="https://www.sii.edu.cn/main.htm" target="_blank">Shanghai Innovation Institute</a>
-- **Sep 2021 - June 2025:** Nanjing University of Aeronautics and Astronautics, advised by <a href="https://lipiji.com/" target="_blank">Prof. Piji Li(李丕绩)</a>
+- **Sep 2021 - June 2025:** Nanjing University of Aeronautics and Astronautics, Changkong College
 - **Sep 2018 - June 2021:** Chongqing High School in Chongzhou City Sichuan Province
 
 ---
