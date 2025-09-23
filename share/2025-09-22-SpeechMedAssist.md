@@ -2235,6 +2235,7 @@ layout: post
 ## 3. Multi turn
 
 
+
 <style>
 .dialog-container {
   display: flex;
@@ -2377,7 +2378,7 @@ layout: post
     <div class="dialog-row">
       <span class="dialog-role">Patient</span>
       <div class="dialog-content">
-        <div class="dialog-text">医生，我明白了。我会尽快再去医院复查一下。如果需要手术，我会听从医生的建议。谢谢您！<结束对话></div>
+        <div class="dialog-text">医生，我明白了。我会尽快再去医院复查一下。如果需要手术，我会听从医生的建议。谢谢您！</div>
         <audio controls class="dialog-audio">
           <source src="/file/SMD/multi/wav_compress\wav_demo_DISC_MedLLM/0/patient_3.mp3" type="audio/mp3">
         </audio>
@@ -2564,7 +2565,7 @@ layout: post
     <div class="dialog-row">
       <span class="dialog-role">Patient</span>
       <div class="dialog-content">
-        <div class="dialog-text">医生，我明白了。我会注意饮食，尽量吃清淡点，多吃蛋白质和水果蔬菜。如果还有其他需要注意的地方，我会再问您。谢谢！<结束对话></div>
+        <div class="dialog-text">医生，我明白了。我会注意饮食，尽量吃清淡点，多吃蛋白质和水果蔬菜。如果还有其他需要注意的地方，我会再问您。谢谢！</div>
         <audio controls class="dialog-audio">
           <source src="/file/SMD/multi/wav_compress\wav_demo_HuatuoGPT2/0/patient_5.mp3" type="audio/mp3">
         </audio>
@@ -2635,7 +2636,7 @@ layout: post
     <div class="dialog-row">
       <span class="dialog-role">Patient</span>
       <div class="dialog-content">
-        <div class="dialog-text">好的，我会注意观察出血的情况，如果出血量变多或者有其他不舒服，我会马上回医院。谢谢您的建议，我会适量吃些红枣和红肉。如果有其他问题，我会再来咨询。祝您一切顺利！<结束对话></div>
+        <div class="dialog-text">好的，我会注意观察出血的情况，如果出血量变多或者有其他不舒服，我会马上回医院。谢谢您的建议，我会适量吃些红枣和红肉。如果有其他问题，我会再来咨询。祝您一切顺利！</div>
         <audio controls class="dialog-audio">
           <source src="/file/SMD/multi/wav_compress\wav_demo_KimiAudio/0/patient_3.mp3" type="audio/mp3">
         </audio>
@@ -2732,7 +2733,7 @@ layout: post
     <div class="dialog-row">
       <span class="dialog-role">Patient</span>
       <div class="dialog-content">
-        <div class="dialog-text">医生，我明白了。我会注意休息，不干重活。如果出血多了或者有其他不舒服，我会马上去医院。谢谢您！<结束对话></div>
+        <div class="dialog-text">医生，我明白了。我会注意休息，不干重活。如果出血多了或者有其他不舒服，我会马上去医院。谢谢您！</div>
         <audio controls class="dialog-audio">
           <source src="/file/SMD/multi/wav_compress\wav_demo_Qwen2-Audio/0/patient_1.mp3" type="audio/mp3">
         </audio>
@@ -3075,7 +3076,7 @@ layout: post
     <div class="dialog-row">
       <span class="dialog-role">Patient</span>
       <div class="dialog-content">
-        <div class="dialog-text">医生，我明白了。我会带好之前的检查报告，明天就去复查。如果需要当天处理，我也会做好准备。谢谢您！<结束对话></div>
+        <div class="dialog-text">医生，我明白了。我会带好之前的检查报告，明天就去复查。如果需要当天处理，我也会做好准备。谢谢您！</div>
         <audio controls class="dialog-audio">
           <source src="/file/SMD/multi/wav_compress\wav_demo_SpeechMedAssist2/0/patient_5.mp3" type="audio/mp3">
         </audio>
