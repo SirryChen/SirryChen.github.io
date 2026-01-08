@@ -13,7 +13,7 @@ title: Blogs
 {% include cardline.html url="/blogs/2024-05-17-CACL.html" img="/file/img/cacl_main_img.png" title="CACL: Community-Aware Heterogeneous Graph Contrastive Learning for Social Media Bot Detection" content="🔥 My first paper" %}
 
 
-{% include cardline.html url="2025-09-22-SpeechMedAssist.html" img="/file/SMA/SMA.png" title="Demo of LLMs & SpeechLMs in Medical Consultation" content="🔥 Try it!" %}
+{% include cardline.html url="2025-09-22-SpeechMedAssist.html" img="/file/SMD/SMA.png" title="Demo of LLMs & SpeechLMs in Medical Consultation" content="🔥 Try it!" %}
 
 
 <br>
