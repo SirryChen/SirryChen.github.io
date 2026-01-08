@@ -2247,38 +2247,50 @@ layout: post
 
 <style>
 .dialog-container {
+  max-width: 100%;
+  margin: 1rem auto;
+}
+
+.dialog-card {
+  background-color: #ffffff;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+  margin-bottom: 1rem;
+}
+
+.dialog-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 0.5rem;
+  align-items: start;
+  padding: 0.25rem 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.dialog-row:first-of-type {
+  border-top: none;
+}
+
+.dialog-role {
+  font-weight: 500;
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+.dialog-content {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin: 16px 0;
+  gap: 0.25rem;
 }
-.dialog-card {
-  background: #f9f9f9;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-.dialog-row {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-.dialog-role {
-  font-weight: bold;
-  min-width: 80px;
-  color: #333;
-}
-.dialog-content {
-  flex: 1;
-}
+
 .dialog-text {
-  margin-bottom: 6px;
-  line-height: 1.5;
+  font-size: 0.875rem;
+  color: #111827;
 }
+
 .dialog-audio {
   width: 100%;
-  margin-top: 4px;
 }
 </style>
 
@@ -2292,7 +2304,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我生完孩子已经15天了，但最近还是有点出血，没有痛。前几天去医院做了彩超，医生说子宫里面有个东西，可能是胎盘没排干净。这严重吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Baichuan2/0/patient_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Baichuan2/0/patient_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2301,7 +2313,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">我不是医生，但我可以提供一些建议。产后出血是正常的现象，通常在产后一个月内停止。然而，如果出血持续时间较长或伴有疼痛，那么可能需要进一步检查。<br><br>关于您提到的子宫内的东西，可能是胎盘残留。这种情况并不罕见，许多女性在产后都会出现一定程度的胎盘残留。在某些情况下，胎盘残留可能会导致出血和感染。然而，大多数情况下，随着身体的恢复，胎盘残留会逐渐被吸收。<br><br>如果您担心自己的情况，建议您咨询您的医生或产科专家，他们会根据您的具体情况给出专业意见。同时，保持良好的卫生习惯，避免感染也很重要。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Baichuan2/0/doctor_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Baichuan2/0/doctor_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2310,7 +2322,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，那我现在这种情况应该怎么办？需要做手术吗？我有点担心。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Baichuan2/0/patient_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Baichuan2/0/patient_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2319,7 +2331,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">我不是医生，但我可以提供一些一般性的建议。首先，您应该尽快联系您的医生或者产科专家，他们会对您的情况进行评估，并给出专业的建议。<br><br>如果确诊为胎盘残留，医生可能会建议您进行进一步的检查或治疗，例如超声波检查、清宫手术等。这些治疗方法的目的是确保胎盘完全排出，减少出血和感染的风险。<br><br>请记住，我不是医生，所以我的建议不能替代专业医疗建议。请务必与您的医生或产科专家进行详细咨询。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Baichuan2/0/doctor_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Baichuan2/0/doctor_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2336,7 +2348,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我生完孩子已经15天了，但最近还是有点出血，没有痛。前几天去医院做了彩超，医生说子宫里面有个东西，可能是胎盘没排干净。这严重吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_DISC_MedLLM/0/patient_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_DISC_MedLLM/0/patient_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2345,7 +2357,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">根据您的描述，您在产后出现了少量阴道出血的情况，并且经过B超检查发现可能存在残留物或胎盘组织未排出体外的问题。这种情况通常不会太严重，但我建议您尽快就医以确保安全和健康。<br><br>为了更准确地判断病因并给出适当的治疗方案，我想请您提供更多关于当前症状的信息。例如，出血的颜色、量以及持续时间等。此外，如果您有其他不适或疼痛感，请告诉我相关情况。这些信息将有助于我们更好地了解病情。<br><br>在此期间，我建议您注意休息，避免剧烈运动和过度劳累，保持良好的生活习惯和饮食结构。同时，如果出现异常症状如持续大量出血、腹痛加重等情况，请及时就医进行进一步的检查和治疗。<br><br>希望我的回答能对您有所帮助。如果您还有其他问题或需要进一步的帮助，请随时告诉我。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_DISC_MedLLM/0/doctor_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_DISC_MedLLM/0/doctor_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2354,7 +2366,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，出血颜色是淡红色，量不多，大概就像来月经的第一天那样。从生完孩子到现在一直都有点出血，但没有痛。除了这个，没有其他不舒服的地方。我需要注意什么？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_DISC_MedLLM/0/patient_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_DISC_MedLLM/0/patient_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2363,7 +2375,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">根据您的描述，您目前出现的阴道出血属于正常范围内的现象。然而，由于每个人的身体状况不同，我仍然建议您密切关注自己的症状变化，并在必要时及时就医咨询专业医生。<br><br>在日常生活中，您可以继续保持良好的生活习惯，包括充足的休息、均衡的饮食和适量的运动。此外，避免过度劳累和精神紧张也是很重要的。<br><br>如果您有任何疑问或需要进一步的帮助，请随时告诉我。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_DISC_MedLLM/0/doctor_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_DISC_MedLLM/0/doctor_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2372,7 +2384,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我明白了。我会注意休息和饮食，不过我还是有点担心。如果真的有胎盘没排干净，会有什么风险吗？需要做手术吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_DISC_MedLLM/0/patient_2.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_DISC_MedLLM/0/patient_2.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2381,7 +2393,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">如果确实存在胎盘残留导致的不规则阴道出血，可能会增加感染的风险。因此，我强烈建议您尽早就医以便得到专业的诊断和治疗。根据具体情况，医生可能会采取不同的方法来处理这个问题，比如药物治疗或者手术切除。具体的治疗方式会根据您的病情而定，所以最好听从医生的建议。<br><br>如果您还有其他问题或需要进一步的帮助，请随时告诉我。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_DISC_MedLLM/0/doctor_2.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_DISC_MedLLM/0/doctor_2.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2390,7 +2402,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我明白了。我会尽快再去医院复查一下。如果需要手术，我会听从医生的建议。谢谢您！</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_DISC_MedLLM/0/patient_3.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_DISC_MedLLM/0/patient_3.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2407,7 +2419,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我生完孩子已经15天了，但最近还是有点出血，没有痛。前几天去医院做了彩超，医生说子宫里面有个东西，可能是胎盘没排干净。这严重吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_GLM4-Voice/0/patient_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_GLM4-Voice/0/patient_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2416,7 +2428,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">子宫里面有东西可能是胎盘残留。这种情况需要进一步处理。建议你跟医生详细沟通，可能需要做刮宫手术来清除残留组织。保持积极的治疗，对你身体的恢复很重要。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_GLM4-Voice/0/doctor_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_GLM4-Voice/0/doctor_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2425,7 +2437,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我听您的，会跟医生详细沟通。但我有点担心这个手术会不会有什么风险？毕竟我是农民，平时还要干农活，希望手术后能尽快恢复。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_GLM4-Voice/0/patient_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_GLM4-Voice/0/patient_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2434,7 +2446,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">我非常理解您的担忧，毕竟手术对于任何人来说都是一个很重要的决定。为您进行的这台手术叫做白内障超声乳化吸出术，是目前最先进的治疗方法之一。它的优点是手术时间短，创伤小，恢复快。手术后，您应该能在短时间内恢复视力，并能够尽快返回田里的农活。不过，在手术前，我会请专业的眼科医生详细评估您的状况，确保手术的安全和效果。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_GLM4-Voice/0/doctor_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_GLM4-Voice/0/doctor_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2443,7 +2455,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，您可能记错了，我不是要做白内障手术，而是因为子宫里面有个东西，可能需要刮宫手术。这个手术真的不会有太大风险吧？我希望能尽快好起来，不耽误家里的农活。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_GLM4-Voice/0/patient_2.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_GLM4-Voice/0/patient_2.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2452,7 +2464,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">理解您的担忧。这个手术其实是一项常见的医疗程序，由经验丰富的医生操作，风险相对较小。术后恢复一段时间，身体就会慢慢恢复。请放心，医生的目的是帮助您尽快恢复健康。积极参与术后康复，对您的恢复非常有帮助哦。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_GLM4-Voice/0/doctor_2.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_GLM4-Voice/0/doctor_2.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2461,7 +2473,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，谢谢您的解释。我还是有点担心，这个刮宫手术大概需要多久恢复？我家里还有农活等着我呢。另外，手术后需要注意些什么？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_GLM4-Voice/0/patient_3.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_GLM4-Voice/0/patient_3.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2470,7 +2482,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">手术后恢复的时间一般是3到7天左右。在这段时间内，您需要避免剧烈运动和重体力劳动，比如提重物或者长时间弯曲。同时，保持手术部位的清洁和干燥，按照医生的要求使用眼药水。饮食方面，多吃富含维生素的食物，有助于身体的恢复。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_GLM4-Voice/0/doctor_3.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_GLM4-Voice/0/doctor_3.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2487,7 +2499,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我生完孩子已经15天了，但最近还是有点出血，没有痛。前几天去医院做了彩超，医生说子宫里面有个东西，可能是胎盘没排干净。这严重吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_HuatuoGPT2/0/patient_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_HuatuoGPT2/0/patient_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2496,7 +2508,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">您好，根据您的描述，您可能正在经历所谓的"恶露"，这是一种在分娩后的一段时间内阴道出血的现象，通常会在产后6周内自然停止。这是因为子宫内膜在分娩过程中脱落，形成的伤口需要一段时间来愈合，这个过程可能会伴随少量的出血。<br><br>然而，如果您的出血量增多，或者出现血块，或者伴有发热、腹痛等症状，那么可能需要进一步的医疗干预，因为这可能是感染或者未完全排出的胎盘引起的。<br><br>您提到医生说有可能是在子宫内的胎盘碎片没有完全排出，这是比较常见的情况，有时候会需要进行清宫手术以确保子宫彻底清除胎盘残留物。这种情况如果不及时处理，可能会导致感染或者其他并发症。<br><br>因此，我建议您尽快再次咨询您的医生，了解具体情况并寻求最佳的治疗方案。同时，保持良好的个人卫生，避免过度劳累，保持饮食均衡，以帮助身体恢复。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_HuatuoGPT2/0/doctor_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_HuatuoGPT2/0/doctor_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2505,7 +2517,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我明白了。我现在就是担心这个胎盘没排干净会不会对我有什么影响，需要做手术的话，会不会很疼？我以前没做过手术，心里有点害怕。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_HuatuoGPT2/0/patient_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_HuatuoGPT2/0/patient_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2514,7 +2526,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">胎盘未能完全排出可能会导致一些并发症，如子宫内膜炎或子宫肌炎，这些病症可能会导致发热、下腹痛或出血等症状。更严重的情况下，如果胎盘残留在子宫内时间过长，可能会导致子宫收缩不良，甚至可能引发大出血，对母亲的健康构成威胁。<br><br>如果需要手术清宫，通常会使用一种叫做宫腔镜的仪器进行。这种手术通常在麻醉下进行，所以你不会感到疼痛。手术后可能会有轻微的不适，但通常可以通过药物控制。<br><br>总的来说，虽然手术可能会带来一些不适，但对于防止可能的并发症来说，这是必要的。你应该与你的医生详细讨论这个问题，了解更多关于手术的信息，以便做出最好的决定。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_HuatuoGPT2/0/doctor_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_HuatuoGPT2/0/doctor_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2523,7 +2535,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，谢谢您的解释。我确实有点担心，因为我平时身体都挺好的，这次出了这个问题，心里没底。如果真的要做手术，我会听医生的建议。不过我还是有点害怕，手术后多久可以恢复正常生活呢？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_HuatuoGPT2/0/patient_2.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_HuatuoGPT2/0/patient_2.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2532,7 +2544,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">手术后的恢复时间因人而异，取决于手术的复杂性和个人的身体状况。一般来说，清宫术后大约需要休息2-4周的时间才能恢复到日常活动。在这段时间里，你可能会感到疲劳，需要多休息。你也应该避免剧烈的运动和重体力劳动，以防止对手术部位造成任何不必要的压力或损伤。<br><br>手术后，你可能会有一些轻微的腹部不适或出血，这些都是正常的。但是，如果你感到严重的疼痛，或者有大量出血，应立即联系医生。<br><br>手术后的护理也很重要，包括保持手术部位的清洁，避免性行为，直到医生告诉你可以这样做为止。你也应该按照医生的指示服用任何开处方的药物。<br><br>总的来说，虽然手术可能会让你感到紧张，但请记住，医生们都是为了你的健康最好。他们经过专业培训，能够提供最佳的医疗护理。在手术前后，遵循他们的建议和指导，可以帮助你尽快恢复。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_HuatuoGPT2/0/doctor_2.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_HuatuoGPT2/0/doctor_2.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2541,7 +2553,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我明白了。我会好好休息，按照您的建议去做。如果有不舒服，我会马上联系医生。谢谢您，我心里有底多了。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_HuatuoGPT2/0/patient_3.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_HuatuoGPT2/0/patient_3.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2550,7 +2562,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">不客气！如果您有任何其他问题或疑虑，请随时联系我。祝您早日康复！</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_HuatuoGPT2/0/doctor_3.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_HuatuoGPT2/0/doctor_3.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2559,7 +2571,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我还有一个问题，手术后饮食上需要注意什么吗？比如能不能吃辛辣食物？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_HuatuoGPT2/0/patient_4.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_HuatuoGPT2/0/patient_4.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2568,7 +2580,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">术后的饮食对于恢复至关重要。以下是一些一般指导原则:<br>* 避免食用刺激性食物，例如辣椒，咖啡和酒精，因为这些可能会刺激消化系统并导致不适。<br>* 避免食用高脂肪和高糖的食物，因为它们可能会导致体重增加和其他健康问题。<br>* 增加蛋白质的摄入量，例如来自肉类，鱼类和豆类的蛋白质，以帮助身体修复和恢复。<br>* 喝大量的水，以帮助身体排毒并保持水分平衡。<br>* 尝试吃一些易于消化的食物，例如煮熟的蔬菜和瘦肉，以及全谷物和水果。<br>最终，每个人的需求和限制都是不同的，所以最好是直接向您的医生或营养师询问具体的饮食建议，以满足您的个人需求。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_HuatuoGPT2/0/doctor_4.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_HuatuoGPT2/0/doctor_4.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2577,7 +2589,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我明白了。我会注意饮食，尽量吃清淡点，多吃蛋白质和水果蔬菜。如果还有其他需要注意的地方，我会再问您。谢谢！</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_HuatuoGPT2/0/patient_5.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_HuatuoGPT2/0/patient_5.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2594,7 +2606,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我生完孩子已经15天了，但最近还是有点出血，没有疼。前几天去医院做了个彩超，说子宫里面有个东西，是不是胎盘没排干净？这严重吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_KimiAudio/0/patient_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_KimiAudio/0/patient_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2603,7 +2615,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">听起来你有点担心啊，这很正常。子宫里有东西不一定就是胎盘残留，也可能是其他情况。不过，既然医生已经做了检查，就先别太担心。回家注意休息，饮食均衡，慢慢恢复。如果出血量增多或者有其他不适，一定要及时回医院。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_KimiAudio/0/doctor_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_KimiAudio/0/doctor_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2612,7 +2624,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，你说得对，我会注意休息和饮食的。不过我还是有点担心，这个东西会不会影响我的身体恢复？需要再做些什么检查吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_KimiAudio/0/patient_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_KimiAudio/0/patient_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2621,7 +2633,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">理解你的担忧。一般来说，子宫恢复需要一段时间，这个过程可能会有些出血。如果出血量不大，可以先观察。不过，如果出血持续或者有其他症状，还是建议再复查一下。你也可以咨询一下你的主治医生，看看他们有什么建议。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_KimiAudio/0/doctor_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_KimiAudio/0/doctor_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2630,7 +2642,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我明白了。我会注意观察出血的情况，如果出血量变多或者有其他不舒服，我会马上回医院。谢谢您！另外，我听说吃一些补血的食物有助于恢复，您觉得呢？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_KimiAudio/0/patient_2.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_KimiAudio/0/patient_2.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2639,7 +2651,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">没问题，随时欢迎你来复查。补血食物确实有助于恢复，比如红枣、枸杞、红肉等。不过，最好还是先咨询一下医生，看看你的具体情况适合吃什么。保持良好的心态，相信你会很快恢复的。有什么问题随时问我，祝你早日康复！</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_KimiAudio/0/doctor_2.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_KimiAudio/0/doctor_2.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2648,7 +2660,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">好的，我会注意观察出血的情况，如果出血量变多或者有其他不舒服，我会马上回医院。谢谢您的建议，我会适量吃些红枣和红肉。如果有其他问题，我会再来咨询。祝您一切顺利！</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_KimiAudio/0/patient_3.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_KimiAudio/0/patient_3.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2665,7 +2677,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我生完孩子已经15天了，但最近还是有点出血，没有痛。前几天去医院做了彩超，医生说子宫里面有个东西，可能是胎盘没排干净。这严重吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Llama-Omni2-7B/0/patient_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Llama-Omni2-7B/0/patient_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2674,7 +2686,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">这种情况需要引起重视，建议尽快联系医生进行详细检查和咨询。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Llama-Omni2-7B/0/doctor_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Llama-Omni2-7B/0/doctor_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2683,7 +2695,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">好的，医生。我明白了。那我应该怎么办呢？需要再做些什么检查或者治疗吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Llama-Omni2-7B/0/patient_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Llama-Omni2-7B/0/patient_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2692,7 +2704,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">建议先预约妇产科医生，进行详细的妇科检查和必要的超声波检查，以确定具体原因并获得相应的治疗方案。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Llama-Omni2-7B/0/doctor_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Llama-Omni2-7B/0/doctor_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2701,7 +2713,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">好的，医生。我会尽快去预约妇产科医生，做详细的检查。如果需要的话，我会再做一次超声波检查。谢谢您的建议。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Llama-Omni2-7B/0/patient_2.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Llama-Omni2-7B/0/patient_2.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2710,7 +2722,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">不客气，希望您早日康复。如果有任何疑问或不适，请及时就医。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Llama-Omni2-7B/0/doctor_2.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Llama-Omni2-7B/0/doctor_2.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2727,7 +2739,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我生完孩子已经15天了，但最近还是有点出血，没有疼。前几天去医院做了个彩超，说子宫里面有个东西，是不是胎盘没排干净？这严重吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Qwen2-Audio/0/patient_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Qwen2-Audio/0/patient_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2736,7 +2748,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">根据你的描述，你可能正在经历产后出血或者胎盘残留的问题。这需要尽快得到医疗专业人士的评估和处理。建议你立即联系你的产科医生或前往医院紧急科进行检查。在此期间，你应该注意休息，避免过度活动，并密切关注任何异常情况，如持续的出血、发热、恶臭的分泌物等。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Qwen2-Audio/0/doctor_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Qwen2-Audio/0/doctor_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2745,7 +2757,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我明白了。我会注意休息，不干重活。如果出血多了或者有其他不舒服，我会马上去医院。谢谢您！</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Qwen2-Audio/0/patient_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Qwen2-Audio/0/patient_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2762,7 +2774,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我生完孩子已经15天了，但最近还是有点出血，没有疼。前几天去医院做了个彩超，说子宫里面有个东西，是不是胎盘没排干净？这严重吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_ShizhenGPT/0/patient_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_ShizhenGPT/0/patient_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2777,7 +2789,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，你说的情况我都明白了。我会尽快去复查彩超，看看子宫里面的东西到底是什么。如果需要的话，我会听从医生的建议做清宫手术。谢谢你的详细解答，我会注意观察出血量和其他症状的。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_ShizhenGPT/0/patient_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_ShizhenGPT/0/patient_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2794,7 +2806,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我生完孩子已经15天了，但最近还是有点出血，没有疼。前几天去医院做了个彩超，说子宫里面有个东西，是不是胎盘没排干净？这严重吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechGPT2/0/patient_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechGPT2/0/patient_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2803,7 +2815,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">听你这么说，可能是有些残留，不过不一定很严重。一般来说，产后有些出血是正常的，尤其是如果彩超显示没有明显异常的话。不过呢，还是建议你去医院再检查一下，确保一切都好。你也可以多注意休息，保持饮食均衡，这样有助于身体恢复。对了，你最近有没有做什么特别的运动？ ###<br></div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechGPT2/0/doctor_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechGPT2/0/doctor_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2812,7 +2824,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我最近就是在家干点轻活，比如做饭、洗衣服，没有做重体力活。就是有点担心那个东西会不会影响恢复，需要怎么处理？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechGPT2/0/patient_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechGPT2/0/patient_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2821,7 +2833,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">听起来你还是挺注意休息的，这样挺好。那个东西如果是残留的话，可能会影响到恢复，不过也不一定。你可以去医院做个详细的检查，医生会给你更具体的建议。平时多喝水，多吃点清淡的食物，保持心情愉快，这样对身体恢复也有帮助。你有没有考虑过什么时候去医院再查查？ ###<br></div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechGPT2/0/doctor_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechGPT2/0/doctor_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2830,7 +2842,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我打算明天就去医院再查查。就是有点担心，毕竟孩子还小，需要照顾。希望这次检查能搞清楚到底是什么情况。谢谢您！</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechGPT2/0/patient_2.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechGPT2/0/patient_2.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2849,7 +2861,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我生完孩子已经15天了，但最近还是有点出血，没有痛。前几天去医院做了彩超，医生说子宫里面有个东西，可能是胎盘没排干净。这严重吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Zhongjing/0/patient_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Zhongjing/0/patient_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2858,7 +2870,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">您好，根据您提供的症状，可能存在胎盘未排干净的情况。胎盘未排干净可能会导致持续性阴道出血，需要及时处理。建议您及时咨询专业医生，进行进一步的检查和治疗。胎盘未排干净可能会增加感染的风险，影响子宫恢复和母婴健康。请您注意休息，避免剧烈运动和性生活，遵医生的指导进行治疗和恢复。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Zhongjing/0/doctor_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Zhongjing/0/doctor_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2867,7 +2879,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我听您的，会注意休息，不干重活。但我有点担心这个胎盘没排干净会不会很危险？需要做手术吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Zhongjing/0/patient_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Zhongjing/0/patient_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2876,7 +2888,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">对于胎盘未排干净的情况，手术是一种治疗方法之一。手术的决定需要根据具体情况进行评估和决定，包括胎盘的大小、位置、子宫恢复情况等。专业医生会根据您的具体情况进行评估和决定是否需要手术治疗。请您及时咨询专业医生，进行进一步的检查和治疗。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Zhongjing/0/doctor_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Zhongjing/0/doctor_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2885,7 +2897,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我明白了。那我现在需要做什么准备呢？如果真的要做手术，需要注意些什么？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Zhongjing/0/patient_2.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Zhongjing/0/patient_2.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2894,7 +2906,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">如果需要进行手术治疗，您需要提前进行一些准备工作。具体的准备工作包括术前的心理辅导、术前的禁食和饮水，以及术前的相关检查和准备。手术后您需要注意休息，遵医生的指导进行恢复和护理。手术后还需注意避免剧烈运动和性生活，以免影响子宫的恢复和母婴健康。请您及时咨询专业医生，进行进一步的检查和治疗。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Zhongjing/0/doctor_2.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Zhongjing/0/doctor_2.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2903,7 +2915,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我听您的，会做好术前的准备。如果真的要做手术，我会注意休息，不干重活，也不做剧烈运动。还有，手术前需要做哪些检查呢？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Zhongjing/0/patient_3.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Zhongjing/0/patient_3.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2912,7 +2924,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">手术前您需要进行一系列的检查，包括血常规、心电图、肝功能等。这些检查有助于评估您的身体状况和手术的安全性。专业医生会根据您的具体情况制定手术前的检查方案。请您及时咨询专业医生，进行进一步的检查和治疗。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Zhongjing/0/doctor_3.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Zhongjing/0/doctor_3.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2921,7 +2933,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我明白了。这些检查听起来挺重要的，我会按时去做。如果真的要做手术，我也会好好配合。不过我还是有点担心，手术会不会很疼？术后恢复需要多久？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Zhongjing/0/patient_4.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Zhongjing/0/patient_4.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2930,7 +2942,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">手术后可能会有一定的疼痛感，但医生会根据您的具体情况进行麻醉和镇痛处理，以减轻手术后的不适感。术后的恢复时间因手术的具体情况而异，一般需要几天至几周的时间。专业医生会根据您的手术情况和身体恢复情况制定术后的康复计划，帮助您尽快恢复健康。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Zhongjing/0/doctor_4.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Zhongjing/0/doctor_4.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2939,7 +2951,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，谢谢您的解释。我理解手术可能会有些疼痛，但我会尽量放松。术后恢复时间我会耐心等待，按医生的指导来做。如果真的要做手术，我还会担心会不会有并发症，比如感染之类的。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Zhongjing/0/patient_5.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Zhongjing/0/patient_5.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2948,7 +2960,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">手术后可能会出现一些并发症，如感染、出血等。专业医生会根据您的手术情况和身体状况进行术后的监测和处理，尽量避免并发症的发生。如果您有任何不适或疑问，请及时咨询专业医生。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_Zhongjing/0/doctor_5.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_Zhongjing/0/doctor_5.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2964,7 +2976,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我生完孩子已经15天了，但最近还是有点出血，没有痛。前几天去医院做了彩超，医生说子宫里面有个东西，可能是胎盘没排干净。这严重吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist1/0/patient_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist1/0/patient_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2973,7 +2985,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">嗯，胎盘早剥确实挺严重的，可能会导致胎儿缺氧。你现在还有出血的情况吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist1/0/doctor_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist1/0/doctor_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2982,7 +2994,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我现在还是有点出血，但不多，也没有痛。就是有点担心这个东西会不会影响恢复。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist1/0/patient_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist1/0/patient_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -2991,7 +3003,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">胎盘早剥需要密切关注，你得继续按医生说的定期复查。如果有任何不适，比如出血增多或者肚子疼，一定要马上去医院。平时注意休息，别太累，饮食也要均衡。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist1/0/doctor_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist1/0/doctor_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3000,7 +3012,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我明白了。我会注意休息，饮食也会注意。如果出血多了或者肚子疼，我会立刻去医院。还有，这个东西会不会影响我以后再怀孕？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist1/0/patient_2.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist1/0/patient_2.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3009,7 +3021,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">胎盘早剥确实挺危险的，但及时处理的话，大多数情况下不会对以后怀孕有太大影响。你还是要定期复查，听从医生的建议。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist1/0/doctor_2.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist1/0/doctor_2.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3018,7 +3030,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我听您的，会按时复查。不过我还是有点担心，这个东西会不会自己排出来？我需要做手术吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist1/0/patient_3.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist1/0/patient_3.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3027,7 +3039,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">胎盘早剥是否需要手术要看具体情况，比如胎儿的情况和你的身体状况。如果情况严重，可能需要手术。你现在要做的就是定期复查，听从医生的建议。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist1/0/doctor_3.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist1/0/doctor_3.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3044,7 +3056,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我生完孩子已经15天了，但最近还是有点出血，没有痛。前几天去医院做了彩超，医生说子宫里面有个东西，可能是胎盘没排干净。这严重吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist2-2k/0/patient_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist2-2k/0/patient_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3053,7 +3065,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">这种情况确实需要关注。你能告诉我具体是什么时候开始出血的吗？还有，出血量大不大？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist2-2k/0/doctor_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist2-2k/0/doctor_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3062,7 +3074,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">出血是从生完孩子后第7天开始的，量不多，就像来月经一样，但颜色比较淡。没有别的不舒服。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist2-2k/0/patient_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist2-2k/0/patient_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3071,7 +3083,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">了解了。胎盘没排干净可能会导致出血，需要及时处理。建议你尽快去医院复查，可能需要做B超看看具体情况，必要时医生会帮你清理。注意休息，避免劳累和性生活，观察出血情况，如有增多或有其他不适，立即就医。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist2-2k/0/doctor_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist2-2k/0/doctor_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3080,7 +3092,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我明白了。我会尽快再去医院复查。如果出血量增多或者有其他不舒服，我会马上去看医生。谢谢您的建议。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist2-2k/0/patient_2.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist2-2k/0/patient_2.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3089,7 +3101,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">好的，记得按时复查，注意身体变化，有任何异常都要及时就医。祝你和宝宝健康。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist2-2k/0/doctor_2.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist2-2k/0/doctor_2.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3098,7 +3110,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">好的，医生。我会注意休息，避免劳累和性生活，观察出血情况。如果出血量增多或有其他不适，我会马上去看医生。谢谢您的关心和建议。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist2-2k/0/patient_3.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist2-2k/0/patient_3.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3115,7 +3127,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我生完孩子已经15天了，但最近还是有点出血，没有痛。前几天去医院做了彩超，医生说子宫里面有个东西，可能是胎盘没排干净。这严重吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist2/0/patient_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist2/0/patient_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3124,7 +3136,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">这种情况确实需要关注。你能告诉我出血量大不大？有没有其他不适的症状？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist2/0/doctor_0.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist2/0/doctor_0.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3133,7 +3145,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">出血量不多，就像来月经的第一天那样，颜色有点暗。没有别的不舒服，就是有点担心。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist2/0/patient_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist2/0/patient_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3142,7 +3154,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">了解了。子宫里有残留物可能会导致出血，最好尽快去医院复查一下，看看是否需要进一步处理。如果有感染风险，医生可能会开些抗生素预防。注意休息，不要做剧烈运动。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist2/0/doctor_1.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist2/0/doctor_1.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3151,7 +3163,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我听您的，明天就去复查。如果需要处理的话，应该怎么办呢？会不会很麻烦？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist2/0/patient_2.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist2/0/patient_2.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3160,7 +3172,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">处理方式要看具体情况，可能是药物治疗或者再次清宫。关键是早发现早治疗，避免感染和其他并发症。记得保持个人卫生，避免性生活直到医生说可以。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist2/0/doctor_2.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist2/0/doctor_2.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3169,7 +3181,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我明白了。如果需要清宫的话，会不会很疼？我有点害怕。还有，复查需要空腹吗？</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist2/0/patient_3.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist2/0/patient_3.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3178,7 +3190,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">清宫时会用麻醉，所以不会太疼。复查一般需要空腹，这样检查更准确。如果有任何疑问，直接跟医生沟通就好。希望你早日康复。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist2/0/doctor_3.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist2/0/doctor_3.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3187,7 +3199,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我明白了。清宫的时候会麻醉，那我就放心了。复查我会空腹去的。如果复查结果出来，需要马上治疗的话，能不能当天就安排？因为我家离医院有点远。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist2/0/patient_4.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist2/0/patient_4.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3196,7 +3208,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">可以的，如果需要紧急处理，医院会安排当天手术。不过最好先跟医生确认一下，看是否真的需要那么快处理。记得带上之前的检查报告。</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist2/0/doctor_4.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist2/0/doctor_4.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
@@ -3205,7 +3217,7 @@ layout: post
       <div class="dialog-content">
         <div class="dialog-text">医生，我明白了。我会带好之前的检查报告，明天就去复查。如果需要当天处理，我也会做好准备。谢谢您！</div>
         <audio controls class="dialog-audio">
-          <source src="./audio/multi/wav_compress\wav_demo_SpeechMedAssist2/0/patient_5.mp3" type="audio/mp3">
+          <source src="/file/SMD/multi/wav_compress/wav_demo_SpeechMedAssist2/0/patient_5.mp3" type="audio/mp3">
         </audio>
       </div>
     </div>
