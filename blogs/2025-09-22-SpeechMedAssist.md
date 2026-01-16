@@ -2086,77 +2086,77 @@ layout: post
 
 ## 2. Single QA
 
-### 1. Example 1
+### Example 
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
       <span class="demo-wild-role">Patient</span>
       <div class="demo-wild-content">
         <div class="demo-wild-text">大水牌维生素AD滴剂是什么？能介绍一下吗？</div>
-        <audio controls class="demo-wild-audio"><source src="./audio/single/wav_compress/wav_Baichuan2/185/patient.mp3" type="audio/mp3"></audio>
+        <audio controls class="demo-wild-audio"><source src="/file/SMD/single/wav_compress/wav_Baichuan2/185/patient.mp3" type="audio/mp3"></audio>
       </div>
     </div>
     <div class="demo-wild-row">
       <span class="demo-wild-role">SpeechGPT2</span>
       <div class="demo-wild-content">
         <div class="demo-wild-text">大硕牌的维生素AD滴剂啊，这个东西主要是给小宝宝补充维生素A和D的。你知道吧，维生素A对眼睛好，维生素D呢，对骨骼发育有帮助。尤其是对那些刚开始接触阳光的小宝宝，喝这个滴剂能帮助他们更好地吸收钙质。你是不是也在考虑给家里的小宝宝补充点营养呢？ ###\n</div>
-        <audio controls class="demo-wild-audio"><source src="./audio/single/wav_compress/wav_SpeechGPT2/185/doctor_None.mp3" type="audio/mp3"></audio>
+        <audio controls class="demo-wild-audio"><source src="/file/SMD/single/wav_compress/wav_SpeechGPT2/185/doctor_None.mp3" type="audio/mp3"></audio>
       </div>
     </div>
     <div class="demo-wild-row">
       <span class="demo-wild-role">SpeechMedAssist1</span>
       <div class="demo-wild-content">
         <div class="demo-wild-text">维生素AD滴剂含维生素A和D，用于预防和治疗缺乏症，如佝偻病、夜盲症。按医嘱服用，注意不要过量。</div>
-        <audio controls class="demo-wild-audio"><source src="./audio/single/wav_compress/wav_SpeechMedAssist1/185/doctor_0.mp3" type="audio/mp3"></audio>
+        <audio controls class="demo-wild-audio"><source src="/file/SMD/single/wav_compress/wav_SpeechMedAssist1/185/doctor_0.mp3" type="audio/mp3"></audio>
       </div>
     </div>
     <div class="demo-wild-row">
       <span class="demo-wild-role">SpeechMedAssist2-2k</span>
       <div class="demo-wild-content">
         <div class="demo-wild-text">大水板维生素AD滴剂含维生素A和D，用于预防和治疗缺乏症，如夜盲症、佝偻病。每日1粒，过量有害，遵医嘱使用。</div>
-        <audio controls class="demo-wild-audio"><source src="./audio/single/wav_compress/wav_SpeechMedAssist2-2k/185/doctor_0.mp3" type="audio/mp3"></audio>
+        <audio controls class="demo-wild-audio"><source src="/file/SMD/single/wav_compress/wav_SpeechMedAssist2-2k/185/doctor_0.mp3" type="audio/mp3"></audio>
       </div>
     </div>
     <div class="demo-wild-row">
       <span class="demo-wild-role">Zhongjing</span>
       <div class="demo-wild-content">
         <div class="demo-wild-text">大水盘维生素ADDG是一种天然的抗氧化剂，主要存在于大水盘藻中。它具有抗氧化、抗炎、抗肿瘤等功效，被广泛应用于保健品、药品和食品中。大水盘维生素ADDG的主要功效包括抗氧化、抗炎、抗肿瘤、抗衰老、抗疲劳等。</div>
-        <audio controls class="demo-wild-audio"><source src="./audio/single/wav_compress/wav_Zhongjing/185/doctor_0.mp3" type="audio/mp3"></audio>
+        <audio controls class="demo-wild-audio"><source src="/file/SMD/single/wav_compress/wav_Zhongjing/185/doctor_0.mp3" type="audio/mp3"></audio>
       </div>
     </div>
     <div class="demo-wild-row">
       <span class="demo-wild-role">Qwen2-Audio</span>
       <div class="demo-wild-content">
         <div class="demo-wild-text">大水牌维生素AD滴剂是一种常见的补充维生素A和D的药品，主要用于预防和治疗维生素A和D缺乏症。其中，维生素A对视力、免疫系统和皮肤健康等方面具有重要作用，而维生素D则有助于钙吸收，维持骨骼健康。\n\n使用大水牌维生素AD滴剂的方法通常是按照说明书上的指示进行。一般来说，婴幼儿每天需要摄入一定量的维生素A和D，而成人则可以根据自己的营养需求来选择适当的剂量。\n\n需要注意的是，虽然维生素AD滴剂可以帮助人体补充所需的维生素，但并不能替代均衡的饮食。因此，在服用维生素AD滴剂的同时，仍应保证摄取足够的蔬菜、水果等食物中的各种营养素。此外，如果长期过量摄入维生素A或D，也可能对人体造成不良影响，因此在使用前最好先咨询医生的建议。</div>
-        <audio controls class="demo-wild-audio"><source src="./audio/single/wav_compress/wav_Qwen2-Audio/185/doctor_0.mp3" type="audio/mp3"></audio>
+        <audio controls class="demo-wild-audio"><source src="/file/SMD/single/wav_compress/wav_Qwen2-Audio/185/doctor_0.mp3" type="audio/mp3"></audio>
       </div>
     </div>
     <div class="demo-wild-row">
       <span class="demo-wild-role">SpeechMedAssist2</span>
       <div class="demo-wild-content">
         <div class="demo-wild-text">它是维生素AD滴剂，含维生素A和D，用于预防和治疗缺乏症，如佝偻病、夜盲症。按医嘱使用，注意不要过量。</div>
-        <audio controls class="demo-wild-audio"><source src="./audio/single/wav_compress/wav_SpeechMedAssist2/185/doctor_0.mp3" type="audio/mp3"></audio>
+        <audio controls class="demo-wild-audio"><source src="/file/SMD/single/wav_compress/wav_SpeechMedAssist2/185/doctor_0.mp3" type="audio/mp3"></audio>
       </div>
     </div>
     <div class="demo-wild-row">
       <span class="demo-wild-role">HuatuoGPT2</span>
       <div class="demo-wild-content">
         <div class="demo-wild-text">大水盘维生素ADDG是一种复方制剂，主要成分为维生素A、维生素D2和甘油磷酸钠。它通常以注射液的形式使用。不同厂家的制剂可能因制作工艺的不同而导致药物效果和不良反应有所差异。大水盘维生素ADDG主要用于预防和治疗由维生素A、D缺乏引起的各种疾病，如夜盲症、眼干燥症、角膜软化症以及佝偻病和软骨病等。用药时需要遵循医生的指导，按照处方进行注射或稀释后口服。对于儿童和老年人的用量需要根据具体情况进行调整。在使用过程中需要注意禁忌症和注意事项，例如对大水盘维生素ADDG过敏者禁用，孕妇和哺乳期妇女需谨慎使用。此外，大水盘维生素ADDG可能会与其他药物发生相互作用，请在使用前告知医生并咨询是否能够同时使用其他药物。</div>
-        <audio controls class="demo-wild-audio"><source src="./audio/single/wav_compress/wav_HuatuoGPT2/185/doctor_0.mp3" type="audio/mp3"></audio>
+        <audio controls class="demo-wild-audio"><source src="/file/SMD/single/wav_compress/wav_HuatuoGPT2/185/doctor_0.mp3" type="audio/mp3"></audio>
       </div>
     </div>
     <div class="demo-wild-row">
       <span class="demo-wild-role">DISC_MedLLM</span>
       <div class="demo-wild-content">
         <div class="demo-wild-text">您好，大水盘维生素ADDG是一种补充剂。它包含了多种维生素和矿物质，可以帮助增强免疫力、促进身体健康发育等。其中包括维生素A、C、E、B族维生素以及钙、铁、锌等多种营养素。这些成分对于维持身体正常功能非常重要。\n\n如果您对这种补充剂感兴趣或有任何疑问，我建议您咨询医生以获取更详细的信息。此外，除了维生素ADDG，还有其他一些补充剂也可以提供类似的益处，例如复合维生素片或者含有丰富维生素和矿物质的食物。请注意，每个人的体质不同，所以最好在使用之前先咨询专业人士的意见。\n\n如果您需要进一步了解关于维生素ADDG或其他健康问题的信息，我会很乐意为您提供支持。</div>
-        <audio controls class="demo-wild-audio"><source src="./audio/single/wav_compress/wav_DISC_MedLLM/185/doctor_0.mp3" type="audio/mp3"></audio>
+        <audio controls class="demo-wild-audio"><source src="/file/SMD/single/wav_compress/wav_DISC_MedLLM/185/doctor_0.mp3" type="audio/mp3"></audio>
       </div>
     </div>
     <div class="demo-wild-row">
       <span class="demo-wild-role">Llama-Omni2-7B</span>
       <div class="demo-wild-content">
         <div class="demo-wild-text">大薯牌维生素AD滴剂是一种补充维生素A和D的营养产品，有助于维护视力、促进骨骼健康及支持免疫系统功能。</div>
-        <audio controls class="demo-wild-audio"><source src="./audio/single/wav_compress/wav_Llama-Omni2-7B/185/doctor_0.mp3" type="audio/mp3"></audio>
+        <audio controls class="demo-wild-audio"><source src="/file/SMD/single/wav_compress/wav_Llama-Omni2-7B/185/doctor_0.mp3" type="audio/mp3"></audio>
       </div>
     </div>
     <div class="demo-wild-row">
@@ -2169,21 +2169,21 @@ layout: post
       <span class="demo-wild-role">GLM4-Voice</span>
       <div class="demo-wild-content">
         <div class="demo-wild-text">B族维生素包括B1、B2、B3、B5、B6、B7、B9。维生素B1帮助代谢食物，保持神经系统健康；B2在红血球生成中很重要，还维护皮肤和视力；B3支持皮肤和消化系统，转化为维生素C也有用；B5帮助代谢和产生能量；B6在红细胞生成和激素合成中重要；B7，又称生物素，支持新陈代谢和皮肤健康；B9对于DNA合成和红血球的生成很重要，特别在怀孕期间需要额外补充。维生素B复合维生素片包含了这些维生素，适合那些饮食可能无法满足需求的人，比如说素食者或者孕妇。服用前最好咨询医生或营养师，以确保安全。</div>
-        <audio controls class="demo-wild-audio"><source src="./audio/single/wav_compress/wav_GLM4-Voice/185/doctor_0.mp3" type="audio/mp3"></audio>
+        <audio controls class="demo-wild-audio"><source src="/file/SMD/single/wav_compress/wav_GLM4-Voice/185/doctor_0.mp3" type="audio/mp3"></audio>
       </div>
     </div>
     <div class="demo-wild-row">
       <span class="demo-wild-role">KimiAudio</span>
       <div class="demo-wild-content">
         <div class="demo-wild-text">大水牌维生素AD滴剂是一种补充维生素AD的营养品，主要是帮助促进钙吸收和骨骼发育的。</div>
-        <audio controls class="demo-wild-audio"><source src="./audio/single/wav_compress/wav_KimiAudio/185/doctor_0.mp3" type="audio/mp3"></audio>
+        <audio controls class="demo-wild-audio"><source src="/file/SMD/single/wav_compress/wav_KimiAudio/185/doctor_0.mp3" type="audio/mp3"></audio>
       </div>
     </div>
     <div class="demo-wild-row">
       <span class="demo-wild-role">Baichuan2</span>
       <div class="demo-wild-content">
         <div class="demo-wild-text">大水盘维生素ADG是一种动物营养补充剂，主要成分为维生素A、D3和G，主要用于提高动物的生长发育速度、增强免疫系统功能以及维持健康。</div>
-        <audio controls class="demo-wild-audio"><source src="./audio/single/wav_compress/wav_Baichuan2/185/doctor_0.mp3" type="audio/mp3"></audio>
+        <audio controls class="demo-wild-audio"><source src="/file/SMD/single/wav_compress/wav_Baichuan2/185/doctor_0.mp3" type="audio/mp3"></audio>
       </div>
     </div>
   </div>
