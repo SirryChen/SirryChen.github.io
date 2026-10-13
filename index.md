@@ -8,7 +8,7 @@ description: "Sirry Chen (陈思远), Ph.D. student at Fudan University, working
   <p>I am <strong>Sirry Chen <span lang="zh">(陈思远)</span></strong>, a Ph.D. student at <strong><a href="https://www.fudan.edu.cn/">Fudan University</a></strong>, advised by <a href="http://www.fudan-disc.com/people/zywei">Prof. Zhongyu Wei <span lang="zh">(魏忠钰)</span></a>. I work with the <a href="http://www.fudan-disc.com/">Data Intelligence and Social Computing Lab</a> and <a href="https://www.sii.edu.cn/czrl/list.htm">Shanghai Innovation Institute</a>.</p>
   <p>I received my bachelor's degree from <strong>Nanjing University of Aeronautics and Astronautics</strong> in 2025, where I was advised by <a href="https://lipiji.com/">Prof. Piji Li <span lang="zh">(李丕绩)</span></a>.</p>
   <p>My research interests include <strong>large language models</strong>, <strong>natural language processing</strong>, and <strong>data mining</strong>. My recent work explores speech language models for medical consultation and graph learning for social media bot detection.</p>
-  <p class="contact-note">I welcome discussions and research collaborations. Feel free to <a href="mailto:{{ site.owner.email }}">get in touch</a>.</p>
+  <p class="contact-note">Welcome to <a href="mailto:{{ site.owner.email }}">get in touch</a> with me, no matter who, where, when, and how!</p>
 </section>
 
 <section id="education" class="home-section">
