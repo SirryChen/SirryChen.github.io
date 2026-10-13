@@ -201,3 +201,27 @@ summary { cursor: pointer; color: var(--muted); font-size: 13px; }
   #main h1, #main h2, #main h3, #main h4, #main h5, #main h6 { scroll-margin-top: 124px; }
 }
 @media print { .contents-sidebar { display: none; } }
+/* Each project is a complete, distinct entry with its own metadata and resources. */
+.project-section { margin-top: 44px; }
+.prose .project-section > h2 { margin-top: 0; margin-bottom: 24px; }
+.project-list { display: grid; gap: 20px; }
+.project-block { padding: 24px 26px; border: 1px solid var(--line); border-left: 3px solid var(--blue); border-radius: 3px; background: #f8fafc; break-inside: avoid; }
+.prose .project-block h3 { margin: 0 0 10px; font-size: 19px; line-height: 1.45; }
+.project-block .project-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 5px 20px; margin: 0 0 17px; color: var(--muted); font-size: 12px; }
+.project-meta > span:last-child { font-variant-numeric: tabular-nums; }
+.project-block .project-description { margin-bottom: 12px; font-size: 15px; }
+.project-block .project-program { margin-bottom: 12px; color: var(--muted); font-size: 13px; }
+.project-details { display: grid; gap: 7px; margin: 14px 0 0; font-size: 13px; }
+.project-details > div { display: grid; grid-template-columns: 62px minmax(0, 1fr); gap: 12px; }
+.project-details dt { color: var(--muted); }
+.project-details dd { margin: 0; }
+.project-links { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13px; }
+.project-language-link { margin: 22px 0 0; font-size: 13px; }
+@media (max-width: 480px) {
+  .project-block { padding: 20px 18px; }
+  .prose .project-block h3 { font-size: 17px; }
+  .project-block .project-meta { display: grid; gap: 5px; }
+  .project-section { margin-top: 36px; }
+  .project-links { gap: 8px 18px; }
+}
+@media print { .project-block { background: none; border-left-color: var(--ink); } }
