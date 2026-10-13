@@ -4,7 +4,7 @@ permalink: /file/awards-zh/index.html
 title: Awards-zh
 ---
 
-> 更新时间：2024/03/20 &nbsp; [English Version (英文)](../awards.md/)
+> 更新时间：2024/03/20 &nbsp; [English Version (英文)](/awards/)
 
 ## 荣誉奖项
 
@@ -13,12 +13,10 @@ title: Awards-zh
 - 2022年09月：校三好学生
 - 2023年05月：校优秀团员
 - 2024年10月：国家奖学金
-- 😰
 
 ## 竞赛
 
 - 2022年12月：高教社杯全国大学生数学建模竞赛全国二等奖
-- 😭
 
 ## 社会服务
 

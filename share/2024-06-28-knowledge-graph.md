@@ -8,6 +8,10 @@ tags:
 abbrlink: dd90554b
 date: 2024-06-28 11:01:00
 swiper_index: 3
+permalink: /share/2024-06-28-knowledge-graph.html
+toc: true
+lang: zh-CN
+layout: post
 ---
 ### 1.课程简述
 

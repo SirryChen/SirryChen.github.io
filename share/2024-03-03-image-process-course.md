@@ -9,6 +9,10 @@ cover: /img/图像处理与分析.png
 abbrlink: dd90554b
 date: 2024-03-03 11:01:00
 swiper_index: 3
+permalink: /share/2024-03-03-image-process-course.html
+toc: true
+lang: zh-CN
+layout: post
 ---
 ### 1.课程简述
 

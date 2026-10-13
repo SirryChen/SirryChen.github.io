@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>{% include head.html %}</head>
+<body{% if page.homepage %} class="homepage"{% endif %}>
+  {% include navigation.html %}
+  <div class="site-shell">
+    {% include author-bio.html %}
+    <main id="main" tabindex="-1">
+      {% if page.homepage %}
+        {{ content }}
+      {% else %}
+        <article class="prose">
+          <header class="page-heading">
+            {% if page.layout == 'post' %}<a class="back-link" href="{% if page.url contains '/share/' %}{{ '/share/' | relative_url }}{% else %}{{ '/blogs/' | relative_url }}{% endif %}">← All notes</a>{% endif %}
+            {% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
+            {% if page.date %}<p class="article-meta"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %-d, %Y' }}</time>{% if page.modified %} · Updated {{ page.modified | date: '%B %-d, %Y' }}{% endif %}</p>{% endif %}
+          </header>
+          <div class="article-content">{{ content }}</div>
+        </article>
+      {% endif %}
+    </main>
+  </div>
+  {% include footer.html %}
+  <script defer src="{{ '/assets/js/academic.js' | relative_url }}"></script>
+</body>
+</html>

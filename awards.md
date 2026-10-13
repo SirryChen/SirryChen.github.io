@@ -1,20 +1,27 @@
 ---
 layout: page
 permalink: /awards/index.html
-title: Awards
+title: Honors & service
 ---
 
-> Lastest Update: 8th Jan 2024 &nbsp; [中文版本 (Chinese Version)](https://sirrychen.github.io//file/awards-zh/)
-
+[中文版](/file/awards-zh/)
 
 ## Honors
 
-- Nothing to show
+- **2024.10** · National Scholarship
+- **2024.01** · First Prize, Shenzhen Zero One College Open Carnival
+- **2023.09** · Xiangrong Scholarship
+- **2023.05** · Outstanding Youth League Member, NUAA
+- **2022.09** · Outstanding Student, NUAA
 
-## Competitions (Selected)
+## Competition
 
-- Nothing to show
+- **2022.12** · National Second Prize, China Undergraduate Mathematical Contest in Modeling
 
-## Services
+## Service
 
-- Nothing to show
+- Youth League branch secretary; branch recognized as a May Fourth Red Flag Youth League Branch and a Five-Star Youth League Branch.
+- Volunteer in two online education support programs.
+- Volunteer at NUAA's 70th anniversary celebration.
+- Volunteer for new students at Changkong College.
+- Student speaker for the Changkong Innovation Class.

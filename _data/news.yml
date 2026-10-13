@@ -1,0 +1,14 @@
+- date: "2026.08"
+  text: "I shared a research write-up on SpeechMedAssist, our ACL 2026 main conference paper."
+  url: /blogs/2026-08-14-SpeechMedAssist-ACL2026.html
+  label: Read the post
+- date: "2025.09"
+  text: "I started my Ph.D. at Fudan University, advised by Prof. Zhongyu Wei."
+- date: "2024.06"
+  text: "Released a course project on automatically constructing a knowledge graph for large language models."
+  url: /share/2024-06-28-knowledge-graph.html
+  label: Project notes
+- date: "2024.05"
+  text: "My first paper, CACL, was accepted to Findings of ACL 2024."
+  url: /blogs/2024-05-17-CACL.html
+  label: Read the post

@@ -1,0 +1,16 @@
+<div class="publication-list">
+{% for paper in site.data.publications %}
+  <article class="publication">
+    <a class="publication-figure" href="{{ paper.paper }}" tabindex="-1" aria-hidden="true"><img src="{{ paper.image | relative_url }}" alt="{{ paper.image_alt }}" width="200" height="130" loading="lazy"></a>
+    <div class="publication-body">
+      <p class="publication-venue">{{ paper.venue }} <span>· {{ paper.venue_detail }}</span></p>
+      <h3><a href="{{ paper.paper }}">{{ paper.title }}</a></h3>
+      <p class="publication-authors">{{ paper.authors }}</p>
+      <p class="publication-summary">{{ paper.summary }}</p>
+      <div class="publication-links" aria-label="Resources for {{ paper.title | escape }}">
+        <a href="{{ paper.paper }}">Paper</a><a href="{{ paper.pdf }}">PDF</a><a href="{{ paper.code }}">Code</a>{% if paper.demo %}<a href="{{ paper.demo }}">Demo</a>{% endif %}<a href="{{ paper.blog | relative_url }}">Blog</a><a href="{{ paper.bibtex }}">BibTeX</a>
+      </div>
+    </div>
+  </article>
+{% endfor %}
+</div>

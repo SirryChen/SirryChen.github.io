@@ -8,6 +8,9 @@ date: 2024-09-05
 modified: 2024-09-07
 swiper_index: 3
 layout: post
+permalink: /share/2024-09-04-lost-in-the-middle.html
+toc: true
+lang: zh-CN
 ---
 
 
@@ -57,7 +60,7 @@ layout: post
 
     <!-- 第四幅图 -->
     <div>
-        <img src="../file/img/lost in the middle/QA-u-shape-lost-in-the-middle.svg" alt="alt text" style="width: 90%; height: auto; margin-bottom: 10px;">
+        <img src="../file/img/lost in the middle/qa_decoder_only_vs_encoder_decoder.svg" alt="alt text" style="width: 90%; height: auto; margin-bottom: 10px;">
         <p style="text-align: center; font-style: italic; font-size: 80%;">随着问题答案位置的变化，模型性能在question-answering任务上呈现出U形</p>
     </div>
 

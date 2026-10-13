@@ -7,6 +7,9 @@ tags:
 date: 2024-04-27
 swiper_index: 3
 layout: post
+permalink: /share/2024-04-27-the-reason-for-scaling.html
+toc: true
+lang: zh-CN
 ---
 
 ### 1. 问题描述

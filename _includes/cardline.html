@@ -1,16 +1,4 @@
-
-<table class="imgtable">
-    <tr>
-        <td style="width: 25%;">
-            <a href="{{ include.url }}">
-                <img src="{{ include.img }}" alt="image" width="100%" style="border-radius: 8px;"/>
-            </a>
-        </td>
-        <td align="left">
-            <a href="{{ include.url }}">
-                <p style="margin: auto;"> <strong>{{ include.title }} </strong><br />
-                <span style="font-size: 90%;">{{ include.content }}</span> </p>
-            </a>
-        </td>
-    </tr>
-</table>
+<article class="note-entry">
+  <a class="note-image" href="{{ include.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ include.img | relative_url }}" alt="" width="160" height="100" loading="lazy"></a>
+  <div><h3><a href="{{ include.url | relative_url }}">{{ include.title }}</a></h3><p>{{ include.content }}</p></div>
+</article>

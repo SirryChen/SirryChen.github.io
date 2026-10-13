@@ -9,6 +9,9 @@ tags:
 date: 2026-08-14
 swiper_index: 4
 layout: post
+permalink: /blogs/2026-08-14-SpeechMedAssist-ACL2026.html
+toc: true
+lang: zh-CN
 ---
 
 ### SpeechMedAssist: Efficiently and Effectively Adapting Speech Language Models for Medical Consultation
@@ -168,14 +171,14 @@ SpeechLM 将语音与文本编码到**共享的语义空间**中。因此，我�
       <span class="demo-wild-role">Patient</span>
       <div class="demo-wild-content">
         <div class="demo-wild-text">就是2月份咨询过的噢，因为当时是输卵管已经做过手术后，今天4月又怀孕了一次，左右都有了，双侧输卵管切除，今年4月份又搞了一次宫外孕。我现在想去做检查，想做试管了。医生，宫外孕的原因是什么？</div>
-        <audio controls class="demo-wild-audio"><source src="/file/SMD/wild/wav_compress/patient/20250920_115710.mp3" type="audio/mp3"></audio>
+        <audio preload="none" controls class="demo-wild-audio"><source src="/file/SMD/wild/wav_compress/patient/20250920_115710.mp3" type="audio/mp3"></audio>
       </div>
     </div>
     <div class="demo-wild-row">
       <span class="demo-wild-role">SpeechMedAssist</span>
       <div class="demo-wild-content">
         <div class="demo-wild-text">输卵管妊娠就是受精卵没在子宫里着床，而是在输卵管里。这通常是因为输卵管有阻塞或者炎症，影响了受精卵的正常移动。你之前有过输卵管手术和宫外孕经历，这些都增加了风险。你现在想再试一次，但最好先做全面检查，看看输卵管情况如何。</div>
-        <audio controls class="demo-wild-audio"><source src="/file/SMD/wild/wav_compress/wav_SpeechMedAssist2/0/doctor_0.mp3" type="audio/mp3"></audio>
+        <audio preload="none" controls class="demo-wild-audio"><source src="/file/SMD/wild/wav_compress/wav_SpeechMedAssist2/0/doctor_0.mp3" type="audio/mp3"></audio>
       </div>
     </div>
   </div>

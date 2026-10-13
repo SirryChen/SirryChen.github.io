@@ -1,0 +1,27 @@
+- title: "SpeechMedAssist: Efficiently and Effectively Adapting Speech Language Models for Medical Consultation"
+  year: 2026
+  venue: ACL 2026
+  venue_detail: Main Conference · Long Paper
+  authors: "<strong>Sirry Chen</strong>, Jieyi Wang, Wei Chen, Zhongyu Wei"
+  image: /file/SMD/SMA.png
+  image_alt: SpeechMedAssist two-stage training framework
+  summary: Adapting speech language models for multi-turn medical consultation through text-based knowledge learning and limited speech alignment.
+  paper: https://aclanthology.org/2026.acl-long.1428/
+  pdf: https://aclanthology.org/2026.acl-long.1428.pdf
+  code: https://github.com/SirryChen/SpeechMedAssist
+  demo: https://speech.medassist.chat
+  blog: /blogs/2026-08-14-SpeechMedAssist-ACL2026.html
+  bibtex: https://aclanthology.org/2026.acl-long.1428.bib
+- title: "CACL: Community-Aware Heterogeneous Graph Contrastive Learning for Social Media Bot Detection"
+  year: 2024
+  venue: ACL 2024
+  venue_detail: Findings
+  authors: "<strong>Sirry Chen</strong>, Shuo Feng, Liang Songsong, Chen-Chen Zong, Jing Li, Piji Li"
+  image: /file/img/cacl_main_img.png
+  image_alt: CACL community-aware graph contrastive learning framework
+  summary: Using community structure and heterogeneous graph contrastive learning to detect social media bots.
+  paper: https://aclanthology.org/2024.findings-acl.617/
+  pdf: https://aclanthology.org/2024.findings-acl.617.pdf
+  code: https://github.com/SirryChen/CACL
+  blog: /blogs/2024-05-17-CACL.html
+  bibtex: https://aclanthology.org/2024.findings-acl.617.bib
