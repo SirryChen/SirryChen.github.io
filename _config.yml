@@ -9,8 +9,12 @@ owner:
   avatar: profile-sketch.png
   role: Ph.D. Student
   affiliation: Fudan University
-  lab: Data Intelligence and Social Computing Lab
-  lab_url: http://www.fudan-disc.com/
+  affiliation_url: https://www.fudan.edu.cn/
+  labs:
+    - name: DISC Lab
+      url: http://www.fudan-disc.com/
+    - name: Fudan NLP
+      url: https://nlp.fudan.edu.cn/
   location: Shanghai, China
   email: siyuanchen25@m.fudan.edu.cn
   twitter: ChenSirry

@@ -38,8 +38,9 @@ h4, h5, h6 { font-size: 16px; margin: 20px 0 10px; }
 .profile-name { font-family: var(--body-font); font-size: 24px; font-weight: 600; margin: 22px 0 0; }
 .chinese-name { font-size: 16px; margin: 2px 0 14px; letter-spacing: .08em; }
 .profile-role { margin: 0 0 12px; }
-.profile-lab { max-width: 210px; margin-bottom: 10px; font-size: 13px; }
-.profile-lab a { color: var(--muted); }
+.profile-labs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.lab-pill { display: inline-flex; align-items: center; border: 1px solid #c9d9e7; border-radius: 999px; padding: 3px 10px; background: #f3f7fb; color: var(--blue); font-size: 12px; line-height: 1.6; white-space: nowrap; }
+.lab-pill:hover { background: #eaf1f8; text-decoration: none; }
 .profile-location { color: var(--muted); font-size: 13px; margin-bottom: 18px; }
 .profile-links { list-style: none; padding: 16px 0 0; margin: 0; border-top: 1px solid var(--line); }
 .profile-links li { margin-bottom: 7px; }
@@ -136,7 +137,7 @@ summary { cursor: pointer; color: var(--muted); font-size: 13px; }
   .profile-name { font-size: 23px; margin: 0; }
   .chinese-name { margin-bottom: 8px; font-size: 14px; }
   .profile-role { margin: 0; font-size: 13px; }
-  .profile-lab { max-width: none; margin: 17px 0 5px; }
+  .profile-labs { margin: 17px 0 10px; }
   .profile-location { margin: 0 0 12px; }
   .profile-links { border: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
   .profile-links li { margin: 0; }

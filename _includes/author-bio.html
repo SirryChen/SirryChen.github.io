@@ -4,10 +4,12 @@
     <div class="profile-summary">
       <h2 class="profile-name">{{ site.owner.name }}</h2>
       <p class="chinese-name" lang="zh">{{ site.owner.chinese_name }}</p>
-      <p class="profile-role">{{ site.owner.role }}<br>{{ site.owner.affiliation }}</p>
+      <p class="profile-role">{{ site.owner.role }}<br><a href="{{ site.owner.affiliation_url }}">{{ site.owner.affiliation }}</a></p>
     </div>
   </div>
-  <p class="profile-lab"><a href="{{ site.owner.lab_url }}">{{ site.owner.lab }}</a></p>
+  <div class="profile-labs" aria-label="Research groups">
+    {% for lab in site.owner.labs %}<a class="lab-pill" href="{{ lab.url }}">{{ lab.name }}</a>{% endfor %}
+  </div>
   <p class="profile-location">{{ site.owner.location }}</p>
   <ul class="profile-links">
     <li><a class="email-link" href="mailto:{{ site.owner.email }}"><i class="icon-mail social-icon" aria-hidden="true"></i>{{ site.owner.email }}</a></li>
