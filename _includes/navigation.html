@@ -4,7 +4,7 @@
     <a class="site-name" href="{{ '/' | relative_url }}">{{ site.owner.name }}</a>
     <nav class="site-nav" aria-label="Main navigation">
       {% for link in site.links %}
-      <a href="{{ link.url | relative_url }}"{% if link.url contains '#' %} data-section="{{ link.url | split: '#' | last }}"{% elsif page.url contains link.url %} aria-current="page"{% endif %}>{{ link.title }}</a>
+      <a href="{{ link.url | relative_url }}"{% if link.url == '/' and page.url == '/' %} aria-current="page"{% elsif link.url != '/' and page.url contains link.url %} aria-current="page"{% endif %}>{{ link.title }}</a>
       {% endfor %}
     </nav>
   </div>

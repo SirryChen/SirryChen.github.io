@@ -5,14 +5,14 @@ A restrained academic website built with Jekyll and hosted on GitHub Pages. The 
 ## Editing content
 
 - `_config.yml`: name, affiliation, email, social links, and navigation.
-- `index.md`: biography, education, and home sections.
+- `index.md`: biography, academic background, and news.
 - `_data/publications.yml`: papers in reverse chronological order. Fill in real metadata and resource URLs only.
 - `_data/news.yml`: dated updates.
 - `blogs.md` and `share.md`: note indexes. Articles live in `blogs/` and `share/`.
-- `works.md`: research and project descriptions.
+- `works.md`: publications, research, and project descriptions.
 - `assets/css/academic.css`: colors, spacing, typography, and responsive layout.
 
-Existing article URLs, downloads, and audio demonstrations are preserved. Add YAML front matter with `layout: post`, `title`, `date`, and an explicit `permalink` to new articles. Use `toc: true` for a contents menu, and `mathjax: true` for mathematical notation.
+Existing article URLs, downloads, and audio demonstrations are preserved. Add YAML front matter with `layout: post`, `title`, `date`, and an explicit `permalink` to new articles. Article pages show a contents sidebar instead of the personal profile. Add `notes: true` to note indexes for the same sidebar, and `mathjax: true` for mathematical notation.
 
 ## Local preview
 

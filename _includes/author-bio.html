@@ -10,13 +10,12 @@
   <p class="profile-lab"><a href="{{ site.owner.lab_url }}">{{ site.owner.lab }}</a></p>
   <p class="profile-location">{{ site.owner.location }}</p>
   <ul class="profile-links">
-    <li><a class="email-link" href="mailto:{{ site.owner.email }}">{{ site.owner.email }}</a></li>
-    {% if site.owner.github %}<li><a href="https://github.com/{{ site.owner.github }}">GitHub</a></li>{% endif %}
+    <li><a class="email-link" href="mailto:{{ site.owner.email }}"><i class="icon-mail social-icon" aria-hidden="true"></i>{{ site.owner.email }}</a></li>
+    {% if site.owner.github %}<li><a href="https://github.com/{{ site.owner.github }}"><i class="icon-github social-icon" aria-hidden="true"></i>GitHub</a></li>{% endif %}
     {% if site.owner.scholar %}<li><a href="{{ site.owner.scholar }}">Google Scholar</a></li>{% endif %}
     {% if site.owner.cv %}<li><a href="{{ site.owner.cv | relative_url }}">Curriculum vitae</a></li>{% endif %}
-    {% if site.owner.twitter %}<li><a href="https://twitter.com/{{ site.owner.twitter }}">Twitter</a></li>{% endif %}
-    {% if site.owner.zhihu %}<li><a href="{{ site.owner.zhihu }}">Zhihu</a></li>{% endif %}
-    {% if site.owner.bilibili %}<li><a href="https://space.bilibili.com/{{ site.owner.bilibili }}">Bilibili</a></li>{% endif %}
+    {% if site.owner.twitter %}<li><a href="https://twitter.com/{{ site.owner.twitter }}"><i class="icon-twitter social-icon" aria-hidden="true"></i>Twitter</a></li>{% endif %}
+    {% if site.owner.zhihu %}<li><a href="{{ site.owner.zhihu }}"><img class="social-icon" src="{{ "/images/logo/icons8-zhihu-96.png" | relative_url }}" alt="" width="16" height="16">Zhihu</a></li>{% endif %}
+    {% if site.owner.bilibili %}<li><a href="https://space.bilibili.com/{{ site.owner.bilibili }}"><img class="social-icon" src="{{ "/images/logo/icons8-retro-tv-100.png" | relative_url }}" alt="" width="16" height="16">Bilibili</a></li>{% endif %}
   </ul>
-  {% if page.toc %}<details class="article-toc" open><summary>On this page</summary><nav id="article-toc" aria-label="Article contents"></nav></details>{% endif %}
 </aside>

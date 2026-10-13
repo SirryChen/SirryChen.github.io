@@ -176,3 +176,30 @@ summary { cursor: pointer; color: var(--muted); font-size: 13px; }
   .publication, .education-item { break-inside: avoid; }
 }
 .more-link { font-size: 13px; }
+/* Original social marks and the article's hierarchical contents menu. */
+@font-face {
+  font-family: icomoon;
+  src: url('../fonts/icomoon.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+.icon-mail, .icon-github, .icon-twitter { font-family: icomoon; font-style: normal; font-weight: normal; line-height: 1; }
+.icon-mail::before { content: '\e006'; }
+.icon-github::before { content: '\e000'; }
+.icon-twitter::before { content: '\e007'; }
+.profile-links a { display: inline-flex; align-items: center; gap: 8px; }
+.social-icon { display: inline-block; width: 16px; height: 16px; flex: 0 0 16px; object-fit: contain; }
+.contents-sidebar { position: sticky; top: 100px; }
+.contents-menu > summary { display: none; }
+.contents-menu nav { max-height: 70vh; overflow-y: auto; padding-right: 8px; scrollbar-width: thin; }
+.contents-menu a { display: block; color: var(--blue); font-size: 13px; line-height: 1.6; margin-bottom: 8px; }
+.contents-menu a.toc-bold { font-weight: 700; }
+#main h1, #main h2, #main h3, #main h4, #main h5, #main h6 { scroll-margin-top: 96px; }
+@media (max-width: 760px) {
+  .contents-sidebar { position: static; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+  .contents-menu > summary { display: list-item; color: var(--ink); font-weight: 600; }
+  .contents-menu nav { max-height: 210px; padding-top: 12px; }
+  #main h1, #main h2, #main h3, #main h4, #main h5, #main h6 { scroll-margin-top: 124px; }
+}
+@media print { .contents-sidebar { display: none; } }

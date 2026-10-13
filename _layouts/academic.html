@@ -4,7 +4,11 @@
 <body{% if page.homepage %} class="homepage"{% endif %}>
   {% include navigation.html %}
   <div class="site-shell">
-    {% include author-bio.html %}
+    {% if page.notes or page.layout == 'post' %}
+      {% include contents-sidebar.html %}
+    {% else %}
+      {% include author-bio.html %}
+    {% endif %}
     <main id="main" tabindex="-1">
       {% if page.homepage %}
         {{ content }}

@@ -1,5 +1,6 @@
 ---
 layout: page
+notes: true
 permalink: /share/index.html
 title: Study notes
 ---

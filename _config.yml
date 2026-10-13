@@ -12,22 +12,22 @@ owner:
   lab: Data Intelligence and Social Computing Lab
   lab_url: http://www.fudan-disc.com/
   location: Shanghai, China
-  email: sirrychen@nuaa.edu.cn
+  email: siyuanchen25@m.fudan.edu.cn
   twitter: ChenSirry
   github: SirryChen
   bilibili: 1902605701
   zhihu: https://www.zhihu.com/people/kcn-82
 links:
-  - title: About
-    url: /#about
-  - title: Publications
-    url: /#publications
-  - title: Education
-    url: /#education
-  - title: Projects
+  - title: About Me
+    url: /
+  - title: Works
     url: /works/
-  - title: Notes
+  - title: Awards
+    url: /awards/
+  - title: Blogs
     url: /blogs/
+  - title: Share
+    url: /share/
 timezone: Asia/Shanghai
 future: true
 highlighter: rouge

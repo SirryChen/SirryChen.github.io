@@ -1,10 +1,11 @@
 ---
 layout: page
+notes: true
 permalink: /blogs/index.html
 title: Research notes
 ---
 
-Paper write-ups, project updates, and demonstrations. See the [publication list](/#publications) for papers and code.
+Paper write-ups, project updates, and demonstrations. See the [publication list](/works/#publications) for papers and code.
 
 ## 2026
 
