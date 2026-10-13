@@ -24,7 +24,7 @@ lang: zh-CN
 
 - 论文：[[ACL Anthology]](https://aclanthology.org/2026.acl-long.1428/) · [[arXiv]](https://arxiv.org/abs/2601.04638) · [[PDF]](https://aclanthology.org/2026.acl-long.1428.pdf)
 - 代码 & 模型权重：[[GitHub]](https://github.com/SirryChen/SpeechMedAssist)
-- 交互 Demo：[[在线体验](/blogs/2025-09-22-SpeechMedAssist.html)] · [[语音样例 Demo](https://speech.medassist.chat)]
+- 交互 Demo：[[语音样例 Demo](https://sirrychen.github.io/blogs/2025-09-22-SpeechMedAssist.html)]
 - 原文推送：[[微信公众号]](https://mp.weixin.qq.com/s/2bx3dmaVIsT6cP6h4UzE4A)
 
 ---
