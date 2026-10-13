@@ -10,13 +10,14 @@
 <meta property="og:url" content="{{ page.url | replace: 'index.html', '' | absolute_url }}">
 <meta property="og:site_name" content="{{ site.title | escape }}">
 <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
-<meta property="og:image" content="{{ '/images/sirry.jpg' | absolute_url }}">
+<meta property="og:image" content="{{ '/images/' | append: site.owner.avatar | absolute_url }}">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="@{{ site.owner.twitter }}">
 <meta name="twitter:title" content="{{ page_title | escape }}">
 <meta name="twitter:description" content="{{ description | escape }}">
-<meta name="twitter:image" content="{{ '/images/sirry.jpg' | absolute_url }}">
-<link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+<meta name="twitter:image" content="{{ '/images/' | append: site.owner.avatar | absolute_url }}">
+<link rel="icon" href="{{ '/images/cat.ico' | relative_url }}" type="image/x-icon">
+<link rel="apple-touch-icon" href="{{ '/images/cat.jpg' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/academic.css' | relative_url }}">
 {% if page.mathjax %}{% include latex.html %}{% endif %}
 {% if site.google_analytics %}
