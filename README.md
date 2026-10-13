@@ -24,3 +24,5 @@ bundle exec jekyll serve
 ```
 
 Open `http://127.0.0.1:4000`. GitHub Pages builds the source on the `main` branch. Generated `_site/` files and local caches should not be committed.
+
+Google Scholar and RedNote (Xiaohongshu) SVG icons are from [Simple Icons](https://github.com/simple-icons/simple-icons), distributed under CC0 1.0. The license is included in `images/logo/SIMPLE-ICONS-LICENSE.txt`.
