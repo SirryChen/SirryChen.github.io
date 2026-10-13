@@ -13,7 +13,8 @@ toc: true
 lang: zh-CN
 ---
 
-## 0. 前置说明
+## 1. 前置说明
+{: id="0-前置说明"}
 
 文本交互是现有医疗大模型的主要交互方式，便于年轻群体直接在网络中通过打字的方式进行交流。但在实际的场景中，例如医疗咨询，语音交互是更为直接、便捷、老年人友好的交互方式。因此，我们期望推动端到端的语音大模型在医疗咨询场景下的应用。我们将医生在多轮咨询过程中的步骤拆解为：分析病症、主动追问、给出诊断或治疗意见。
 
@@ -24,9 +25,11 @@ lang: zh-CN
 
 
 
-## 1. Wild
+## 2. Wild
+{: id="1-wild"}
 
-### 1. Example 1
+### 2.1 Example 1
+{: id="1-example-1"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -129,7 +132,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 2. Example 2
+### 2.2 Example 2
+{: id="2-example-2"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -232,7 +236,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 3. Example 3
+### 2.3 Example 3
+{: id="3-example-3"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -335,7 +340,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 4. Example 4
+### 2.4 Example 4
+{: id="4-example-4"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -438,7 +444,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 5. Example 5
+### 2.5 Example 5
+{: id="5-example-5"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -541,7 +548,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 6. Example 6
+### 2.6 Example 6
+{: id="6-example-6"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -644,7 +652,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 7. Example 7
+### 2.7 Example 7
+{: id="7-example-7"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -747,7 +756,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 8. Example 8
+### 2.8 Example 8
+{: id="8-example-8"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -850,7 +860,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 9. Example 9
+### 2.9 Example 9
+{: id="9-example-9"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -953,7 +964,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 10. Example 10
+### 2.10 Example 10
+{: id="10-example-10"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -1056,7 +1068,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 11. Example 11
+### 2.11 Example 11
+{: id="11-example-11"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -1159,7 +1172,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 12. Example 12
+### 2.12 Example 12
+{: id="12-example-12"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -1262,7 +1276,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 13. Example 13
+### 2.13 Example 13
+{: id="13-example-13"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -1365,7 +1380,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 14. Example 14
+### 2.14 Example 14
+{: id="14-example-14"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -1468,7 +1484,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 15. Example 15
+### 2.15 Example 15
+{: id="15-example-15"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -1571,7 +1588,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 16. Example 16
+### 2.16 Example 16
+{: id="16-example-16"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -1674,7 +1692,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 17. Example 17
+### 2.17 Example 17
+{: id="17-example-17"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -1777,7 +1796,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 18. Example 18
+### 2.18 Example 18
+{: id="18-example-18"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -1880,7 +1900,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 19. Example 19
+### 2.19 Example 19
+{: id="19-example-19"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -1983,7 +2004,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 20. Example 20
+### 2.20 Example 20
+{: id="20-example-20"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -2087,9 +2109,11 @@ lang: zh-CN
 </div>
 
 
-## 2. Single QA
+## 3. Single QA
+{: id="2-single-qa"}
 
-### Example 
+### 3.1 Example
+{: id="example"}
 <div class="demo-wild-container">
   <div class="demo-wild-card">
     <div class="demo-wild-row">
@@ -2244,7 +2268,8 @@ lang: zh-CN
 </style>
 
 
-## 3. Multi Conv
+## 4. Multi Conv
+{: id="3-multi-conv"}
 
 
 
@@ -2298,7 +2323,8 @@ lang: zh-CN
 </style>
 
 
-### 1. Baichuan2
+### 4.1 Baichuan2
+{: id="1-baichuan2"}
 
 <div class="dialog-container">
   <div class="dialog-card">
@@ -2342,7 +2368,8 @@ lang: zh-CN
 </div>
 
 
-### 2. DISC_MedLLM
+### 4.2 DISC_MedLLM
+{: id="2-disc_medllm"}
 
 <div class="dialog-container">
   <div class="dialog-card">
@@ -2413,7 +2440,8 @@ lang: zh-CN
 </div>
 
 
-### 3. GLM4-Voice
+### 4.3 GLM4-Voice
+{: id="3-glm4-voice"}
 
 <div class="dialog-container">
   <div class="dialog-card">
@@ -2493,7 +2521,8 @@ lang: zh-CN
 </div>
 
 
-### 4. HuatuoGPT2
+### 4.4 HuatuoGPT2
+{: id="4-huatuogpt2"}
 
 <div class="dialog-container">
   <div class="dialog-card">
@@ -2600,7 +2629,8 @@ lang: zh-CN
 </div>
 
 
-### 5. KimiAudio
+### 4.5 KimiAudio
+{: id="5-kimiaudio"}
 
 <div class="dialog-container">
   <div class="dialog-card">
@@ -2671,7 +2701,8 @@ lang: zh-CN
 </div>
 
 
-### 6. Llama-Omni2-7B
+### 4.6 Llama-Omni2-7B
+{: id="6-llama-omni2-7b"}
 
 <div class="dialog-container">
   <div class="dialog-card">
@@ -2733,7 +2764,8 @@ lang: zh-CN
 </div>
 
 
-### 7. Qwen2-Audio
+### 4.7 Qwen2-Audio
+{: id="7-qwen2-audio"}
 
 <div class="dialog-container">
   <div class="dialog-card">
@@ -2768,7 +2800,8 @@ lang: zh-CN
 </div>
 
 
-### 8. ShizhenGPT
+### 4.8 ShizhenGPT
+{: id="8-shizhengpt"}
 
 <div class="dialog-container">
   <div class="dialog-card">
@@ -2800,7 +2833,8 @@ lang: zh-CN
 </div>
 
 
-### 9. SpeechGPT2
+### 4.9 SpeechGPT2
+{: id="9-speechgpt2"}
 
 <div class="dialog-container">
   <div class="dialog-card">
@@ -2855,7 +2889,8 @@ lang: zh-CN
 
 
 
-### 10. Zhongjing
+### 4.10 Zhongjing
+{: id="10-zhongjing"}
 
 <div class="dialog-container">
   <div class="dialog-card">
@@ -2970,7 +3005,8 @@ lang: zh-CN
   </div>
 </div>
 
-### 11. SpeechMedAssist1
+### 4.11 SpeechMedAssist1
+{: id="11-speechmedassist1"}
 
 <div class="dialog-container">
   <div class="dialog-card">
@@ -3050,7 +3086,8 @@ lang: zh-CN
 </div>
 
 
-### 12. SpeechMedAssist2-10k
+### 4.12 SpeechMedAssist2-10k
+{: id="12-speechmedassist2-10k"}
 
 <div class="dialog-container">
   <div class="dialog-card">
@@ -3121,7 +3158,8 @@ lang: zh-CN
 </div>
 
 
-### 13. SpeechMedAssist2
+### 4.13 SpeechMedAssist2
+{: id="13-speechmedassist2"}
 
 <div class="dialog-container">
   <div class="dialog-card">

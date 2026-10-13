@@ -14,13 +14,15 @@ toc: true
 lang: zh-CN
 layout: post
 ---
-### 1.课程简述
+## 1. 课程简述
+{: id="1课程简述"}
 
 - 课程书籍：[数字图像处理 第四版](https://z-library.se/book/21510875/facb30/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%AC%AC%E5%9B%9B%E7%89%88digital-image-processingfourth-edition.html){:target="_blank"}
 - 学分：2
 
 
-### 2.课程报告
+## 2. 课程报告
+{: id="2课程报告"}
 
 <iframe src="../file/图像处理与分析大作业.pdf" width="100%" height="600px"></iframe>
 

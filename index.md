@@ -17,7 +17,7 @@ description: "Sirry Chen (陈思远), Ph.D. student at Fudan University, working
     <div class="education-item"><p class="education-date">2025.09 — Present</p><div><h3><a href="https://www.fudan.edu.cn/">Fudan University</a> &amp; <a href="https://www.sii.edu.cn/czrl/list.htm">Shanghai Innovation Institute</a></h3><p>Ph.D. student · Data Intelligence and Social Computing Lab</p><p>Advisor: <a href="http://www.fudan-disc.com/people/zywei">Prof. Zhongyu Wei</a></p></div></div>
     <div class="education-item"><p class="education-date">2021.09 — 2025.06</p><div><h3>Nanjing University of Aeronautics and Astronautics</h3><p>Bachelor's degree · <a href="https://changkong.nuaa.edu.cn/zkcxbzl/list.htm">Changkong College</a> × <a href="https://ai.nuaa.edu.cn/main.htm">College of AI</a></p><p>Advisor: <a href="https://lipiji.com/">Prof. Piji Li</a></p></div></div>
   </div>
-  <details class="earlier-education"><summary>Earlier education</summary><p>2018.09 — 2021.06 · Chongqing High School, Chongzhou, Sichuan</p></details>
+  <details class="earlier-education"><summary>Earlier education</summary><p>2018.09 — 2021.06 · Chongqing High School, Chengdu, Sichuan</p></details>
 </section>
 
 

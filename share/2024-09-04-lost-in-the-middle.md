@@ -15,9 +15,11 @@ lang: zh-CN
 
 
 
-## 1.问题提出
+## 1. 问题提出
+{: id="1问题提出"}
 
 ### 1.1 Lost in the middle
+{: id="11-lost-in-the-middle"}
 
 <blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin-bottom: 15px;">
     23年11月：<a href="https://aclanthology.org/2024.tacl-1.9/" style="color: red;">Lost in the Middle: How Language Models Use Long Contexts</a>
@@ -28,7 +30,8 @@ lang: zh-CN
 - multi-document question answering(e.g. who got the first nobel prize in physics)
 - key-value retrieval
 
-##### 观察到的现象
+#### 1.1.1 观察到的现象
+{: id="观察到的现象"}
 - 当问题的答案位于长文本的文首或者文末时，模型（即使是经过长文本训练）能够回答出问题答案的频率，大于答案分布在文本中部的情况。
 - 并且模型性能随着答案的位置的变化，整体呈现出U形的连续渐变性。
 - 部分情况下，当答案放置在长文本中部，模型的性能甚至 < 没有额外输入直接进行回答
@@ -73,11 +76,13 @@ lang: zh-CN
 
 
 
-##### 观测结论
+#### 1.1.2 观测结论
+{: id="观测结论"}
 大模型（无论是否经过指令微调）的性能都呈现出U形，即对长文本中信息的使用缺乏稳健性。
 
 
 ### 1.2 Same Task, More Tokens
+{: id="12-same-task-more-tokens"}
 
 <blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin: 15px;">
     23年11月：<a href="https://aclanthology.org/2024.acl-long.818/" style="color: red;">Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models</a>
@@ -89,7 +94,8 @@ lang: zh-CN
 - People In Rooms
 - A simplified version of Ruletaker
 
-##### 观察到的现象
+#### 1.2.1 观察到的现象
+{: id="观察到的现象-1"}
 1. 仅通过**重复**所有**关键信息**来扩大文本长度，随着长度增加，模型性能也会下降
 2. 两个关键信息相邻，随机分布在长文本中，效果为**文末 > 文首 > 中间 > 随机**，且随文本长度增加，模型性能下降（文末>文首的情况与lost in the middle不太相符）
 3. 当冗余信息与关键信息来自于相同任务时（即relevant），模型性能的下降**小于**冗余信息无关的情况
@@ -146,16 +152,19 @@ lang: zh-CN
 </div>
 
 
-##### 观测结论
+#### 1.2.2 观测结论
+{: id="观测结论-1"}
 - 随着文本长度增大，模型性能均有下降
 - 在无CoT，推理任务，任意文本长度情况下，不同关键信息位置，模型的性能<span style="color: red;">文末 > 文首 > 中间 > 随机</span>
 
 
-## 2.原因猜想
+## 2. 原因猜想
+{: id="2原因猜想"}
 
 上述两篇论文的共同点在于，模型无法有效利用位于模型中部的信息。下面概述一些可能的原因。
 
 ### 2.1 模型结构
+{: id="21-模型结构"}
 
 ["Lost in the middle"](https://aclanthology.org/2024.tacl-1.9/)中认为，decoder-only模型在训练时使用的mask可能会导致在每一个时间点，模型倾向于关注之前的tokens，而encoder-decoder模型则能关注到两边的tokens。为了探究是否是模型结构的影响，文中挑选了两组模型进行实验。
 <br>
@@ -180,6 +189,7 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 
 
 ### 2.2 Pretraining & Fine-Tuning对模型造成影响
+{: id="22-pretraining--fine-tuning对模型造成影响"}
 
 ["Make Your LLM Fully Utilize the Context"](https://arxiv.org/abs/2404.16811) 中认为，在自回归的预训练过程中，代理任务（e.g., next token prediction）的训练目标会使得模型更倾向于关注邻近token，在后续生成过程中，处于**文末**的token对生成有更大的影响。
 
@@ -206,6 +216,7 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 
 
 ### 2.3 Attention分布不均
+{: id="23-attention分布不均"}
 
 受微调对模型关注位置影响的启发，对ChatGLM2-6B-32K的attention score可视化，可以更直观地展现模型对文首和文末的注意，以及对文本中部的忽视。
 
@@ -223,12 +234,14 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
     <p style="text-align: center; font-style: italic; font-size: 80%;">在经过第三层后的注意力中，前几个token的注意力巨增<br><a href="https://iclr.cc/virtual/2024/poster/18794/">Efficient Streaming Language Models with Attention Sinks</a> Xiao et al., Sep 2023</p>
 </div>
 
-## 3.尝试解决
+## 3. 尝试解决
+{: id="3尝试解决"}
 
 最近有许多工作，依据初步的实验，对原因进行了猜想，并以猜想作为假设，采取了一系列措施，尝试解决这个问题
 
 
 ### 3.1 Never Lost in the Middle
+{: id="31-never-lost-in-the-middle"}
 
 <blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin-bottom: 10px;">
     24年8月：<a href="https://aclanthology.org/2024.acl-long.736/" style="color: red;">Never Lost in the Middle: Mastering Long-Context Question Answering with Position-Agnostic Decompositional Training</a>
@@ -264,6 +277,7 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 
 
 ### 3.2 Make Your LLM Fully Utilize the Context
+{: id="32-make-your-llm-fully-utilize-the-context"}
 
 <blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin-bottom: 10px;">
     24年4月：<a href="https://arxiv.org/abs/2404.16811" style="color: red;">Make Your LLM Fully Utilize the Context</a>
@@ -281,6 +295,7 @@ Longchat-13b-16k(<a href="https://huggingface.co/lmsys/longchat-13b-16k/blob/mai
 </div>
 
 ### 3.3 Found in the Middle
+{: id="33-found-in-the-middle"}
 
 <blockquote style="border-left: 3px solid red; padding-left: 10px; color: red; font-size: 120%; margin-bottom: 10px;">
     24年7月：<a href="https://aclanthology.org/2024.findings-acl.890/" style="color: red;">Found in the Middle: Calibrating Positional Attention Bias Improves Long Context Utilization</a>
@@ -326,7 +341,8 @@ $$ rel(x^{doc})=Attn(x^{doc},k)-Attn(x^{dum},k)+rel(x^{dum}).$$
 <span style="color: orange;">突然想到，如果在transformer中，不加位置编码，那么对于模型来说输入是无序的。那么是否能够设计“一种仅在文档内部进行位置信息标注，而不同文档间位置无关”的位置编码方式。此时，在全局注意力下，不存在距离文首\文末（或者说instruction\query）更近的文档，是否与这篇文章提出的方法等效。</span>
 
 
-## 4.这仍是一个开放问题
+## 4. 这仍是一个开放问题
+{: id="4这仍是一个开放问题"}
 
 对于产生lost in the middle的原因，最开始的["Lost in the middle"](https://aclanthology.org/2024.tacl-1.9/)中提出三种不同的原因，之后的大部分文章都基于“Attention weight的U形分布”与“不同关键信息位置分布下 模型性能呈U形分布”的相似性，着重关注如何增大关键信息的attention，即让模型能充分利用输入，更关注于关键信息。
 
@@ -356,7 +372,8 @@ $$ rel(x^{doc})=Attn(x^{doc},k)-Attn(x^{dum},k)+rel(x^{dum}).$$
 </div>
 
 
-## References
+## 5. References
+{: id="references"}
 - <span style="text-align: left; font-style: italic;"><a href="https://aclanthology.org/2024.tacl-1.9/">Lost in the Middle: How Language Models Use Long Contexts</a> Liu et al., Nov 2023</span>
 - <span style="text-align: left; font-style: italic;"><a href="https://aclanthology.org/2024.tacl-1.9/">Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models</a> Levy et al., 2024</span>
 - <span style="text-align: left; font-style: italic;"><a href="https://aclanthology.org/2024.acl-long.736/">Never Lost in the Middle: Mastering Long-Context Question Answering with Position-Agnostic Decompositional Training</a> He et al., Aug 2024</span>
