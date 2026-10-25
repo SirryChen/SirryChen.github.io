@@ -132,3 +132,5 @@ footer{background:#eeebf3;border-color:#e0d9e9}.footer-inner .brand{color:var(--
 }
 @media(max-width:960px){.evolution-layout{grid-template-columns:minmax(0,1fr)}.evolution-evidence{grid-template-columns:minmax(0,1fr);max-width:750px;gap:22px;margin:0 auto}.evolution-evidence .training-figure{display:block}}
 @media(max-width:650px){.evolution-layout{gap:20px}.evolution-evidence{gap:18px}}
+
+#clinlab-context{flex-basis:100%;margin:0;font-size:12px;line-height:1.7;color:#685778}#clinlab-context[hidden]{display:none}
