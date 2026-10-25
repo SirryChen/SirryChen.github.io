@@ -7,7 +7,7 @@
  const requestNames={cbc:'Complete blood count (CBC)',cmp:'Comprehensive metabolic panel (CMP)',bmp:'Basic metabolic panel (BMP)',lft:'Liver function tests (LFT)',cardiac_markers:'Cardiac markers',coagulation:'Coagulation panel',inflammatory:'Inflammatory markers',chest_xray:'Chest radiograph',ct_chest:'CT chest',ct_abdomen_pelvis:'CT abdomen and pelvis',ct_head:'CT head',mri_head:'MRI head',echocardiogram:'Echocardiogram',ultrasound_abdomen:'Abdominal ultrasound',vbg:'Venous blood gas (VBG)',abg:'Arterial blood gas (ABG)',ua:'Urinalysis',urine_ketone:'Urine ketones',lactate_bg:'Lactate',ldh:'Lactate dehydrogenase (LDH)'};
  const roleIcons={ask_patient:'patient',request_physical_exam:'lab',order_tests:'lab',order_imaging:'lab',order_microbiology:'lab'};
  const niceRequest=x=>requestNames[String(x).toLowerCase()]||String(x).replaceAll('_',' ');
- let dataset=null,caseIndex=1,modelKey='gpt',revealed=1,focused=0,playTimer=null,scrollFrame=0,navigating=false,navTimer=null;
+ let dataset=null,caseIndex=0,modelKey='qwen',revealed=1,focused=0,playTimer=null,scrollFrame=0,navigating=false,navTimer=null;
  const currentCase=()=>dataset.cases[caseIndex];
  const currentRun=()=>currentCase().runs[modelKey];
  const predictionCount=run=>run.turns.reduce((sum,t)=>sum+(t.rows||[]).filter(r=>r.origin==='Predicted').length,0);
@@ -32,6 +32,6 @@
  q('#play').onclick=()=>{if(playTimer){stopPlayback();return}q('#play').innerHTML=CVIcon('pause')+'Pause';playTimer=setInterval(()=>{if(focused<currentRun().turns.length)goTo(focused+1);else stopPlayback()},5500)};
  q('#case-select').onchange=()=>{caseIndex=Number(q('#case-select').value);syncModels();reset()};q('#model-select').onchange=()=>{modelKey=q('#model-select').value;reset()};
  q('#show-clinlab').onclick=()=>{stopPlayback();const index=firstPredictionRound(currentRun());if(index>=0)goTo(index)};
- async function load(){try{const response=await fetch('data/trajectories.json');if(!response.ok)throw Error('Saved data unavailable');dataset=await response.json();if(!dataset.cases?.length)throw Error('No saved cases');syncCases();for(const id of ['case-select','model-select'])q('#'+id).disabled=false;reset();const first=firstPredictionRound(currentRun());if(first>=0)goTo(first,false)}catch(error){dataset=null;q('#turn').textContent='Replay unavailable';viewport.innerHTML='<div class="replay-error"><p>The saved interaction data could not be loaded.</p><button class="button secondary" id="retry-replay">Try again</button></div>';q('#retry-replay').onclick=load;for(const id of ['back','next','play'])q('#'+id).disabled=true;}}
+ async function load(){try{const response=await fetch('data/trajectories.json?v=reviewed-20261025');if(!response.ok)throw Error('Saved data unavailable');dataset=await response.json();if(!dataset.cases?.length)throw Error('No saved cases');syncCases();for(const id of ['case-select','model-select'])q('#'+id).disabled=false;reset();const first=firstPredictionRound(currentRun());if(first>=0)goTo(first,false)}catch(error){dataset=null;q('#turn').textContent='Replay unavailable';viewport.innerHTML='<div class="replay-error"><p>The saved interaction data could not be loaded.</p><button class="button secondary" id="retry-replay">Try again</button></div>';q('#retry-replay').onclick=load;for(const id of ['back','next','play'])q('#'+id).disabled=true;}}
  load();
 })();
