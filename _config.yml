@@ -71,3 +71,4 @@ exclude:
   - less
   - minimal-mistakes.sublime-project
   - minimal-mistakes.sublime-workspace
+  - blogs/ClinVerse/data

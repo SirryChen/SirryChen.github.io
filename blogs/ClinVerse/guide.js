@@ -1,0 +1,18 @@
+(()=>{
+const tabs=[...document.querySelectorAll('.guide-tabs [role="tab"]')];
+function activate(tab,focus=false){for(const item of tabs){const selected=item===tab;item.setAttribute('aria-selected',String(selected));item.tabIndex=selected?0:-1;document.getElementById(item.getAttribute('aria-controls')).hidden=!selected}if(focus)tab.focus()}
+for(const tab of tabs){tab.addEventListener('click',()=>activate(tab));tab.addEventListener('keydown',event=>{let i=tabs.indexOf(tab);if(event.key==='ArrowRight')i=(i+1)%tabs.length;else if(event.key==='ArrowLeft')i=(i+tabs.length-1)%tabs.length;else if(event.key==='Home')i=0;else if(event.key==='End')i=tabs.length-1;else return;event.preventDefault();activate(tabs[i],true)})}
+for(const button of document.querySelectorAll('.guide-copy'))button.addEventListener('click',async()=>{const code=button.closest('.guide-code').querySelector('code');try{await navigator.clipboard.writeText(code.textContent);button.textContent='Copied';setTimeout(()=>button.textContent='Copy',1800)}catch{const range=document.createRange();range.selectNodeContents(code);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);button.textContent='Selected';setTimeout(()=>button.textContent='Copy',1800)}});
+})();
+
+(()=>{
+const button=document.querySelector('.prompt-copy'),label=button.querySelector('.prompt-copy-label'),box=document.getElementById('agent-prompt'),output=box.querySelector('.prompt-output'),full=document.getElementById('prompt-markdown').textContent,motion=window.matchMedia('(prefers-reduced-motion: reduce)');
+const walker=document.createTreeWalker(output,NodeFilter.SHOW_TEXT),nodes=[];let node;while(node=walker.nextNode())nodes.push({node,text:node.textContent});const total=nodes.reduce((sum,item)=>sum+item.text.length,0),links=[...output.querySelectorAll('a')];
+const caret=document.createElement('span');caret.className='typing-caret';caret.setAttribute('aria-hidden','true');let reset,frame,last=null,elapsed=0,done=false;
+function paint(count){let remaining=count,active=null;for(const item of nodes){const shown=Math.min(remaining,item.text.length);item.node.textContent=item.text.slice(0,shown);remaining-=shown;if(shown>0)active=item.node}for(const item of output.querySelectorAll('li'))item.style.visibility=item.textContent.trim()?'visible':'hidden';if(active)active.after(caret);else output.querySelector('p').prepend(caret)}
+function finish(){cancelAnimationFrame(frame);paint(total);caret.remove();output.classList.remove('typing');for(const link of links)link.removeAttribute('tabindex');done=true}
+function tick(time){if(document.hidden){last=null;frame=requestAnimationFrame(tick);return}if(last!==null)elapsed+=Math.min(time-last,80);last=time;const count=Math.min(total,Math.floor(elapsed*.095));paint(count);if(count>=total)finish();else frame=requestAnimationFrame(tick)}
+if(motion.matches)finish();else{paint(0);for(const link of links)link.tabIndex=-1;const observer=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){observer.disconnect();if(done)return;output.classList.add('typing');frame=requestAnimationFrame(tick)}},{threshold:.15});observer.observe(box)}
+motion.addEventListener('change',()=>{if(motion.matches)finish()});
+button.addEventListener('click',async()=>{clearTimeout(reset);try{await navigator.clipboard.writeText(full);label.textContent='Copied'}catch{finish();output.textContent=full;output.style.whiteSpace='pre-wrap';const range=document.createRange();range.selectNodeContents(output);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);label.textContent='Selected'}reset=setTimeout(()=>label.textContent='Copy prompt',1800)});
+})();
