@@ -9,6 +9,7 @@ Paper write-ups, project updates, and demonstrations. See the [publication list]
 
 ## 2026
 
+{% include cardline.html url="/blogs/ClinVerse/" img="/file/ClinVerse/main.png" title="ClinVerse: A Realistic Multi-Agent Diagnostic Environment for Training and Evaluating Medical Agents" content="Interactive demo · Clinical simulation, agent evaluation, and self-evolution" %}
 {% include cardline.html url="/blogs/2026-08-14-SpeechMedAssist-ACL2026.html" img="/file/SMD/SMA.png" title="SpeechMedAssist: Efficiently and Effectively Adapting Speech Language Models for Medical Consultation" content="August 14, 2026 · ACL 2026 main conference paper" %}
 
 ## 2025
