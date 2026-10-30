@@ -1,4 +1,7 @@
 <aside class="profile" aria-label="Personal information">
+  <details class="profile-menu" open>
+    <summary>Profile</summary>
+    <div class="profile-panel">
   <div class="profile-identity">
     <a class="portrait-link" href="{{ '/' | relative_url }}" aria-label="Sirry Chen homepage"><img class="portrait" src="{{ '/images/' | append: site.owner.avatar | relative_url }}" alt="Sirry Chen" width="190" height="190"></a>
     <div class="profile-summary">
@@ -21,4 +24,6 @@
     {% if site.owner.bilibili %}<li><a href="https://space.bilibili.com/{{ site.owner.bilibili }}"><img class="social-icon" src="{{ "/images/logo/icons8-retro-tv-100.png" | relative_url }}" alt="" width="16" height="16">Bilibili</a></li>{% endif %}
     {% if site.owner.rednote %}<li><a href="{{ site.owner.rednote | escape }}"><img class="social-icon" src="{{ "/images/logo/rednote.svg" | relative_url }}" alt="" width="16" height="16">RedNote</a></li>{% endif %}
   </ul>
+    </div>
+  </details>
 </aside>

@@ -1,0 +1,21 @@
+{% assign current_path = page.url | replace: 'index.html', '' %}
+{% assign next_link = site.links.first %}
+{% assign section_matched = false %}
+{% for link in site.links %}
+  {% if current_path == link.url %}
+    {% assign section_matched = true %}
+  {% elsif link.url != '/' and current_path contains link.url %}
+    {% assign section_matched = true %}
+  {% endif %}
+  {% if section_matched %}
+    {% assign next_index = forloop.index %}
+    {% if next_index < site.links.size %}{% assign next_link = site.links[next_index] %}{% endif %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+{% if section_matched %}
+<nav class="page-next" aria-label="Next section">
+  <span>Next</span>
+  <a id="next-page" href="{{ next_link.url | relative_url }}">{{ next_link.title }} <span aria-hidden="true">→</span></a>
+</nav>
+{% endif %}
